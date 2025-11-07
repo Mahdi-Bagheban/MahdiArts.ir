@@ -3088,3 +3088,29 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Utility Classes for Inline Styles
+--------------------------------------------------------------*/
+/* Logo height */
+.logo img,
+.footer .logo img {
+  height: 40px;
+}
+
+/* Portfolio placeholder */
+#portfolio-placeholder {
+  display: none;
+}
+
+/* Price strikethrough text */
+.pricing .price .text-decoration-line-through {
+  font-size: 0.8em;
+}
+
+/* Form messages - default hidden */
+.contact .form-wrapper .loading,
+.contact .form-wrapper .error-message,
+.contact .form-wrapper .sent-message {
+  display: none;
+}
