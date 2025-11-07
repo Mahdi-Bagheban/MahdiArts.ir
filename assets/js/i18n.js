@@ -20,6 +20,7 @@ class I18n {
     await this.loadLanguage(this.currentLanguage);
     this.applyLanguage();
     this.createLanguageSelector();
+    this.updateLanguageSelector();
   }
 
   /**
@@ -113,6 +114,7 @@ class I18n {
   async changeLanguage(lang) {
     await this.loadLanguage(lang);
     await this.applyLanguage();
+    this.updateLanguageSelector();
     
     // Trigger custom event for other scripts
     window.dispatchEvent(new CustomEvent('languageChanged', { 
@@ -125,16 +127,16 @@ class I18n {
    */
   createLanguageSelector() {
     const languages = [
-      { code: 'fa', name: 'فارسی', flag: '🇮🇷' },
-      { code: 'en', name: 'English', flag: '🇬🇧' },
-      { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-      { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-      { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-      { code: 'fr', name: 'Français', flag: '🇫🇷' },
-      { code: 'es', name: 'Español', flag: '🇪🇸' },
-      { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-      { code: 'zh', name: '中文', flag: '🇨🇳' },
-      { code: 'it', name: 'Italiano', flag: '🇮🇹' }
+      { code: 'fa', name: 'فارسی', shortName: 'فا', flag: '🇮🇷' },
+      { code: 'en', name: 'English', shortName: 'En', flag: '🇬🇧' },
+      { code: 'ar', name: 'العربية', shortName: 'Ar', flag: '🇸🇦' },
+      { code: 'tr', name: 'Türkçe', shortName: 'Tr', flag: '🇹🇷' },
+      { code: 'de', name: 'Deutsch', shortName: 'De', flag: '🇩🇪' },
+      { code: 'fr', name: 'Français', shortName: 'Fr', flag: '🇫🇷' },
+      { code: 'es', name: 'Español', shortName: 'Es', flag: '🇪🇸' },
+      { code: 'ru', name: 'Русский', shortName: 'Ru', flag: '🇷🇺' },
+      { code: 'zh', name: '中文', shortName: 'Zh', flag: '🇨🇳' },
+      { code: 'it', name: 'Italiano', shortName: 'It', flag: '🇮🇹' }
     ];
 
     // بررسی وجود منوی زبان
@@ -148,7 +150,7 @@ class I18n {
       langSelector.innerHTML = `
         <button class="btn btn-link dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="lang-flag">${currentLang ? currentLang.flag : '🌐'}</span>
-          <span class="lang-name">${currentLang ? currentLang.name : 'Language'}</span>
+          <span class="lang-name">${currentLang ? currentLang.shortName : 'Language'}</span>
         </button>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
           ${languages.map(lang => `
@@ -180,6 +182,45 @@ class I18n {
           const lang = item.getAttribute('data-lang');
           this.changeLanguage(lang);
         });
+      });
+    }
+  }
+
+  /**
+   * به‌روزرسانی منوی انتخاب زبان
+   */
+  updateLanguageSelector() {
+    const languages = [
+      { code: 'fa', name: 'فارسی', shortName: 'فا', flag: '🇮🇷' },
+      { code: 'en', name: 'English', shortName: 'En', flag: '🇬🇧' },
+      { code: 'ar', name: 'العربية', shortName: 'Ar', flag: '🇸🇦' },
+      { code: 'tr', name: 'Türkçe', shortName: 'Tr', flag: '🇹🇷' },
+      { code: 'de', name: 'Deutsch', shortName: 'De', flag: '🇩🇪' },
+      { code: 'fr', name: 'Français', shortName: 'Fr', flag: '🇫🇷' },
+      { code: 'es', name: 'Español', shortName: 'Es', flag: '🇪🇸' },
+      { code: 'ru', name: 'Русский', shortName: 'Ru', flag: '🇷🇺' },
+      { code: 'zh', name: '中文', shortName: 'Zh', flag: '🇨🇳' },
+      { code: 'it', name: 'Italiano', shortName: 'It', flag: '🇮🇹' }
+    ];
+
+    const langSelector = document.querySelector('.language-selector');
+    if (langSelector) {
+      const currentLang = languages.find(l => l.code === this.currentLanguage);
+      const button = langSelector.querySelector('#langDropdown');
+      if (button && currentLang) {
+        const flagSpan = button.querySelector('.lang-flag');
+        const nameSpan = button.querySelector('.lang-name');
+        if (flagSpan) flagSpan.textContent = currentLang.flag;
+        if (nameSpan) nameSpan.textContent = currentLang.shortName;
+      }
+
+      // Update active state in dropdown menu
+      langSelector.querySelectorAll('[data-lang]').forEach(item => {
+        if (item.getAttribute('data-lang') === this.currentLanguage) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
       });
     }
   }

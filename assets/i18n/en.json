@@ -1,4 +1,5 @@
 {
+  "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "Mahdi Baghebanpour | Professional Website & App Development | MahdiArts.ir",
     "description": "Website and Android app design and development with 10 years of experience. Professional services, competitive prices, 24/7 support"
@@ -85,7 +86,10 @@
         "Responsive for mobile and tablet",
         "Simple contact form",
         "Basic SEO optimization",
+        "Simple and user-friendly UI/UX design",
+        "Support for various browsers",
         "3 months free support",
+        "System usage training",
         "Delivery time: 7-10 business days"
       ],
       "button": "Select Plan"
@@ -102,7 +106,9 @@
         "API integration",
         "User authentication system",
         "Advanced SEO optimization",
+        "Professional and modern UI/UX design",
         "6 months free support",
+        "Complete training and technical documentation",
         "Delivery time: 15-21 business days"
       ],
       "button": "Select Plan",
@@ -128,12 +134,62 @@
       "button": "Select Plan"
     }
   },
+  "howWeWork": {
+    "title": "How We Work",
+    "subtitle": "We deliver your projects through a structured and professional process",
+    "steps": {
+      "planning": {
+        "title": "Project Planning",
+        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
+      },
+      "development": {
+        "title": "Development Phase",
+        "description": "Implementing the project using the best technologies and current world standards"
+      },
+      "testing": {
+        "title": "Testing & QA",
+        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
+      },
+      "launch": {
+        "title": "Launch & Support",
+        "description": "Successful project launch and continuous support for your complete satisfaction"
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Still Have Questions?",
+    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
+    "contactOptions": {
+      "email": "Email Support",
+      "chat": "Live Chat",
+      "phone": "Call Us"
+    },
+    "questions": {
+      "q1": {
+        "question": "What is the project delivery time?",
+        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
+      },
+      "q2": {
+        "question": "Is support provided after project delivery?",
+        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
+      },
+      "q3": {
+        "question": "Can I request changes to the project?",
+        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
+      },
+      "q4": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
+      }
+    }
+  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Get in touch with us to start your project",
     "address": {
       "title": "Address",
-      "value": "Iran"
+      "value": "Iran, Ahvaz"
     },
     "phone": {
       "title": "Contact Number",
@@ -166,6 +222,7 @@
     "ourServices": "Our Services",
     "copyright": "All Rights Reserved",
     "designedBy": "Designed by"
-  }
+  },
+  "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
 

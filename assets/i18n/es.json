@@ -1,4 +1,5 @@
 {
+  "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "Mahdi Baghebanpour | Desarrollo Profesional de Sitios Web y Aplicaciones | MahdiArts.ir",
     "description": "Diseño y desarrollo de sitios web y aplicaciones Android con 10 años de experiencia. Servicios profesionales, precios competitivos, soporte 24/7"
@@ -85,7 +86,10 @@
         "Responsive para móvil y tableta",
         "Formulario de contacto simple",
         "Optimización SEO básica",
+        "Diseño UI/UX simple y fácil de usar",
+        "Soporte para varios navegadores",
         "3 meses de soporte gratuito",
+        "Capacitación en el uso del sistema",
         "Tiempo de entrega: 7-10 días hábiles"
       ],
       "button": "Seleccionar plan"
@@ -102,7 +106,9 @@
         "Integración API",
         "Sistema de autenticación de usuarios",
         "Optimización SEO avanzada",
+        "Diseño UI/UX profesional y moderno",
         "6 meses de soporte gratuito",
+        "Capacitación completa y documentación técnica",
         "Tiempo de entrega: 15-21 días hábiles"
       ],
       "button": "Seleccionar plan",
@@ -128,12 +134,62 @@
       "button": "Seleccionar plan"
     }
   },
+  "howWeWork": {
+    "title": "Cómo trabajamos",
+    "subtitle": "Entregamos sus proyectos a través de un proceso estructurado y profesional",
+    "steps": {
+      "planning": {
+        "title": "Planificación del proyecto",
+        "description": "Análisis de requisitos, diseño de arquitectura y planificación detallada para la ejecución exitosa del proyecto"
+      },
+      "development": {
+        "title": "Fase de desarrollo",
+        "description": "Implementación del proyecto utilizando las mejores tecnologías y estándares mundiales actuales"
+      },
+      "testing": {
+        "title": "Pruebas y control de calidad",
+        "description": "Pruebas completas de funcionalidad, seguridad y experiencia de usuario para garantizar alta calidad"
+      },
+      "launch": {
+        "title": "Lanzamiento y soporte",
+        "description": "Lanzamiento exitoso del proyecto y soporte continuo para su completa satisfacción"
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "¿Aún tiene preguntas?",
+    "description": "Estamos listos para responder sus preguntas. Contáctenos por correo electrónico, chat o llamada telefónica.",
+    "contactOptions": {
+      "email": "Soporte por correo electrónico",
+      "chat": "Chat en vivo",
+      "phone": "Llame"
+    },
+    "questions": {
+      "q1": {
+        "question": "¿Cuál es el tiempo de entrega del proyecto?",
+        "answer": "El tiempo de entrega depende del tipo y complejidad del proyecto. Los proyectos básicos toman 7-10 días hábiles, los proyectos profesionales 15-21 días hábiles y los proyectos empresariales 30-45 días hábiles."
+      },
+      "q2": {
+        "question": "¿Se proporciona soporte después de la entrega del proyecto?",
+        "answer": "Sí, todos los planes incluyen soporte gratuito. El plan básico incluye 3 meses, el plan profesional 6 meses y el plan empresarial 12 meses de soporte gratuito."
+      },
+      "q3": {
+        "question": "¿Puedo solicitar cambios al proyecto?",
+        "answer": "Sí, durante el proceso de desarrollo puede solicitar cambios y modificaciones según sea necesario. Estos cambios se implementarán según su plan seleccionado."
+      },
+      "q4": {
+        "question": "¿Qué métodos de pago aceptan?",
+        "answer": "Aceptamos varios métodos de pago. Puede contactarnos a través de WhatsApp para discutir los detalles del pago."
+      }
+    }
+  },
   "contact": {
     "title": "Contáctenos",
     "subtitle": "Póngase en contacto con nosotros para comenzar su proyecto",
     "address": {
       "title": "Dirección",
-      "value": "Irán"
+      "value": "Irán, Ahvaz"
     },
     "phone": {
       "title": "Número de contacto",
@@ -166,6 +222,7 @@
     "ourServices": "Nuestros servicios",
     "copyright": "Todos los derechos reservados",
     "designedBy": "Diseñado por"
-  }
+  },
+  "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
 

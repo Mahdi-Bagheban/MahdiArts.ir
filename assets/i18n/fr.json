@@ -1,4 +1,5 @@
 {
+  "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "Mahdi Baghebanpour | Développement Web et Application Professionnel | MahdiArts.ir",
     "description": "Conception et développement de sites web et d'applications Android avec 10 ans d'expérience. Services professionnels, prix compétitifs, support 24/7"
@@ -85,7 +86,10 @@
         "Responsive pour mobile et tablette",
         "Formulaire de contact simple",
         "Optimisation SEO de base",
+        "Conception UI/UX simple et conviviale",
+        "Support pour différents navigateurs",
         "3 mois de support gratuit",
+        "Formation à l'utilisation du système",
         "Délai de livraison: 7-10 jours ouvrables"
       ],
       "button": "Sélectionner le plan"
@@ -102,7 +106,9 @@
         "Intégration API",
         "Système d'authentification utilisateur",
         "Optimisation SEO avancée",
+        "Conception UI/UX professionnelle et moderne",
         "6 mois de support gratuit",
+        "Formation complète et documentation technique",
         "Délai de livraison: 15-21 jours ouvrables"
       ],
       "button": "Sélectionner le plan",
@@ -128,12 +134,62 @@
       "button": "Sélectionner le plan"
     }
   },
+  "howWeWork": {
+    "title": "Comment nous travaillons",
+    "subtitle": "Nous livrons vos projets grâce à un processus structuré et professionnel",
+    "steps": {
+      "planning": {
+        "title": "Planification du projet",
+        "description": "Analyse des besoins, conception de l'architecture et planification détaillée pour une exécution réussie du projet"
+      },
+      "development": {
+        "title": "Phase de développement",
+        "description": "Mise en œuvre du projet en utilisant les meilleures technologies et normes mondiales actuelles"
+      },
+      "testing": {
+        "title": "Tests et assurance qualité",
+        "description": "Tests complets de la fonctionnalité, de la sécurité et de l'expérience utilisateur pour garantir une haute qualité"
+      },
+      "launch": {
+        "title": "Lancement et support",
+        "description": "Lancement réussi du projet et support continu pour votre satisfaction complète"
+      }
+    }
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "subtitle": "Vous avez encore des questions ?",
+    "description": "Nous sommes prêts à répondre à vos questions. Contactez-nous par e-mail, chat ou appel téléphonique.",
+    "contactOptions": {
+      "email": "Support par e-mail",
+      "chat": "Chat en direct",
+      "phone": "Appelez-nous"
+    },
+    "questions": {
+      "q1": {
+        "question": "Quel est le délai de livraison du projet ?",
+        "answer": "Le délai de livraison dépend du type et de la complexité du projet. Les projets de base prennent 7-10 jours ouvrables, les projets professionnels 15-21 jours ouvrables et les projets d'entreprise 30-45 jours ouvrables."
+      },
+      "q2": {
+        "question": "Un support est-il fourni après la livraison du projet ?",
+        "answer": "Oui, tous les plans incluent un support gratuit. Le plan de base comprend 3 mois, le plan professionnel 6 mois et le plan d'entreprise 12 mois de support gratuit."
+      },
+      "q3": {
+        "question": "Puis-je demander des modifications au projet ?",
+        "answer": "Oui, pendant le processus de développement, vous pouvez demander des modifications et des ajustements selon vos besoins. Ces modifications seront mises en œuvre en fonction de votre plan sélectionné."
+      },
+      "q4": {
+        "question": "Quels modes de paiement acceptez-vous ?",
+        "answer": "Nous acceptons différents modes de paiement. Vous pouvez nous contacter via WhatsApp pour discuter des détails de paiement."
+      }
+    }
+  },
   "contact": {
     "title": "Contactez-nous",
     "subtitle": "Contactez-nous pour démarrer votre projet",
     "address": {
       "title": "Adresse",
-      "value": "Iran"
+      "value": "Iran, Ahvaz"
     },
     "phone": {
       "title": "Numéro de contact",
@@ -166,6 +222,7 @@
     "ourServices": "Nos services",
     "copyright": "Tous droits réservés",
     "designedBy": "Conçu par"
-  }
+  },
+  "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
 

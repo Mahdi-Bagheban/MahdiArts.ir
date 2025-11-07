@@ -1,4 +1,5 @@
 {
+  "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "Mahdi Baghebanpour | Sviluppo Professionale di Siti Web e App | MahdiArts.ir",
     "description": "Progettazione e sviluppo di siti web e app Android con 10 anni di esperienza. Servizi professionali, prezzi competitivi, supporto 24/7"
@@ -85,7 +86,10 @@
         "Responsive per mobile e tablet",
         "Modulo di contatto semplice",
         "Ottimizzazione SEO di base",
+        "Progettazione UI/UX semplice e intuitiva",
+        "Supporto per vari browser",
         "3 mesi di supporto gratuito",
+        "Formazione sull'uso del sistema",
         "Tempo di consegna: 7-10 giorni lavorativi"
       ],
       "button": "Seleziona piano"
@@ -102,7 +106,9 @@
         "Integrazione API",
         "Sistema di autenticazione utenti",
         "Ottimizzazione SEO avanzata",
+        "Progettazione UI/UX professionale e moderna",
         "6 mesi di supporto gratuito",
+        "Formazione completa e documentazione tecnica",
         "Tempo di consegna: 15-21 giorni lavorativi"
       ],
       "button": "Seleziona piano",
@@ -128,12 +134,62 @@
       "button": "Seleziona piano"
     }
   },
+  "howWeWork": {
+    "title": "Come lavoriamo",
+    "subtitle": "Consegniamo i tuoi progetti attraverso un processo strutturato e professionale",
+    "steps": {
+      "planning": {
+        "title": "Pianificazione del progetto",
+        "description": "Analisi dei requisiti, progettazione dell'architettura e pianificazione dettagliata per l'esecuzione riuscita del progetto"
+      },
+      "development": {
+        "title": "Fase di sviluppo",
+        "description": "Implementazione del progetto utilizzando le migliori tecnologie e standard mondiali attuali"
+      },
+      "testing": {
+        "title": "Test e controllo qualità",
+        "description": "Test completi di funzionalità, sicurezza e esperienza utente per garantire alta qualità"
+      },
+      "launch": {
+        "title": "Lancio e supporto",
+        "description": "Lancio di successo del progetto e supporto continuo per la tua completa soddisfazione"
+      }
+    }
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "subtitle": "Hai ancora domande?",
+    "description": "Siamo pronti a rispondere alle tue domande. Contattaci tramite email, chat o chiamata telefonica.",
+    "contactOptions": {
+      "email": "Supporto email",
+      "chat": "Chat live",
+      "phone": "Chiamaci"
+    },
+    "questions": {
+      "q1": {
+        "question": "Qual è il tempo di consegna del progetto?",
+        "answer": "Il tempo di consegna dipende dal tipo e dalla complessità del progetto. I progetti base richiedono 7-10 giorni lavorativi, i progetti professionali 15-21 giorni lavorativi e i progetti aziendali 30-45 giorni lavorativi."
+      },
+      "q2": {
+        "question": "Viene fornito supporto dopo la consegna del progetto?",
+        "answer": "Sì, tutti i piani includono supporto gratuito. Il piano base include 3 mesi, il piano professionale 6 mesi e il piano aziendale 12 mesi di supporto gratuito."
+      },
+      "q3": {
+        "question": "Posso richiedere modifiche al progetto?",
+        "answer": "Sì, durante il processo di sviluppo puoi richiedere modifiche e aggiustamenti secondo necessità. Queste modifiche saranno implementate in base al piano selezionato."
+      },
+      "q4": {
+        "question": "Quali metodi di pagamento accettate?",
+        "answer": "Accettiamo vari metodi di pagamento. Puoi contattarci tramite WhatsApp per discutere i dettagli del pagamento."
+      }
+    }
+  },
   "contact": {
     "title": "Contattaci",
     "subtitle": "Mettiti in contatto con noi per iniziare il tuo progetto",
     "address": {
       "title": "Indirizzo",
-      "value": "Iran"
+      "value": "Iran, Ahvaz"
     },
     "phone": {
       "title": "Numero di contatto",
@@ -166,6 +222,7 @@
     "ourServices": "I nostri servizi",
     "copyright": "Tutti i diritti riservati",
     "designedBy": "Progettato da"
-  }
+  },
+  "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
 

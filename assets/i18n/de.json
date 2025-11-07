@@ -1,4 +1,5 @@
 {
+  "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "Mahdi Baghebanpour | Professionelle Website & App Entwicklung | MahdiArts.ir",
     "description": "Website und Android App Design und Entwicklung mit 10 Jahren Erfahrung. Professionelle Dienstleistungen, wettbewerbsfähige Preise, 24/7 Support"
@@ -85,7 +86,10 @@
         "Responsive für Mobilgerät und Tablet",
         "Einfaches Kontaktformular",
         "Grundlegende SEO-Optimierung",
+        "Einfaches und benutzerfreundliches UI/UX Design",
+        "Unterstützung für verschiedene Browser",
         "3 Monate kostenloser Support",
+        "Systemnutzungsschulung",
         "Lieferzeit: 7-10 Werktage"
       ],
       "button": "Plan auswählen"
@@ -102,7 +106,9 @@
         "API-Integration",
         "Benutzerauthentifizierungssystem",
         "Erweiterte SEO-Optimierung",
+        "Professionelles und modernes UI/UX Design",
         "6 Monate kostenloser Support",
+        "Vollständige Schulung und technische Dokumentation",
         "Lieferzeit: 15-21 Werktage"
       ],
       "button": "Plan auswählen",
@@ -128,12 +134,62 @@
       "button": "Plan auswählen"
     }
   },
+  "howWeWork": {
+    "title": "Wie wir arbeiten",
+    "subtitle": "Wir liefern Ihre Projekte durch einen strukturierten und professionellen Prozess",
+    "steps": {
+      "planning": {
+        "title": "Projektplanung",
+        "description": "Analyse der Anforderungen, Architekturgestaltung und detaillierte Planung für erfolgreiche Projektdurchführung"
+      },
+      "development": {
+        "title": "Entwicklungsphase",
+        "description": "Umsetzung des Projekts mit den besten Technologien und aktuellen Weltstandards"
+      },
+      "testing": {
+        "title": "Tests & Qualitätssicherung",
+        "description": "Vollständiges Testen von Funktionalität, Sicherheit und Benutzerfreundlichkeit für hohe Qualität"
+      },
+      "launch": {
+        "title": "Start & Support",
+        "description": "Erfolgreicher Projektstart und kontinuierlicher Support für Ihre vollständige Zufriedenheit"
+      }
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Haben Sie noch Fragen?",
+    "description": "Wir sind bereit, Ihre Fragen zu beantworten. Kontaktieren Sie uns per E-Mail, Chat oder Telefonanruf.",
+    "contactOptions": {
+      "email": "E-Mail-Support",
+      "chat": "Live-Chat",
+      "phone": "Rufen Sie uns an"
+    },
+    "questions": {
+      "q1": {
+        "question": "Wie ist die Projektlieferzeit?",
+        "answer": "Die Lieferzeit hängt von Art und Komplexität des Projekts ab. Grundprojekte dauern 7-10 Werktage, professionelle Projekte 15-21 Werktage und Unternehmensprojekte 30-45 Werktage."
+      },
+      "q2": {
+        "question": "Wird nach Projektabgabe Support angeboten?",
+        "answer": "Ja, alle Pläne beinhalten kostenlosen Support. Der Basis-Plan umfasst 3 Monate, der professionelle Plan 6 Monate und der Enterprise-Plan 12 Monate kostenlosen Support."
+      },
+      "q3": {
+        "question": "Kann ich Änderungen am Projekt anfordern?",
+        "answer": "Ja, während des Entwicklungsprozesses können Sie nach Bedarf Änderungen und Anpassungen anfordern. Diese Änderungen werden basierend auf Ihrem ausgewählten Plan umgesetzt."
+      },
+      "q4": {
+        "question": "Welche Zahlungsmethoden akzeptieren Sie?",
+        "answer": "Wir akzeptieren verschiedene Zahlungsmethoden. Sie können uns über WhatsApp kontaktieren, um Zahlungsdetails zu besprechen."
+      }
+    }
+  },
   "contact": {
     "title": "Kontakt",
     "subtitle": "Kontaktieren Sie uns, um Ihr Projekt zu starten",
     "address": {
       "title": "Adresse",
-      "value": "Iran"
+      "value": "Iran, Ahvaz"
     },
     "phone": {
       "title": "Kontaktnummer",
@@ -166,6 +222,7 @@
     "ourServices": "Unsere Dienstleistungen",
     "copyright": "Alle Rechte vorbehalten",
     "designedBy": "Entworfen von"
-  }
+  },
+  "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
 

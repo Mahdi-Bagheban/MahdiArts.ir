@@ -792,7 +792,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 40px 0;
   scroll-margin-top: 98px;
   overflow: clip;
 }
@@ -810,15 +810,15 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   position: relative;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
   position: relative;
 }
 
@@ -856,11 +856,11 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  padding-top: 140px;
+  padding-top: 120px;
   position: relative;
   overflow: hidden;
   background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
 .hero .badge-wrapper .d-inline-flex {
@@ -1282,7 +1282,7 @@ section,
   display: flex;
   background-color: var(--surface-color);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -1351,13 +1351,13 @@ section,
 
 .services .service-content h3 {
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-weight: 700;
   color: var(--heading-color);
 }
 
 .services .service-content p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
@@ -1861,11 +1861,13 @@ section,
 --------------------------------------------------------------*/
 .pricing .pricing-card {
   height: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--surface-color);
   border-radius: 1rem;
   transition: all 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing .pricing-card:hover {
@@ -1925,7 +1927,7 @@ section,
 }
 
 .pricing .pricing-card .price {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .pricing .pricing-card .price .currency {
@@ -1947,25 +1949,26 @@ section,
 }
 
 .pricing .pricing-card .description {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 0.975rem;
 }
 
 .pricing .pricing-card h4 {
   font-size: 1.125rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .pricing .pricing-card .features-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 auto 0;
+  flex-grow: 1;
 }
 
 .pricing .pricing-card .features-list li {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .pricing .pricing-card .features-list li i {
@@ -2519,6 +2522,17 @@ section,
 
 .contact .form-wrapper .input-group .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
+  text-align: center;
+}
+
+[dir="rtl"] .contact .form-wrapper .input-group .form-control::placeholder,
+body.rtl .contact .form-wrapper .input-group .form-control::placeholder {
+  text-align: center;
+}
+
+[dir="ltr"] .contact .form-wrapper .input-group .form-control::placeholder,
+body.ltr .contact .form-wrapper .input-group .form-control::placeholder {
+  text-align: center;
 }
 
 .contact .form-wrapper select.form-control {
@@ -2532,6 +2546,20 @@ section,
 
 .contact .form-wrapper textarea.form-control {
   min-height: 160px;
+}
+
+.contact .form-wrapper textarea.form-control::placeholder {
+  text-align: center;
+}
+
+[dir="rtl"] .contact .form-wrapper textarea.form-control::placeholder,
+body.rtl .contact .form-wrapper textarea.form-control::placeholder {
+  text-align: center;
+}
+
+[dir="ltr"] .contact .form-wrapper textarea.form-control::placeholder,
+body.ltr .contact .form-wrapper textarea.form-control::placeholder {
+  text-align: center;
 }
 
 .contact .form-wrapper button {
