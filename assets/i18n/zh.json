@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "马赫迪·巴格班普尔 | 专业网站和应用开发 | MahdiArts.ir",
+    "description": "拥有10年经验的网站和Android应用设计和开发。专业服务，有竞争力的价格，24/7支持"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我",
+    "services": "服务",
+    "pricing": "价格",
+    "contact": "联系我们",
+    "getStarted": "开始"
+  },
+  "hero": {
+    "badge": "创新解决方案",
+    "title": "马赫迪·巴格班普尔 - 高级计算机工程师",
+    "description": "在专业网站和Android应用设计和开发方面拥有10年经验",
+    "cta": "了解更多"
+  },
+  "features": {
+    "rapidDeployment": {
+      "title": "快速部署",
+      "text": "使用最新技术快速高效地实施您的项目"
+    },
+    "advancedSecurity": {
+      "title": "高级安全性",
+      "text": "使用当前安全标准完全保护数据和信息"
+    },
+    "dedicatedSupport": {
+      "title": "专属支持",
+      "text": "24/7支持以确保最佳系统性能"
+    }
+  },
+  "about": {
+    "whoWeAre": "关于我",
+    "title": "用创意策略释放潜力",
+    "subtitle": "在网站和移动应用设计和开发方面拥有超过10年的经验，我致力于提供创新和高质量的解决方案。",
+    "points": [
+      "现代响应式网站的设计和开发",
+      "具有最佳性能的原生Android应用开发",
+      "SEO优化和改进搜索引擎排名",
+      "项目的持续支持和维护"
+    ],
+    "readMore": "阅读更多"
+  },
+  "services": {
+    "title": "服务",
+    "subtitle": "专业的网页和移动设计和开发服务",
+    "uiux": {
+      "title": "专业UI/UX设计",
+      "description": "美观且功能性的用户界面设计，专注于最佳用户体验"
+    },
+    "responsive": {
+      "title": "响应式网站开发",
+      "description": "构建在所有设备上完美显示的响应式网站"
+    },
+    "android": {
+      "title": "原生Android应用开发",
+      "description": "使用原生技术进行Android应用开发以获得最佳性能"
+    },
+    "support": {
+      "title": "持续支持和维护",
+      "description": "提供持续的支持和更新服务以确保正确运行"
+    },
+    "seo": {
+      "title": "SEO和性能优化",
+      "description": "针对搜索引擎优化网站并提高速度和性能"
+    },
+    "security": {
+      "title": "安全性和网站稳定性",
+      "description": "实施安全标准并保证系统稳定性"
+    }
+  },
+  "pricing": {
+    "title": "价格",
+    "subtitle": "适合每种项目类型的计划",
+    "basic": {
+      "name": "基础计划",
+      "originalPrice": "$100",
+      "discount": "20%",
+      "finalPrice": "$80",
+      "description": "适合小型项目和着陆页",
+      "features": [
+        "单页着陆页设计",
+        "移动设备和平板电脑响应式",
+        "简单联系表单",
+        "基本SEO优化",
+        "3个月免费支持",
+        "交付时间：7-10个工作日"
+      ],
+      "button": "选择计划"
+    },
+    "professional": {
+      "name": "专业计划",
+      "originalPrice": "$200",
+      "discount": "15%",
+      "finalPrice": "$170",
+      "description": "适合中型企业",
+      "features": [
+        "多页网站（最多10页）",
+        "内容管理系统（CMS）",
+        "API集成",
+        "用户认证系统",
+        "高级SEO优化",
+        "6个月免费支持",
+        "交付时间：15-21个工作日"
+      ],
+      "button": "选择计划",
+      "popular": "最受欢迎"
+    },
+    "enterprise": {
+      "name": "企业计划",
+      "originalPrice": "$500",
+      "discount": "10%",
+      "finalPrice": "$450",
+      "description": "适合大型和企业项目",
+      "features": [
+        "完整的网站或应用系统",
+        "微服务和可扩展架构",
+        "高级管理面板",
+        "与支付网关完全集成",
+        "报告系统和仪表板",
+        "高级安全性和加密",
+        "12个月免费支持+更新",
+        "专属技术顾问",
+        "交付时间：30-45个工作日"
+      ],
+      "button": "选择计划"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们联系以开始您的项目",
+    "address": {
+      "title": "地址",
+      "value": "伊朗"
+    },
+    "phone": {
+      "title": "联系电话",
+      "value": "WhatsApp: +989306880801"
+    },
+    "email": {
+      "title": "电子邮件",
+      "value": "info@mahdiarts.ir"
+    },
+    "form": {
+      "name": "全名",
+      "email": "电子邮件",
+      "whatsapp": "带国家代码的WhatsApp号码",
+      "service": "选择计划",
+      "message": "消息/项目描述",
+      "file": "上传文件（可选）",
+      "submit": "发送消息",
+      "selectService": "选择计划",
+      "basic": "基础计划",
+      "professional": "专业计划",
+      "enterprise": "企业计划"
+    },
+    "success": "您的消息已成功发送。谢谢！",
+    "error": "发送消息时出错。请重试。"
+  },
+  "footer": {
+    "about": "MahdiArts",
+    "description": "具有质量和当前世界标准的网站和移动应用设计和开发",
+    "usefulLinks": "有用链接",
+    "ourServices": "我们的服务",
+    "copyright": "版权所有",
+    "designedBy": "设计者"
+  }
+}
+

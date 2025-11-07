@@ -1,0 +1,15 @@
+name = "mahdiarts-contact-form"
+type = "javascript"
+account_id = "YOUR_ACCOUNT_ID"
+workers_dev = true
+
+[env.production]
+name = "mahdiarts-contact-form"
+route = "mahdiarts.ir/api/contact"
+
+[vars]
+ALLOWED_ORIGINS = "https://mahdiarts.ir"
+MAILGUN_API_KEY = "YOUR_MAILGUN_API_KEY"
+MAILGUN_DOMAIN = "mg.mahdiarts.ir"
+ADMIN_EMAIL = "info@mahdiarts.ir"
+

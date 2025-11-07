@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Mahdi Baghebanpour | Profesyonel Web Sitesi ve Uygulama Geliştirme | MahdiArts.ir",
+    "description": "10 yıllık deneyimle web sitesi ve Android uygulama tasarımı ve geliştirme. Profesyonel hizmetler, rekabetçi fiyatlar, 7/24 destek"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "services": "Hizmetler",
+    "pricing": "Fiyatlandırma",
+    "contact": "İletişim",
+    "getStarted": "Başlayın"
+  },
+  "hero": {
+    "badge": "Yenilikçi Çözümler",
+    "title": "Mahdi Baghebanpour - Kıdemli Bilgisayar Mühendisi",
+    "description": "Profesyonel web sitesi ve Android uygulama tasarımı ve geliştirmede 10 yıllık deneyim",
+    "cta": "Daha Fazla Keşfet"
+  },
+  "features": {
+    "rapidDeployment": {
+      "title": "Hızlı Dağıtım",
+      "text": "En son teknolojileri kullanarak projelerinizin hızlı ve verimli uygulanması"
+    },
+    "advancedSecurity": {
+      "title": "Gelişmiş Güvenlik",
+      "text": "Mevcut güvenlik standartlarıyla veri ve bilgilerin tam korunması"
+    },
+    "dedicatedSupport": {
+      "title": "Özel Destek",
+      "text": "Optimal sistem performansını sağlamak için 7/24 destek"
+    }
+  },
+  "about": {
+    "whoWeAre": "Hakkımda",
+    "title": "Yaratıcı Strateji ile Potansiyeli Açığa Çıkarma",
+    "subtitle": "Web sitesi ve mobil uygulama tasarımı ve geliştirmede 10 yılı aşkın deneyimle, yenilikçi ve kaliteli çözümler sunmaya kararlıyım.",
+    "points": [
+      "Modern Responsive web sitelerinin tasarımı ve geliştirilmesi",
+      "Optimal performansla Native Android uygulama geliştirme",
+      "SEO optimizasyonu ve arama motoru sıralamasında iyileştirme",
+      "Projelerin sürekli desteği ve bakımı"
+    ],
+    "readMore": "Daha Fazla Oku"
+  },
+  "services": {
+    "title": "Hizmetler",
+    "subtitle": "Profesyonel web ve mobil tasarım ve geliştirme hizmetleri",
+    "uiux": {
+      "title": "Profesyonel UI/UX Tasarımı",
+      "description": "Optimal kullanıcı deneyimine odaklanarak güzel ve işlevsel kullanıcı arayüzü tasarımı"
+    },
+    "responsive": {
+      "title": "Responsive Web Sitesi Geliştirme",
+      "description": "Tüm cihazlarda mükemmel görüntülenen responsive web siteleri oluşturma"
+    },
+    "android": {
+      "title": "Native Android Uygulama Geliştirme",
+      "description": "Optimal performans için Native teknolojiler kullanarak Android uygulama geliştirme"
+    },
+    "support": {
+      "title": "Sürekli Destek ve Bakım",
+      "description": "Düzgün çalışmayı sağlamak için sürekli destek ve güncelleme hizmetleri sağlama"
+    },
+    "seo": {
+      "title": "SEO ve Performans Optimizasyonu",
+      "description": "Arama motorları için site optimizasyonu ve hız ve performans iyileştirmesi"
+    },
+    "security": {
+      "title": "Güvenlik ve Site Kararlılığı",
+      "description": "Güvenlik standartlarının uygulanması ve sistem kararlılığı garantisi"
+    }
+  },
+  "pricing": {
+    "title": "Fiyatlandırma",
+    "subtitle": "Her tür proje için uygun planlar",
+    "basic": {
+      "name": "Temel Plan",
+      "originalPrice": "$100",
+      "discount": "20%",
+      "finalPrice": "$80",
+      "description": "Küçük projeler ve Landing Page'ler için uygun",
+      "features": [
+        "Tek sayfalık Landing Page tasarımı",
+        "Mobil ve tablet için responsive",
+        "Basit iletişim formu",
+        "Temel SEO optimizasyonu",
+        "3 ay ücretsiz destek",
+        "Teslimat süresi: 7-10 iş günü"
+      ],
+      "button": "Planı Seç"
+    },
+    "professional": {
+      "name": "Profesyonel Plan",
+      "originalPrice": "$200",
+      "discount": "15%",
+      "finalPrice": "$170",
+      "description": "Orta ölçekli işletmeler için uygun",
+      "features": [
+        "Çok sayfalı web sitesi (10 sayfaya kadar)",
+        "İçerik Yönetim Sistemi (CMS)",
+        "API entegrasyonu",
+        "Kullanıcı kimlik doğrulama sistemi",
+        "Gelişmiş SEO optimizasyonu",
+        "6 ay ücretsiz destek",
+        "Teslimat süresi: 15-21 iş günü"
+      ],
+      "button": "Planı Seç",
+      "popular": "En Popüler"
+    },
+    "enterprise": {
+      "name": "Kurumsal Plan",
+      "originalPrice": "$500",
+      "discount": "10%",
+      "finalPrice": "$450",
+      "description": "Büyük ve kurumsal projeler için uygun",
+      "features": [
+        "Tam web sitesi veya uygulama sistemi",
+        "Mikroservisler ve ölçeklenebilir mimari",
+        "Gelişmiş yönetim paneli",
+        "Ödeme ağ geçitleri ile tam entegrasyon",
+        "Raporlama sistemi ve kontrol paneli",
+        "Yüksek seviye güvenlik ve şifreleme",
+        "12 ay ücretsiz destek + güncellemeler",
+        "Özel teknik danışman",
+        "Teslimat süresi: 30-45 iş günü"
+      ],
+      "button": "Planı Seç"
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Projenizi başlatmak için bizimle iletişime geçin",
+    "address": {
+      "title": "Adres",
+      "value": "İran"
+    },
+    "phone": {
+      "title": "İletişim Numarası",
+      "value": "WhatsApp: +989306880801"
+    },
+    "email": {
+      "title": "E-posta",
+      "value": "info@mahdiarts.ir"
+    },
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "whatsapp": "Ülke Kodu ile WhatsApp Numarası",
+      "service": "Plan Seç",
+      "message": "Mesaj/Proje Açıklaması",
+      "file": "Dosya Yükle (İsteğe Bağlı)",
+      "submit": "Mesaj Gönder",
+      "selectService": "Plan Seç",
+      "basic": "Temel Plan",
+      "professional": "Profesyonel Plan",
+      "enterprise": "Kurumsal Plan"
+    },
+    "success": "Mesajınız başarıyla gönderildi. Teşekkürler!",
+    "error": "Mesaj gönderme hatası. Lütfen tekrar deneyin."
+  },
+  "footer": {
+    "about": "MahdiArts",
+    "description": "Kalite ve güncel dünya standartlarıyla web sitesi ve mobil uygulama tasarımı ve geliştirme",
+    "usefulLinks": "Yararlı Bağlantılar",
+    "ourServices": "Hizmetlerimiz",
+    "copyright": "Tüm Hakları Saklıdır",
+    "designedBy": "Tasarım"
+  }
+}
+

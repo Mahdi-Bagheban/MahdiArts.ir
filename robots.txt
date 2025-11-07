@@ -1,0 +1,13 @@
+# robots.txt for MahdiArts.ir
+# ساخته شده توسط مهدی باغبان‌پور
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mahdiarts.ir/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+

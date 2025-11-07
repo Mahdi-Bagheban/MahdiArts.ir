@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Mahdi Baghebanpour | Développement Web et Application Professionnel | MahdiArts.ir",
+    "description": "Conception et développement de sites web et d'applications Android avec 10 ans d'expérience. Services professionnels, prix compétitifs, support 24/7"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "getStarted": "Commencer"
+  },
+  "hero": {
+    "badge": "Solutions innovantes",
+    "title": "Mahdi Baghebanpour - Ingénieur Informatique Senior",
+    "description": "10 ans d'expérience en conception et développement professionnel de sites web et d'applications Android",
+    "cta": "Découvrir plus"
+  },
+  "features": {
+    "rapidDeployment": {
+      "title": "Déploiement rapide",
+      "text": "Mise en œuvre rapide et efficace de vos projets en utilisant les dernières technologies"
+    },
+    "advancedSecurity": {
+      "title": "Sécurité avancée",
+      "text": "Protection complète des données et informations avec les normes de sécurité actuelles"
+    },
+    "dedicatedSupport": {
+      "title": "Support dédié",
+      "text": "Support 24/7 pour assurer des performances système optimales"
+    }
+  },
+  "about": {
+    "whoWeAre": "À propos de moi",
+    "title": "Libérer le potentiel avec une stratégie créative",
+    "subtitle": "Avec plus de 10 ans d'expérience dans la conception et le développement de sites web et d'applications mobiles, je m'engage à fournir des solutions innovantes et de qualité.",
+    "points": [
+      "Conception et développement de sites web Responsive modernes",
+      "Développement d'applications Android natives avec des performances optimales",
+      "Optimisation SEO et amélioration du classement dans les moteurs de recherche",
+      "Support et maintenance continus des projets"
+    ],
+    "readMore": "Lire plus"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Services professionnels de conception et développement web et mobile",
+    "uiux": {
+      "title": "Conception UI/UX professionnelle",
+      "description": "Conception d'interface utilisateur belle et fonctionnelle axée sur une expérience utilisateur optimale"
+    },
+    "responsive": {
+      "title": "Développement de sites web Responsive",
+      "description": "Création de sites web responsives qui s'affichent parfaitement sur tous les appareils"
+    },
+    "android": {
+      "title": "Développement d'applications Android natives",
+      "description": "Développement d'applications Android utilisant des technologies natives pour des performances optimales"
+    },
+    "support": {
+      "title": "Support et maintenance continus",
+      "description": "Fourniture de services de support et de mise à jour continus pour assurer un fonctionnement correct"
+    },
+    "seo": {
+      "title": "Optimisation SEO et performances",
+      "description": "Optimisation du site pour les moteurs de recherche et amélioration de la vitesse et des performances"
+    },
+    "security": {
+      "title": "Sécurité et stabilité du site",
+      "description": "Mise en œuvre de normes de sécurité et garantie de stabilité du système"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "subtitle": "Plans adaptés à chaque type de projet",
+    "basic": {
+      "name": "Plan de base",
+      "originalPrice": "$100",
+      "discount": "20%",
+      "finalPrice": "$80",
+      "description": "Adapté aux petits projets et pages d'atterrissage",
+      "features": [
+        "Conception de page d'atterrissage à page unique",
+        "Responsive pour mobile et tablette",
+        "Formulaire de contact simple",
+        "Optimisation SEO de base",
+        "3 mois de support gratuit",
+        "Délai de livraison: 7-10 jours ouvrables"
+      ],
+      "button": "Sélectionner le plan"
+    },
+    "professional": {
+      "name": "Plan professionnel",
+      "originalPrice": "$200",
+      "discount": "15%",
+      "finalPrice": "$170",
+      "description": "Adapté aux entreprises moyennes",
+      "features": [
+        "Site web multi-pages (jusqu'à 10 pages)",
+        "Système de gestion de contenu (CMS)",
+        "Intégration API",
+        "Système d'authentification utilisateur",
+        "Optimisation SEO avancée",
+        "6 mois de support gratuit",
+        "Délai de livraison: 15-21 jours ouvrables"
+      ],
+      "button": "Sélectionner le plan",
+      "popular": "Le plus populaire"
+    },
+    "enterprise": {
+      "name": "Plan entreprise",
+      "originalPrice": "$500",
+      "discount": "10%",
+      "finalPrice": "$450",
+      "description": "Adapté aux grands projets et projets d'entreprise",
+      "features": [
+        "Système de site web ou application complet",
+        "Architecture microservices et évolutive",
+        "Panneau d'administration avancé",
+        "Intégration complète avec les passerelles de paiement",
+        "Système de reporting et tableau de bord",
+        "Sécurité de haut niveau et cryptage",
+        "12 mois de support gratuit + mises à jour",
+        "Conseiller technique dédié",
+        "Délai de livraison: 30-45 jours ouvrables"
+      ],
+      "button": "Sélectionner le plan"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Contactez-nous pour démarrer votre projet",
+    "address": {
+      "title": "Adresse",
+      "value": "Iran"
+    },
+    "phone": {
+      "title": "Numéro de contact",
+      "value": "WhatsApp: +989306880801"
+    },
+    "email": {
+      "title": "Email",
+      "value": "info@mahdiarts.ir"
+    },
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "whatsapp": "Numéro WhatsApp avec indicatif pays",
+      "service": "Sélectionner le plan",
+      "message": "Message/Description du projet",
+      "file": "Télécharger un fichier (Optionnel)",
+      "submit": "Envoyer le message",
+      "selectService": "Sélectionner le plan",
+      "basic": "Plan de base",
+      "professional": "Plan professionnel",
+      "enterprise": "Plan entreprise"
+    },
+    "success": "Votre message a été envoyé avec succès. Merci!",
+    "error": "Erreur lors de l'envoi du message. Veuillez réessayer."
+  },
+  "footer": {
+    "about": "MahdiArts",
+    "description": "Conception et développement de sites web et d'applications mobiles avec qualité et normes mondiales actuelles",
+    "usefulLinks": "Liens utiles",
+    "ourServices": "Nos services",
+    "copyright": "Tous droits réservés",
+    "designedBy": "Conçu par"
+  }
+}
+

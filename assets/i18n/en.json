@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Mahdi Baghebanpour | Professional Website & App Development | MahdiArts.ir",
+    "description": "Website and Android app design and development with 10 years of experience. Professional services, competitive prices, 24/7 support"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Innovative Solutions",
+    "title": "Mahdi Baghebanpour - Senior Computer Engineer",
+    "description": "10 years of experience in professional website and Android app design and development",
+    "cta": "Discover More"
+  },
+  "features": {
+    "rapidDeployment": {
+      "title": "Rapid Deployment",
+      "text": "Fast and efficient implementation of your projects using the latest technologies"
+    },
+    "advancedSecurity": {
+      "title": "Advanced Security",
+      "text": "Complete protection of data and information with current security standards"
+    },
+    "dedicatedSupport": {
+      "title": "Dedicated Support",
+      "text": "24/7 support to ensure optimal system performance"
+    }
+  },
+  "about": {
+    "whoWeAre": "About Me",
+    "title": "Unleashing Potential with Creative Strategy",
+    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
+    "points": [
+      "Design and development of modern Responsive websites",
+      "Native Android app development with optimal performance",
+      "SEO optimization and improved search engine rankings",
+      "Continuous support and maintenance of projects"
+    ],
+    "readMore": "Read More"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Professional web and mobile design and development services",
+    "uiux": {
+      "title": "Professional UI/UX Design",
+      "description": "Beautiful and functional user interface design with focus on optimal user experience"
+    },
+    "responsive": {
+      "title": "Responsive Website Development",
+      "description": "Building responsive websites that display perfectly on all devices"
+    },
+    "android": {
+      "title": "Native Android App Development",
+      "description": "Android app development using Native technologies for optimal performance"
+    },
+    "support": {
+      "title": "Continuous Support & Maintenance",
+      "description": "Providing continuous support and update services to ensure proper operation"
+    },
+    "seo": {
+      "title": "SEO & Performance Optimization",
+      "description": "Site optimization for search engines and improved speed and performance"
+    },
+    "security": {
+      "title": "Security & Site Stability",
+      "description": "Implementation of security standards and system stability guarantee"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Suitable plans for every type of project",
+    "basic": {
+      "name": "Basic Plan",
+      "originalPrice": "$100",
+      "discount": "20%",
+      "finalPrice": "$80",
+      "description": "Suitable for small projects and Landing Pages",
+      "features": [
+        "Single-page Landing Page design",
+        "Responsive for mobile and tablet",
+        "Simple contact form",
+        "Basic SEO optimization",
+        "3 months free support",
+        "Delivery time: 7-10 business days"
+      ],
+      "button": "Select Plan"
+    },
+    "professional": {
+      "name": "Professional Plan",
+      "originalPrice": "$200",
+      "discount": "15%",
+      "finalPrice": "$170",
+      "description": "Suitable for medium businesses",
+      "features": [
+        "Multi-page website (up to 10 pages)",
+        "Content Management System (CMS)",
+        "API integration",
+        "User authentication system",
+        "Advanced SEO optimization",
+        "6 months free support",
+        "Delivery time: 15-21 business days"
+      ],
+      "button": "Select Plan",
+      "popular": "Most Popular"
+    },
+    "enterprise": {
+      "name": "Enterprise Plan",
+      "originalPrice": "$500",
+      "discount": "10%",
+      "finalPrice": "$450",
+      "description": "Suitable for large and enterprise projects",
+      "features": [
+        "Complete website or app system",
+        "Microservices and scalable architecture",
+        "Advanced management panel",
+        "Complete payment gateway integration",
+        "Reporting system and dashboard",
+        "High-level security and encryption",
+        "12 months free support + updates",
+        "Dedicated technical consultant",
+        "Delivery time: 30-45 business days"
+      ],
+      "button": "Select Plan"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us to start your project",
+    "address": {
+      "title": "Address",
+      "value": "Iran"
+    },
+    "phone": {
+      "title": "Contact Number",
+      "value": "WhatsApp: +989306880801"
+    },
+    "email": {
+      "title": "Email",
+      "value": "info@mahdiarts.ir"
+    },
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "whatsapp": "WhatsApp Number with Country Code",
+      "service": "Select Plan",
+      "message": "Message/Project Description",
+      "file": "Upload File (Optional)",
+      "submit": "Send Message",
+      "selectService": "Select Plan",
+      "basic": "Basic Plan",
+      "professional": "Professional Plan",
+      "enterprise": "Enterprise Plan"
+    },
+    "success": "Your message has been sent successfully. Thank you!",
+    "error": "Error sending message. Please try again."
+  },
+  "footer": {
+    "about": "MahdiArts",
+    "description": "Website and mobile app design and development with quality and current world standards",
+    "usefulLinks": "Useful Links",
+    "ourServices": "Our Services",
+    "copyright": "All Rights Reserved",
+    "designedBy": "Designed by"
+  }
+}
+

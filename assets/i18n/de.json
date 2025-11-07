@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Mahdi Baghebanpour | Professionelle Website & App Entwicklung | MahdiArts.ir",
+    "description": "Website und Android App Design und Entwicklung mit 10 Jahren Erfahrung. Professionelle Dienstleistungen, wettbewerbsfähige Preise, 24/7 Support"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "services": "Dienstleistungen",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "getStarted": "Loslegen"
+  },
+  "hero": {
+    "badge": "Innovative Lösungen",
+    "title": "Mahdi Baghebanpour - Senior Computer Engineer",
+    "description": "10 Jahre Erfahrung in professionellem Website- und Android-App-Design und -Entwicklung",
+    "cta": "Mehr erfahren"
+  },
+  "features": {
+    "rapidDeployment": {
+      "title": "Schnelle Bereitstellung",
+      "text": "Schnelle und effiziente Umsetzung Ihrer Projekte mit neuesten Technologien"
+    },
+    "advancedSecurity": {
+      "title": "Erweiterte Sicherheit",
+      "text": "Vollständiger Schutz von Daten und Informationen mit aktuellen Sicherheitsstandards"
+    },
+    "dedicatedSupport": {
+      "title": "Dedizierter Support",
+      "text": "24/7 Support für optimale Systemleistung"
+    }
+  },
+  "about": {
+    "whoWeAre": "Über mich",
+    "title": "Potenzial mit kreativer Strategie freisetzen",
+    "subtitle": "Mit über 10 Jahren Erfahrung im Website- und Mobile-App-Design und -Entwicklung bin ich verpflichtet, innovative und qualitativ hochwertige Lösungen zu liefern.",
+    "points": [
+      "Design und Entwicklung moderner Responsive Websites",
+      "Native Android-App-Entwicklung mit optimaler Leistung",
+      "SEO-Optimierung und verbesserte Suchmaschinenrankings",
+      "Kontinuierliche Unterstützung und Wartung von Projekten"
+    ],
+    "readMore": "Weiterlesen"
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "subtitle": "Professionelle Web- und Mobile-Design- und Entwicklungsdienstleistungen",
+    "uiux": {
+      "title": "Professionelles UI/UX Design",
+      "description": "Schönes und funktionales Benutzeroberflächendesign mit Fokus auf optimale Benutzererfahrung"
+    },
+    "responsive": {
+      "title": "Responsive Website-Entwicklung",
+      "description": "Erstellung responsiver Websites, die auf allen Geräten perfekt angezeigt werden"
+    },
+    "android": {
+      "title": "Native Android-App-Entwicklung",
+      "description": "Android-App-Entwicklung mit Native-Technologien für optimale Leistung"
+    },
+    "support": {
+      "title": "Kontinuierliche Unterstützung und Wartung",
+      "description": "Bereitstellung kontinuierlicher Support- und Update-Services für ordnungsgemäßen Betrieb"
+    },
+    "seo": {
+      "title": "SEO- und Leistungsoptimierung",
+      "description": "Site-Optimierung für Suchmaschinen und verbesserte Geschwindigkeit und Leistung"
+    },
+    "security": {
+      "title": "Sicherheit und Site-Stabilität",
+      "description": "Umsetzung von Sicherheitsstandards und Systemstabilitätsgarantie"
+    }
+  },
+  "pricing": {
+    "title": "Preise",
+    "subtitle": "Geeignete Pläne für jeden Projekttyp",
+    "basic": {
+      "name": "Basis-Plan",
+      "originalPrice": "$100",
+      "discount": "20%",
+      "finalPrice": "$80",
+      "description": "Geeignet für kleine Projekte und Landing Pages",
+      "features": [
+        "Einseitiges Landing Page Design",
+        "Responsive für Mobilgerät und Tablet",
+        "Einfaches Kontaktformular",
+        "Grundlegende SEO-Optimierung",
+        "3 Monate kostenloser Support",
+        "Lieferzeit: 7-10 Werktage"
+      ],
+      "button": "Plan auswählen"
+    },
+    "professional": {
+      "name": "Professioneller Plan",
+      "originalPrice": "$200",
+      "discount": "15%",
+      "finalPrice": "$170",
+      "description": "Geeignet für mittlere Unternehmen",
+      "features": [
+        "Mehrseitige Website (bis zu 10 Seiten)",
+        "Content Management System (CMS)",
+        "API-Integration",
+        "Benutzerauthentifizierungssystem",
+        "Erweiterte SEO-Optimierung",
+        "6 Monate kostenloser Support",
+        "Lieferzeit: 15-21 Werktage"
+      ],
+      "button": "Plan auswählen",
+      "popular": "Beliebtester"
+    },
+    "enterprise": {
+      "name": "Enterprise-Plan",
+      "originalPrice": "$500",
+      "discount": "10%",
+      "finalPrice": "$450",
+      "description": "Geeignet für große und Enterprise-Projekte",
+      "features": [
+        "Vollständiges Website- oder App-System",
+        "Microservices und skalierbare Architektur",
+        "Erweiterte Verwaltungsplattform",
+        "Vollständige Integration mit Zahlungsgateways",
+        "Berichtssystem und Dashboard",
+        "Hochsicherheit und Verschlüsselung",
+        "12 Monate kostenloser Support + Updates",
+        "Dedizierter technischer Berater",
+        "Lieferzeit: 30-45 Werktage"
+      ],
+      "button": "Plan auswählen"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktieren Sie uns, um Ihr Projekt zu starten",
+    "address": {
+      "title": "Adresse",
+      "value": "Iran"
+    },
+    "phone": {
+      "title": "Kontaktnummer",
+      "value": "WhatsApp: +989306880801"
+    },
+    "email": {
+      "title": "E-Mail",
+      "value": "info@mahdiarts.ir"
+    },
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "whatsapp": "WhatsApp-Nummer mit Ländercode",
+      "service": "Plan auswählen",
+      "message": "Nachricht/Projektbeschreibung",
+      "file": "Datei hochladen (Optional)",
+      "submit": "Nachricht senden",
+      "selectService": "Plan auswählen",
+      "basic": "Basis-Plan",
+      "professional": "Professioneller Plan",
+      "enterprise": "Enterprise-Plan"
+    },
+    "success": "Ihre Nachricht wurde erfolgreich gesendet. Vielen Dank!",
+    "error": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut."
+  },
+  "footer": {
+    "about": "MahdiArts",
+    "description": "Website- und Mobile-App-Design und -Entwicklung mit Qualität und aktuellen Weltstandards",
+    "usefulLinks": "Nützliche Links",
+    "ourServices": "Unsere Dienstleistungen",
+    "copyright": "Alle Rechte vorbehalten",
+    "designedBy": "Entworfen von"
+  }
+}
+
