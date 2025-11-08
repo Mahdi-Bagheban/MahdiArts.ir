@@ -33,9 +33,70 @@
   });
 
   /**
+   * اعتبارسنجی فایل در سمت کلاینت
+   */
+  function validateFile(file) {
+    if (!file) return { isValid: true, errors: [] };
+    
+    const errors = [];
+    
+    // انواع فایل مجاز
+    const allowedTypes = [
+      'application/pdf',
+      'image/jpeg',
+      'image/jpg',
+      'image/png',
+      'image/gif',
+      'image/webp',
+      'text/plain',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+    
+    // پسوندهای مجاز
+    const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.webp', '.txt', '.doc', '.docx'];
+    const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+    
+    // بررسی نوع فایل
+    const isValidType = allowedTypes.includes(file.type.toLowerCase()) || 
+                        allowedExtensions.includes(fileExtension);
+    
+    if (!isValidType) {
+      errors.push('فقط فایل‌های PDF، تصاویر و متن با حداکثر حجم ۵ مگابایت مجاز هستند');
+    }
+    
+    // بررسی حجم فایل (حداکثر 5MB)
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSize) {
+      errors.push('فقط فایل‌های PDF، تصاویر و متن با حداکثر حجم ۵ مگابایت مجاز هستند');
+    }
+    
+    return {
+      isValid: errors.length === 0,
+      errors: errors
+    };
+  }
+
+  /**
+   * تبدیل فایل به base64
+   */
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        // حذف prefix data:type/subtype;base64, از نتیجه
+        const base64 = reader.result.split(',')[1];
+        resolve(base64);
+      };
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /**
    * اعتبارسنجی فرم در سمت کلاینت
    */
-  function validateForm(name, email, whatsapp, plan, message) {
+  function validateForm(name, email, whatsapp, plan, message, file) {
     const errors = [];
     
     // اعتبارسنجی نام
@@ -73,6 +134,14 @@
       errors.push('پیام نباید بیشتر از 5000 کاراکتر باشد');
     }
     
+    // اعتبارسنجی فایل در صورت وجود
+    if (file) {
+      const fileValidation = validateFile(file);
+      if (!fileValidation.isValid) {
+        errors.push(...fileValidation.errors);
+      }
+    }
+    
     return {
       isValid: errors.length === 0,
       errors: errors
@@ -98,9 +167,11 @@
       const whatsapp = (this.querySelector('#whatsapp')?.value || '').trim();
       const plan = (this.querySelector('#service-select')?.value || '').trim();
       const message = (this.querySelector('#message')?.value || '').trim();
+      const fileInput = this.querySelector('#file');
+      const file = fileInput?.files?.[0] || null;
       
-      // اعتبارسنجی فرم
-      const validation = validateForm(name, email, whatsapp, plan, message);
+      // اعتبارسنجی فرم (شامل فایل)
+      const validation = validateForm(name, email, whatsapp, plan, message, file);
       if (!validation.isValid) {
         errorDiv.style.display = 'block';
         errorDiv.textContent = validation.errors.join(' | ');
@@ -112,7 +183,7 @@
       // نمایش loading state
       submitBtn.disabled = true;
       const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'در حال ارسال...';
+      submitBtn.textContent = file ? 'در حال آپلود و ارسال...' : 'در حال ارسال...';
       loadingDiv.style.display = 'block';
       errorDiv.style.display = 'none';
       successDiv.style.display = 'none';
@@ -127,10 +198,34 @@
           message: message
         };
         
-        console.log('Sending form data:', formData);
+        // تبدیل فایل به base64 در صورت وجود
+        if (file) {
+          console.log('Processing file:', file.name, file.size, 'bytes');
+          submitBtn.textContent = 'در حال پردازش فایل...';
+          
+          try {
+            const base64Content = await fileToBase64(file);
+            formData.file = {
+              name: file.name,
+              type: file.type,
+              size: file.size,
+              content: base64Content
+            };
+            console.log('File converted to base64, size:', base64Content.length, 'characters');
+          } catch (fileError) {
+            console.error('Error converting file to base64:', fileError);
+            throw new Error('خطا در پردازش فایل. لطفاً دوباره تلاش کنید.');
+          }
+        }
+        
+        console.log('Sending form data:', {
+          ...formData,
+          file: formData.file ? { name: formData.file.name, size: formData.file.size } : null
+        });
         
         // ارسال به Cloudflare Worker
         const workerUrl = 'https://mahdiarts.ir/api/contact';
+        submitBtn.textContent = 'در حال ارسال...';
         const response = await fetch(workerUrl, {
           method: 'POST',
           headers: {

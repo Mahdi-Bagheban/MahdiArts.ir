@@ -6,21 +6,14 @@
  * 
  * ویژگی‌ها:
  * - یکپارچه‌سازی با Resend API برای ارسال ایمیل
- * - Rate Limiting (حداکثر 5 درخواست در ساعت)
  * - اعتبارسنجی و پاکسازی ورودی‌ها
  * - مدیریت CORS
  * - قالب‌های ایمیل حرفه‌ای به فارسی
+ * - مدیریت خطاهای جامع
  */
-
-// تنظیمات Rate Limiting
-const RATE_LIMIT = {
-  MAX_REQUESTS: 5,
-  WINDOW_HOURS: 1
-};
 
 /**
  * پاکسازی و اعتبارسنجی ورودی‌های فرم
- * این تابع تگ‌های HTML و کاراکترهای خطرناک را حذف می‌کند
  */
 function sanitizeInput(input) {
   if (typeof input !== 'string') return '';
@@ -33,7 +26,6 @@ function sanitizeInput(input) {
 
 /**
  * اعتبارسنجی ایمیل
- * بررسی می‌کند که ایمیل وارد شده معتبر باشد
  */
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,9 +34,9 @@ function validateEmail(email) {
 
 /**
  * اعتبارسنجی کامل فرم
- * تمام فیلدهای مورد نیاز را بررسی می‌کند
+ * فیلدهای مورد نیاز: name, email, whatsapp, plan, message
  */
-function validateForm(name, email, subject, message) {
+function validateForm(name, email, whatsapp, plan, message) {
   const errors = [];
 
   // اعتبارسنجی نام (2-100 کاراکتر)
@@ -61,12 +53,21 @@ function validateForm(name, email, subject, message) {
     errors.push('ایمیل معتبر وارد کنید');
   }
 
-  // اعتبارسنجی موضوع (5-200 کاراکتر)
-  const sanitizedSubject = sanitizeInput(subject);
-  if (!sanitizedSubject || sanitizedSubject.length < 5) {
-    errors.push('موضوع باید حداقل 5 کاراکتر باشد');
-  } else if (sanitizedSubject.length > 200) {
-    errors.push('موضوع نباید بیشتر از 200 کاراکتر باشد');
+  // اعتبارسنجی واتساپ (اختیاری اما اگر وارد شده باشد باید معتبر باشد)
+  const sanitizedWhatsapp = sanitizeInput(whatsapp || '');
+  if (sanitizedWhatsapp && sanitizedWhatsapp.length > 0) {
+    // بررسی فرمت شماره واتساپ (حداقل 10 رقم)
+    const whatsappRegex = /^[\d\s\-\+\(\)]+$/;
+    if (!whatsappRegex.test(sanitizedWhatsapp) || sanitizedWhatsapp.replace(/\D/g, '').length < 10) {
+      errors.push('شماره واتساپ معتبر وارد کنید');
+    }
+  }
+
+  // اعتبارسنجی پلن
+  const validPlans = ['basic', 'professional', 'enterprise'];
+  const sanitizedPlan = sanitizeInput(plan || '');
+  if (!sanitizedPlan || !validPlans.includes(sanitizedPlan)) {
+    errors.push('لطفاً یک پلن معتبر انتخاب کنید');
   }
 
   // اعتبارسنجی پیام (10-5000 کاراکتر)
@@ -83,82 +84,83 @@ function validateForm(name, email, subject, message) {
     sanitized: {
       name: sanitizedName,
       email: sanitizedEmail,
-      subject: sanitizedSubject,
+      whatsapp: sanitizedWhatsapp,
+      plan: sanitizedPlan,
       message: sanitizedMessage
     }
   };
 }
 
 /**
- * بررسی Rate Limiting با استفاده از KV Store
- * این تابع تعداد درخواست‌های هر IP را در یک بازه زمانی مشخص بررسی می‌کند
+ * تبدیل پلن به موضوع فارسی
  */
-async function checkRateLimit(ip, env) {
-  if (!env.RATE_LIMIT_KV) {
-    // اگر KV موجود نباشد، rate limiting را نادیده می‌گیریم
-    return { allowed: true, remaining: RATE_LIMIT.MAX_REQUESTS };
+function getSubjectFromPlan(plan) {
+  const planMap = {
+    'basic': 'درخواست پلن پایه',
+    'professional': 'درخواست پلن حرفه‌ای',
+    'enterprise': 'درخواست پلن سازمانی'
+  };
+  return planMap[plan] || 'درخواست تماس';
+}
+
+/**
+ * اعتبارسنجی فایل
+ * بررسی نوع و حجم فایل
+ */
+function validateFile(file) {
+  const errors = [];
+  
+  if (!file || !file.name || !file.type || !file.size || !file.content) {
+    errors.push('اطلاعات فایل ناقص است');
+    return { isValid: false, errors };
   }
 
-  try {
-    const key = `rate_limit:${ip}`;
-    const now = Date.now();
-    const windowMs = RATE_LIMIT.WINDOW_HOURS * 60 * 60 * 1000;
+  // انواع فایل مجاز
+  const allowedTypes = [
+    'application/pdf',
+    'image/jpeg',
+    'image/jpg',
+    'image/png',
+    'image/gif',
+    'image/webp',
+    'text/plain',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+  ];
 
-    // دریافت داده‌های قبلی
-    const existing = await env.RATE_LIMIT_KV.get(key, 'json');
-    
-    if (existing) {
-      // حذف درخواست‌های قدیمی (خارج از window)
-      const recentRequests = existing.requests.filter(
-        timestamp => timestamp > (now - windowMs)
-      );
+  // پسوندهای مجاز
+  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.webp', '.txt', '.doc', '.docx'];
+  const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
 
-      if (recentRequests.length >= RATE_LIMIT.MAX_REQUESTS) {
-        const resetTime = recentRequests[0] + windowMs;
-        return {
-          allowed: false,
-          remaining: 0,
-          resetTime
-        };
-      }
-
-      // اضافه کردن درخواست جدید
-      recentRequests.push(now);
-      await env.RATE_LIMIT_KV.put(
-        key,
-        JSON.stringify({ requests: recentRequests }),
-        { expirationTtl: RATE_LIMIT.WINDOW_HOURS * 60 * 60 }
-      );
-
-      return {
-        allowed: true,
-        remaining: RATE_LIMIT.MAX_REQUESTS - recentRequests.length
-      };
-    } else {
-      // اولین درخواست
-      await env.RATE_LIMIT_KV.put(
-        key,
-        JSON.stringify({ requests: [now] }),
-        { expirationTtl: RATE_LIMIT.WINDOW_HOURS * 60 * 60 }
-      );
-
-      return {
-        allowed: true,
-        remaining: RATE_LIMIT.MAX_REQUESTS - 1
-      };
-    }
-  } catch (error) {
-    console.error('Rate limit error:', error);
-    // در صورت خطا، اجازه می‌دهیم درخواست ادامه یابد
-    return { allowed: true, remaining: RATE_LIMIT.MAX_REQUESTS };
+  // بررسی نوع فایل
+  const isValidType = allowedTypes.includes(file.type.toLowerCase()) || 
+                      allowedExtensions.includes(fileExtension);
+  
+  if (!isValidType) {
+    errors.push('نوع فایل مجاز نیست. فقط فایل‌های PDF، تصاویر و متن مجاز هستند');
   }
+
+  // بررسی حجم فایل (حداکثر 5MB)
+  const maxSize = 5 * 1024 * 1024; // 5MB
+  if (file.size > maxSize) {
+    errors.push('حجم فایل نباید بیشتر از 5 مگابایت باشد');
+  }
+
+  // بررسی base64 content
+  if (!file.content || typeof file.content !== 'string') {
+    errors.push('محتوای فایل نامعتبر است');
+  }
+
+  return {
+    isValid: errors.length === 0,
+    errors
+  };
 }
 
 /**
  * ایجاد قالب HTML ایمیل تأیید برای کاربر
- * این ایمیل به کاربر ارسال می‌شود تا تأیید کند که پیامش دریافت شده است
  */
-function createUserConfirmationEmail(name, subject, message) {
+function createUserConfirmationEmail(name, plan, message) {
   const date = new Date().toLocaleDateString('fa-IR', {
     year: 'numeric',
     month: 'long',
@@ -166,6 +168,8 @@ function createUserConfirmationEmail(name, subject, message) {
     hour: '2-digit',
     minute: '2-digit'
   });
+
+  const subject = getSubjectFromPlan(plan);
 
   return `
 <!DOCTYPE html>
@@ -297,7 +301,7 @@ function createUserConfirmationEmail(name, subject, message) {
       
       <div class="details-box">
         <div class="detail-row">
-          <span class="detail-label">موضوع:</span>
+          <span class="detail-label">پلن انتخابی:</span>
           <span class="detail-value">${subject}</span>
         </div>
         <div class="detail-row">
@@ -334,9 +338,8 @@ function createUserConfirmationEmail(name, subject, message) {
 
 /**
  * ایجاد قالب HTML ایمیل اطلاع‌رسانی برای ادمین
- * این ایمیل به ادمین ارسال می‌شود و شامل تمام جزئیات فرم است
  */
-function createAdminNotificationEmail(name, email, subject, message, ip, timestamp) {
+function createAdminNotificationEmail(name, email, whatsapp, plan, message, ip, timestamp, hasFile = false, fileName = null) {
   const date = new Date(timestamp).toLocaleDateString('fa-IR', {
     year: 'numeric',
     month: 'long',
@@ -344,6 +347,8 @@ function createAdminNotificationEmail(name, email, subject, message, ip, timesta
     hour: '2-digit',
     minute: '2-digit'
   });
+
+  const subject = getSubjectFromPlan(plan);
 
   return `
 <!DOCTYPE html>
@@ -475,8 +480,15 @@ function createAdminNotificationEmail(name, email, subject, message, ip, timesta
           <span class="detail-value"><a href="mailto:${email}">${email}</a></span>
         </div>
         
+        ${whatsapp ? `
         <div class="detail-row">
-          <span class="detail-label">موضوع:</span>
+          <span class="detail-label">واتساپ:</span>
+          <span class="detail-value">${whatsapp}</span>
+        </div>
+        ` : ''}
+        
+        <div class="detail-row">
+          <span class="detail-label">پلن انتخابی:</span>
           <span class="detail-value"><strong>${subject}</strong></span>
         </div>
         
@@ -484,6 +496,13 @@ function createAdminNotificationEmail(name, email, subject, message, ip, timesta
           <span class="detail-label">متن پیام:</span>
         </div>
         <div class="message-box">${message}</div>
+        
+        ${hasFile && fileName ? `
+        <div class="detail-row">
+          <span class="detail-label">فایل ضمیمه:</span>
+          <span class="detail-value"><strong>${fileName}</strong> (فایل در attachment ایمیل موجود است)</span>
+        </div>
+        ` : ''}
         
         <div class="detail-row">
           <span class="detail-label">آی‌پی کاربر:</span>
@@ -509,56 +528,124 @@ function createAdminNotificationEmail(name, email, subject, message, ip, timesta
 
 /**
  * ارسال ایمیل با استفاده از Resend API
- * این تابع از Resend API برای ارسال ایمیل استفاده می‌کند
+ * @param {string} to - آدرس ایمیل گیرنده
+ * @param {string} subject - موضوع ایمیل
+ * @param {string} html - محتوای HTML ایمیل
+ * @param {object} env - Environment variables
+ * @param {array} attachments - آرایه فایل‌های ضمیمه (اختیاری)
  */
-async function sendEmailWithResend(to, subject, html, env) {
+async function sendEmailWithResend(to, subject, html, env, attachments = null) {
+  console.log(`[Resend] Attempting to send email to: ${to}`);
+  console.log(`[Resend] Subject: ${subject}`);
+  
   const resendApiKey = env.RESEND_API_KEY;
   
   if (!resendApiKey) {
+    console.error('[Resend] ERROR: RESEND_API_KEY is not set');
     throw new Error('RESEND_API_KEY تنظیم نشده است');
   }
 
   const fromEmail = env.FROM_EMAIL || 'noreply@mahdiarts.ir';
+  console.log(`[Resend] From email: ${fromEmail}`);
 
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${resendApiKey}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [to],
-      subject: subject,
-      html: html
-    })
-  });
+  const requestBody = {
+    from: fromEmail,
+    to: [to],
+    subject: subject,
+    html: html
+  };
 
-  if (!response.ok) {
-    const errorData = await response.text();
-    console.error('Resend API error:', errorData);
-    throw new Error(`خطا در ارسال ایمیل: ${response.status}`);
+  // اضافه کردن attachments در صورت وجود
+  if (attachments && Array.isArray(attachments) && attachments.length > 0) {
+    requestBody.attachments = attachments;
+    console.log(`[Resend] Adding ${attachments.length} attachment(s) to email`);
   }
 
-  return await response.json();
+  // Log request payload before sending for debugging
+  const requestPayload = JSON.stringify(requestBody);
+  console.log(`[Resend] Request payload (before sending):`, {
+    from: fromEmail,
+    to: to,
+    subject: subject,
+    htmlLength: html.length,
+    payloadLength: requestPayload.length
+  });
+  console.log(`[Resend] Full request payload:`, requestPayload.substring(0, 500) + (requestPayload.length > 500 ? '...' : ''));
+
+  try {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: requestPayload
+    });
+
+    console.log(`[Resend] Response status: ${response.status}`);
+    console.log(`[Resend] Response status text: ${response.statusText}`);
+    console.log(`[Resend] Response headers:`, Object.fromEntries(response.headers.entries()));
+
+    const responseText = await response.text();
+    console.log(`[Resend] Response body (full):`, responseText);
+    console.log(`[Resend] Response body length: ${responseText.length}`);
+
+    if (!response.ok) {
+      // Log full error details
+      console.error(`[Resend] ERROR - Status: ${response.status}`);
+      console.error(`[Resend] ERROR - Status Text: ${response.statusText}`);
+      console.error(`[Resend] ERROR - Response Body:`, responseText);
+      
+      let errorMessage = `خطا در ارسال ایمیل: ${response.status}`;
+      try {
+        const errorData = JSON.parse(responseText);
+        console.error('[Resend] ERROR - Parsed error data:', JSON.stringify(errorData, null, 2));
+        if (errorData.message) {
+          errorMessage = `خطا در ارسال ایمیل: ${errorData.message}`;
+        } else if (errorData.error) {
+          errorMessage = `خطا در ارسال ایمیل: ${errorData.error}`;
+        }
+      } catch (parseError) {
+        console.error('[Resend] ERROR - Could not parse error response:', parseError);
+        console.error('[Resend] ERROR - Raw response text:', responseText);
+        errorMessage = `خطا در ارسال ایمیل: ${response.status} - ${responseText.substring(0, 200)}`;
+      }
+      throw new Error(errorMessage);
+    }
+
+    const result = JSON.parse(responseText);
+    console.log('[Resend] SUCCESS - Email sent successfully:', JSON.stringify(result, null, 2));
+    return result;
+
+  } catch (error) {
+    console.error('[Resend] Exception during email send:', error);
+    if (error.message) {
+      throw error;
+    }
+    throw new Error(`خطا در ارسال ایمیل: ${error.toString()}`);
+  }
 }
 
 /**
  * تابع اصلی Worker
- * این تابع تمام درخواست‌ها را پردازش می‌کند
  */
 export default {
   async fetch(request, env) {
+    console.log(`[Worker] New request: ${request.method} ${request.url}`);
+    
     // دریافت Origin برای CORS
     const origin = request.headers.get('Origin');
-    const allowedOrigins = (env.ALLOWED_ORIGINS || 'https://mahdiarts.ir,https://www.mahdiarts.ir').split(',');
-    const isAllowedOrigin = allowedOrigins.some(allowed => 
-      origin && origin.trim() === allowed.trim()
-    );
-    const corsOrigin = isAllowedOrigin ? origin : allowedOrigins[0]?.trim() || '*';
+    console.log(`[Worker] Origin: ${origin}`);
+    
+    const allowedOrigins = (env.ALLOWED_ORIGINS || 'https://mahdiarts.ir,https://www.mahdiarts.ir').split(',').map(o => o.trim());
+    const isAllowedOrigin = origin && allowedOrigins.includes(origin);
+    const corsOrigin = isAllowedOrigin ? origin : allowedOrigins[0] || '*';
+    
+    console.log(`[Worker] CORS origin: ${corsOrigin}`);
 
     // مدیریت CORS Preflight
     if (request.method === 'OPTIONS') {
+      console.log('[Worker] Handling OPTIONS preflight request');
       return new Response(null, {
         status: 204,
         headers: {
@@ -572,10 +659,11 @@ export default {
 
     // فقط POST مجاز است
     if (request.method !== 'POST') {
+      console.log(`[Worker] Method not allowed: ${request.method}`);
       return new Response(
         JSON.stringify({ 
           success: false, 
-          error: 'Method not allowed' 
+          error: 'فقط درخواست POST مجاز است' 
         }),
         {
           status: 405,
@@ -589,11 +677,14 @@ export default {
 
     // بررسی مسیر درخواست
     const url = new URL(request.url);
+    console.log(`[Worker] Path: ${url.pathname}`);
+    
     if (url.pathname !== '/api/contact') {
+      console.log(`[Worker] Path not found: ${url.pathname}`);
       return new Response(
         JSON.stringify({ 
           success: false, 
-          error: 'Not found' 
+          error: 'مسیر یافت نشد' 
         }),
         {
           status: 404,
@@ -606,43 +697,31 @@ export default {
     }
 
     try {
-      // دریافت IP کاربر برای rate limiting
+      // دریافت IP کاربر
       const clientIP = request.headers.get('CF-Connecting-IP') || 
                           request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim() || 
                           'unknown';
+      console.log(`[Worker] Client IP: ${clientIP}`);
 
-      // بررسی Rate Limiting
-      const rateLimit = await checkRateLimit(clientIP, env);
-      if (!rateLimit.allowed) {
-        const resetDate = rateLimit.resetTime 
-          ? new Date(rateLimit.resetTime).toLocaleTimeString('fa-IR')
-          : 'بعداً';
-        
-        return new Response(
-          JSON.stringify({ 
-            success: false, 
-            error: `تعداد درخواست‌های شما بیش از حد مجاز است. لطفاً بعد از ${resetDate} دوباره تلاش کنید.` 
-          }),
-          {
-            status: 429,
-            headers: { 
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': corsOrigin,
-              'Retry-After': '3600'
-            }
-          }
-        );
-      }
+      // دریافت Content-Type
+      const contentType = request.headers.get('Content-Type') || '';
+      console.log(`[Worker] Content-Type: ${contentType}`);
 
       // دریافت و پردازش JSON body
       let body;
       try {
-        body = await request.json();
+        const bodyText = await request.text();
+        console.log(`[Worker] Request body received (length: ${bodyText.length})`);
+        console.log(`[Worker] Request body preview: ${bodyText.substring(0, 200)}`);
+        
+        body = JSON.parse(bodyText);
+        console.log(`[Worker] Parsed body:`, JSON.stringify(body));
       } catch (jsonError) {
+        console.error('[Worker] JSON parse error:', jsonError);
         return new Response(
           JSON.stringify({ 
             success: false, 
-            error: 'فرمت JSON نامعتبر است' 
+            error: 'فرمت JSON نامعتبر است. لطفاً مطمئن شوید که داده‌ها به صورت JSON ارسال شده‌اند.' 
           }),
           {
             status: 400,
@@ -654,12 +733,53 @@ export default {
         );
       }
 
-      const { name, email, subject, message } = body;
+      // استخراج فیلدها
+      const { name, email, whatsapp, plan, message, file } = body;
+      console.log(`[Worker] Extracted fields:`, { 
+        name: name ? 'present' : 'missing',
+        email: email ? 'present' : 'missing',
+        whatsapp: whatsapp ? 'present' : 'missing',
+        plan: plan ? 'present' : 'missing',
+        message: message ? 'present' : 'missing',
+        file: file ? 'present' : 'missing'
+      });
+
+      // اعتبارسنجی فایل در صورت وجود
+      let fileAttachment = null;
+      if (file) {
+        console.log('[Worker] Validating file...');
+        const fileValidation = validateFile(file);
+        if (!fileValidation.isValid) {
+          console.error('[Worker] File validation failed:', fileValidation.errors);
+          return new Response(
+            JSON.stringify({ 
+              success: false, 
+              error: fileValidation.errors.join(' | ') 
+            }),
+            {
+              status: 400,
+              headers: { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': corsOrigin
+              }
+            }
+          );
+        }
+        
+        // آماده‌سازی attachment برای Resend API
+        fileAttachment = [{
+          filename: file.name,
+          content: file.content // base64 encoded content
+        }];
+        console.log(`[Worker] File validated: ${file.name} (${file.size} bytes)`);
+      }
 
       // اعتبارسنجی و پاکسازی ورودی‌ها
-      const validation = validateForm(name, email, subject, message);
+      console.log('[Worker] Validating form data...');
+      const validation = validateForm(name, email, whatsapp, plan, message);
       
       if (!validation.isValid) {
+        console.error('[Worker] Validation failed:', validation.errors);
         return new Response(
           JSON.stringify({ 
             success: false, 
@@ -675,55 +795,70 @@ export default {
         );
       }
 
+      console.log('[Worker] Validation passed');
       const { sanitized } = validation;
       const timestamp = new Date().toISOString();
+      const subject = getSubjectFromPlan(sanitized.plan);
 
       // ارسال ایمیل تأیید به کاربر
+      console.log('[Worker] Sending user confirmation email...');
       try {
         const userEmailHTML = createUserConfirmationEmail(
           sanitized.name,
-          sanitized.subject,
+          sanitized.plan,
           sanitized.message
         );
         
-        await sendEmailWithResend(
+        const userEmailResult = await sendEmailWithResend(
           sanitized.email,
           'پیام شما با موفقیت دریافت شد - MahdiArts',
           userEmailHTML,
           env
         );
         
-        console.log('User confirmation email sent successfully');
+        console.log('[Worker] User confirmation email sent successfully:', userEmailResult);
       } catch (emailError) {
-        console.error('Error sending user email:', emailError);
+        console.error('[Worker] Error sending user email:', emailError);
         // ادامه می‌دهیم حتی اگر ایمیل کاربر ارسال نشود
       }
 
-      // ارسال ایمیل اطلاع‌رسانی به ادمین
+      // ارسال ایمیل اطلاع‌رسانی به ادمین (با attachment در صورت وجود)
+      console.log('[Worker] Sending admin notification email...');
       const adminEmail = env.ADMIN_EMAIL || 'info@mahdiarts.ir';
       const adminEmailHTML = createAdminNotificationEmail(
         sanitized.name,
         sanitized.email,
-        sanitized.subject,
+        sanitized.whatsapp,
+        sanitized.plan,
         sanitized.message,
         clientIP,
-        timestamp
+        timestamp,
+        !!fileAttachment,
+        file ? file.name : null
       );
       
-      await sendEmailWithResend(
+      // اضافه کردن اطلاعات فایل به ایمیل ادمین در صورت وجود
+      let adminEmailSubject = `پیام جدید از فرم تماس - ${sanitized.name} (${subject})`;
+      if (fileAttachment) {
+        adminEmailSubject += ` [با فایل: ${file.name}]`;
+      }
+      
+      const adminEmailResult = await sendEmailWithResend(
         adminEmail,
-        `پیام جدید از فرم تماس - ${sanitized.name}`,
+        adminEmailSubject,
         adminEmailHTML,
-        env
+        env,
+        fileAttachment // ارسال attachment فقط به ادمین
       );
       
-      console.log('Admin notification email sent successfully');
+      console.log('[Worker] Admin notification email sent successfully:', adminEmailResult);
 
       // پاسخ موفقیت
+      console.log('[Worker] Request processed successfully');
       return new Response(
         JSON.stringify({ 
           success: true, 
-          message: 'پیام شما با موفقیت ارسال شد' 
+          message: 'پیام شما با موفقیت ارسال شد. به زودی با شما تماس خواهیم گرفت.' 
         }),
         {
           status: 200,
@@ -735,16 +870,13 @@ export default {
       );
 
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error('[Worker] Unhandled error:', error);
+      console.error('[Worker] Error stack:', error.stack);
       
       // مدیریت خطاها
-      let errorMessage = 'خطا در پردازش درخواست';
+      let errorMessage = 'خطا در پردازش درخواست. لطفاً دوباره تلاش کنید.';
       
-      if (error.message.includes('RESEND')) {
-        errorMessage = 'خطا در ارسال ایمیل. لطفاً دوباره تلاش کنید.';
-      } else if (error.message.includes('rate limit')) {
-        errorMessage = 'تعداد درخواست‌های شما بیش از حد مجاز است.';
-      } else if (error.message) {
+      if (error.message) {
         errorMessage = error.message;
       }
 
