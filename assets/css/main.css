@@ -164,6 +164,7 @@ a {
 }
 
 a:hover {
+  color: rgba(93, 87, 244, 0.75); /* Fallback for browsers < Chrome 111 */
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
@@ -279,6 +280,7 @@ h6 {
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
+  background: rgba(93, 87, 244, 0.85); /* Fallback for browsers < Chrome 111 */
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
@@ -475,6 +477,7 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
+    background-color: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
@@ -859,12 +862,14 @@ section,
   padding-top: 120px;
   position: relative;
   overflow: hidden;
+  background-color: rgba(93, 87, 244, 0.05); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
   padding-bottom: 60px;
 }
 
 .hero .badge-wrapper .d-inline-flex {
   padding: 0.5rem 0.75rem;
+  border-color: rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
   border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
@@ -872,6 +877,7 @@ section,
   height: 24px;
   width: 24px;
   border-radius: 50%;
+  background-color: rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
   display: flex;
   align-items: center;
@@ -968,6 +974,7 @@ section,
   padding: 1.5rem;
   border-radius: 12px;
   background-color: var(--surface-color);
+  border: 1px solid rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
   height: 100%;
   transition: all 0.3s ease;
@@ -994,6 +1001,7 @@ section,
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  background-color: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   display: flex;
   align-items: center;
@@ -1102,6 +1110,7 @@ section,
 }
 
 .about .content .read-more:hover {
+  background: rgba(93, 87, 244, 0.8); /* Fallback for browsers < Chrome 111 */
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   padding-right: 19px;
 }
@@ -1212,6 +1221,7 @@ section,
 }
 
 .how-we-work .process-item .arrow {
+  color: rgba(93, 87, 244, 0.5); /* Fallback for browsers < Chrome 111 */
   color: color-mix(in srgb, var(--accent-color), transparent 50%);
   margin: 1rem 0;
   width: 100px;
@@ -1331,6 +1341,7 @@ section,
   width: 70px;
   height: 70px;
   border-radius: 12px;
+  background-color: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   color: var(--accent-color);
   display: flex;
@@ -1379,6 +1390,7 @@ section,
 }
 
 .services .service-link:hover {
+  color: rgba(93, 87, 244, 0.75); /* Fallback for browsers < Chrome 111 */
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
@@ -1448,6 +1460,7 @@ section,
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 0.8rem;
+  color: rgba(93, 87, 244, 0.75); /* Fallback for browsers < Chrome 111 */
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
@@ -1719,6 +1732,7 @@ section,
 }
 
 .portfolio .portfolio-filters li:hover {
+  background-color: rgba(93, 87, 244, 0.15); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
   color: var(--accent-color);
   transform: translateY(-2px);
@@ -1994,6 +2008,7 @@ section,
 }
 
 .pricing .pricing-card .btn.btn-primary:hover {
+  background: rgba(93, 87, 244, 0.85); /* Fallback for browsers < Chrome 111 */
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
@@ -2234,6 +2249,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   display: flex;
   flex-direction: column;
@@ -2294,6 +2310,7 @@ section,
 .team .team-content .position {
   display: inline-block;
   padding: 0.35rem 1rem;
+  background-color: rgba(93, 87, 244, 0.15); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
   border-radius: 30px;
   font-size: 0.875rem;
@@ -2357,6 +2374,7 @@ section,
   top: 15px;
   left: 30px;
   font-size: 42px;
+  color: rgba(93, 87, 244, 0.15); /* Fallback for browsers < Chrome 111 */
   color: color-mix(in srgb, var(--accent-color), transparent 85%);
   z-index: 0;
   opacity: 0.8;
@@ -2418,6 +2436,7 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
+  background-color: rgba(93, 87, 244, 0.4); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 60%);
   opacity: 1;
 }
@@ -2477,6 +2496,7 @@ section,
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background-color: rgba(93, 87, 244, 0.08); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
 }
 
@@ -2574,6 +2594,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .contact .form-wrapper button:hover {
+  background-color: rgba(93, 87, 244, 0.8); /* Fallback for browsers < Chrome 111 */
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -2684,6 +2705,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .portfolio-details .portfolio-info .btn-visit:hover {
+  background: rgba(93, 87, 244, 0.8); /* Fallback for browsers < Chrome 111 */
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -2727,6 +2749,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: rgba(93, 87, 244, 0.5); /* Fallback for browsers < Chrome 111 */
   color: color-mix(in srgb, var(--accent-color), transparent 50%);
   font-size: 26px;
   line-height: 0;
@@ -2811,6 +2834,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .service-details .service-main-content .section-header .section-subtitle {
   display: inline-block;
   padding: 8px 16px;
+  background: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
   color: var(--accent-color);
   border-radius: 50px;

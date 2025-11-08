@@ -1,15 +1,45 @@
+# Cloudflare Worker Configuration for MahdiArts Contact Form
+# ساخته شده توسط مهدی باغبان‌پور
+
 name = "mahdiarts-contact-form"
-type = "javascript"
-account_id = "YOUR_ACCOUNT_ID"
+main = "workers/contact-form.js"
+compatibility_date = "2024-01-01"
+# account_id می‌تواند به صورت خودکار تشخیص داده شود، یا می‌توانید آن را از داشبورد Cloudflare دریافت کنید
+# account_id = "YOUR_ACCOUNT_ID"
 workers_dev = true
 
+# تنظیمات Production
 [env.production]
 name = "mahdiarts-contact-form"
-route = "mahdiarts.ir/api/contact"
+route = { pattern = "mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" }
 
+# Environment Variables
 [vars]
-ALLOWED_ORIGINS = "https://mahdiarts.ir"
-MAILGUN_API_KEY = "YOUR_MAILGUN_API_KEY"
-MAILGUN_DOMAIN = "mg.mahdiarts.ir"
+# دامنه‌های مجاز برای CORS (با کاما جدا کنید)
+ALLOWED_ORIGINS = "https://mahdiarts.ir,https://www.mahdiarts.ir"
+# ایمیل ادمین برای دریافت پیام‌ها
 ADMIN_EMAIL = "info@mahdiarts.ir"
+# URL عمومی R2 برای دسترسی به فایل‌ها (اختیاری)
+# R2_PUBLIC_URL = "https://files.mahdiarts.ir"
 
+# Secret Bindings (باید از طریق wrangler secret put تنظیم شوند)
+# wrangler secret put RESEND_API_KEY
+# wrangler secret put RESEND_API_KEY --env production
+
+# KV Namespace برای Rate Limiting
+# برای ایجاد KV namespace:
+# wrangler kv:namespace create "RATE_LIMIT_KV"
+# wrangler kv:namespace create "RATE_LIMIT_KV" --env production
+# پس از ایجاد namespace، ID های زیر را از خروجی دستورات بالا کپی کنید
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "YOUR_KV_NAMESPACE_ID"
+# preview_id = "YOUR_PREVIEW_KV_NAMESPACE_ID"
+
+# R2 Bucket برای آپلود فایل‌ها (اختیاری)
+# برای ایجاد R2 bucket:
+# wrangler r2 bucket create mahdiarts-uploads
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "mahdiarts-uploads"
+preview_bucket_name = "mahdiarts-uploads-preview"
