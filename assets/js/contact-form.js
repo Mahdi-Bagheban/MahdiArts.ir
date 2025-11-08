@@ -35,7 +35,7 @@
   /**
    * اعتبارسنجی فرم در سمت کلاینت
    */
-  function validateForm(name, email, message, service) {
+  function validateForm(name, email, whatsapp, plan, message) {
     const errors = [];
     
     // اعتبارسنجی نام
@@ -51,16 +51,26 @@
       errors.push('لطفاً یک ایمیل معتبر وارد کنید');
     }
     
+    // اعتبارسنجی واتساپ (اختیاری اما اگر وارد شده باشد باید معتبر باشد)
+    if (whatsapp && whatsapp.trim().length > 0) {
+      const whatsappRegex = /^[\d\s\-\+\(\)]+$/;
+      const digitsOnly = whatsapp.replace(/\D/g, '');
+      if (!whatsappRegex.test(whatsapp.trim()) || digitsOnly.length < 10) {
+        errors.push('شماره واتساپ معتبر وارد کنید');
+      }
+    }
+    
+    // اعتبارسنجی انتخاب پلن
+    const validPlans = ['basic', 'professional', 'enterprise'];
+    if (!plan || plan.trim() === '' || !validPlans.includes(plan.trim())) {
+      errors.push('لطفاً یک پلن معتبر انتخاب کنید');
+    }
+    
     // اعتبارسنجی پیام
     if (!message || message.trim().length < 10) {
       errors.push('پیام باید حداقل 10 کاراکتر باشد');
     } else if (message.trim().length > 5000) {
       errors.push('پیام نباید بیشتر از 5000 کاراکتر باشد');
-    }
-    
-    // اعتبارسنجی انتخاب پلن
-    if (!service || service.trim() === '') {
-      errors.push('لطفاً یک پلن را انتخاب کنید');
     }
     
     return {
@@ -69,55 +79,56 @@
     };
   }
 
-  /**
-   * تبدیل مقدار پلن به موضوع فارسی
-   */
-  function getSubjectFromService(service) {
-    const serviceMap = {
-      'basic': 'درخواست پلن پایه',
-      'professional': 'درخواست پلن حرفه‌ای',
-      'enterprise': 'درخواست پلن سازمانی'
-    };
-    return serviceMap[service] || 'درخواست تماس';
-  }
-
   // مدیریت فرم تماس
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
+      // جلوگیری از ارسال پیش‌فرض فرم
       e.preventDefault();
       
+      // دریافت عناصر DOM
       const submitBtn = this.querySelector('button[type="submit"]');
       const loadingDiv = this.querySelector('.loading');
       const errorDiv = this.querySelector('.error-message');
       const successDiv = this.querySelector('.sent-message');
       
       // دریافت مقادیر فرم
-      const name = this.querySelector('#name').value.trim();
-      const email = this.querySelector('#email').value.trim();
-      const message = this.querySelector('#message').value.trim();
-      const service = this.querySelector('#service-select').value;
+      const name = (this.querySelector('#name')?.value || '').trim();
+      const email = (this.querySelector('#email')?.value || '').trim();
+      const whatsapp = (this.querySelector('#whatsapp')?.value || '').trim();
+      const plan = (this.querySelector('#service-select')?.value || '').trim();
+      const message = (this.querySelector('#message')?.value || '').trim();
       
       // اعتبارسنجی فرم
-      const validation = validateForm(name, email, message, service);
+      const validation = validateForm(name, email, whatsapp, plan, message);
       if (!validation.isValid) {
         errorDiv.style.display = 'block';
         errorDiv.textContent = validation.errors.join(' | ');
         successDiv.style.display = 'none';
+        loadingDiv.style.display = 'none';
         return;
       }
       
-      // ایجاد موضوع از پلن انتخابی
-      const subject = getSubjectFromService(service);
-      
-      // نمایش loading
+      // نمایش loading state
       submitBtn.disabled = true;
+      const originalBtnText = submitBtn.textContent;
       submitBtn.textContent = 'در حال ارسال...';
       loadingDiv.style.display = 'block';
       errorDiv.style.display = 'none';
       successDiv.style.display = 'none';
       
       try {
+        // آماده‌سازی داده‌های JSON
+        const formData = {
+          name: name,
+          email: email,
+          whatsapp: whatsapp || '', // اختیاری
+          plan: plan,
+          message: message
+        };
+        
+        console.log('Sending form data:', formData);
+        
         // ارسال به Cloudflare Worker
         const workerUrl = 'https://mahdiarts.ir/api/contact';
         const response = await fetch(workerUrl, {
@@ -125,28 +136,38 @@
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-          })
+          body: JSON.stringify(formData)
         });
         
-        const result = await response.json();
+        console.log('Response status:', response.status);
+        
+        // دریافت پاسخ
+        let result;
+        try {
+          result = await response.json();
+        } catch (jsonError) {
+          console.error('Error parsing JSON response:', jsonError);
+          throw new Error('پاسخ نامعتبر از سرور دریافت شد. لطفاً دوباره تلاش کنید.');
+        }
+        
+        console.log('Response data:', result);
         
         if (response.ok && result.success) {
           // موفقیت
           loadingDiv.style.display = 'none';
           successDiv.style.display = 'block';
-          submitBtn.textContent = 'ارسال پیام';
+          submitBtn.textContent = originalBtnText;
+          
+          // پاک کردن فرم
           this.reset();
           
           // پاک کردن selected plan از localStorage
           localStorage.removeItem('selectedPlan');
           
           // اسکرول به پیام موفقیت
-          successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          setTimeout(() => {
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
         } else {
           // مدیریت خطاهای مختلف
           let errorMessage = 'خطا در ارسال پیام. لطفاً دوباره تلاش کنید.';
@@ -157,6 +178,9 @@
           } else if (response.status === 400) {
             // خطای اعتبارسنجی
             errorMessage = result.error || 'لطفاً تمام فیلدها را به درستی پر کنید.';
+          } else if (response.status === 500) {
+            // خطای سرور
+            errorMessage = result.error || 'خطا در سرور. لطفاً بعداً دوباره تلاش کنید.';
           } else if (result.error) {
             errorMessage = result.error;
           }
@@ -164,17 +188,20 @@
           throw new Error(errorMessage);
         }
       } catch (error) {
-        // خطا
+        // مدیریت خطا
+        console.error('Form submission error:', error);
         loadingDiv.style.display = 'none';
         errorDiv.style.display = 'block';
         
-        if (error.message.includes('fetch') || error.message.includes('network')) {
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
           errorDiv.textContent = 'خطا در اتصال به سرور. لطفاً اتصال اینترنت خود را بررسی کنید و دوباره تلاش کنید.';
+        } else if (error.message) {
+          errorDiv.textContent = error.message;
         } else {
-          errorDiv.textContent = error.message || 'خطا در ارسال پیام. لطفاً دوباره تلاش کنید.';
+          errorDiv.textContent = 'خطا در ارسال پیام. لطفاً دوباره تلاش کنید.';
         }
         
-        submitBtn.textContent = 'ارسال پیام';
+        submitBtn.textContent = originalBtnText;
       } finally {
         submitBtn.disabled = false;
       }
