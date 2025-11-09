@@ -224,7 +224,7 @@
         });
         
         // ارسال به Cloudflare Worker
-        const workerUrl = 'https://mahdiarts.ir/api/contact';
+const workerUrl = 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev/api/contact';
         submitBtn.textContent = 'در حال ارسال...';
         const response = await fetch(workerUrl, {
           method: 'POST',
