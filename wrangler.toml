@@ -39,7 +39,3 @@ ADMIN_EMAIL = "info@mahdiarts.ir"
 # R2 Bucket برای آپلود فایل‌ها (اختیاری)
 # برای ایجاد R2 bucket:
 # wrangler r2 bucket create mahdiarts-uploads
-[[r2_buckets]]
-binding = "R2_BUCKET"
-bucket_name = "mahdiarts-uploads"
-preview_bucket_name = "mahdiarts-uploads-preview"
