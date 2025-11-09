@@ -101,6 +101,9 @@ body.rtl {
   font-family: var(--persian-font);
   direction: rtl;
   text-align: right;
+  /* Ensure all headings and navigation use Vazirmatn in RTL */
+  --heading-font: var(--persian-font);
+  --nav-font: var(--persian-font);
 }
 
 [dir="rtl"] .service-link i,
