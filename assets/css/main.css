@@ -22,6 +22,15 @@
 }
 
 /* Vazirmatn Font for Persian */
+/* Variable font (preferred where supported) */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Vazirmatn';
   src: url('../fonts/Vazirmatn-Regular.woff2') format('woff2');
@@ -180,6 +189,47 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+}
+
+/* Persian language-wide font application using :lang selector */
+:root:lang(fa),
+[lang="fa"] {
+  /* Prefer Vazirmatn across the stack when language is Persian */
+  --default-font: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Vazirmatn", sans-serif;
+  --nav-font: "Vazirmatn", sans-serif;
+}
+
+/* Apply Vazirmatn to all common text elements when language is Persian */
+:lang(fa),
+:lang(fa) p,
+:lang(fa) span,
+:lang(fa) div,
+:lang(fa) h1,
+:lang(fa) h2,
+:lang(fa) h3,
+:lang(fa) h4,
+:lang(fa) h5,
+:lang(fa) h6,
+:lang(fa) a,
+:lang(fa) button,
+:lang(fa) label,
+:lang(fa) input,
+:lang(fa) textarea,
+:lang(fa) select {
+  font-family: var(--persian-font);
+}
+
+/* Ensure form controls use Vazirmatn in RTL as well */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select,
+[dir="rtl"] button,
+body.rtl input,
+body.rtl textarea,
+body.rtl select,
+body.rtl button {
+  font-family: var(--persian-font);
 }
 
 /* حذف استایل‌های بلااستفاده مربوط به php-email-form */
