@@ -1,0 +1,60 @@
+[en] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = Mahdi Baghebanpour | Professional Website & App Development | MahdiArts.ir
+  - meta.description = Website and Android app design and development with 10 years of experience. Professional services, competitive prices, 24/7 support
+  - nav.home = Home
+  - nav.about = About
+[fa] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — مهندسی حرفه‌ای وب و اندروید
+  - meta.description = طراحی و توسعه وب‌سایت‌ها و اپلیکیشن‌های اندروید با استانداردهای روز، کارایی و امنیت.
+  - nav.home = خانه
+  - nav.about = درباره
+[ar] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — هندسة احترافية للويب والأندرويد
+  - meta.description = تصميم وتطوير مواقع وتطبيقات أندرويد عالية الجودة وفقًا للمعايير الحديثة، الأداء والأمان.
+  - nav.home = الرئيسية
+  - nav.about = من نحن
+[tr] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — Profesyonel Web ve Android Mühendisliği
+  - meta.description = Modern standartlara uygun, yüksek kaliteli web siteleri ve Android uygulamaları tasarlayıp geliştiriyoruz; performans ve güvenliği ön planda tutarız.
+  - nav.home = Ana Sayfa
+  - nav.about = Hakkında
+[de] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — Professionelles Web- & Android-Engineering
+  - meta.description = Entwicklung moderner, leistungsstarker und sicherer Websites und Android-Apps nach aktuellen Standards.
+  - nav.home = Startseite
+  - nav.about = Über uns
+[fr] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — Ingénierie Web et Android professionnelle
+  - meta.description = Conception et développement de sites web et d’applications Android de haute qualité selon les standards modernes, avec performance et sécurité.
+  - nav.home = Accueil
+  - nav.about = À propos
+[es] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — Ingeniería profesional Web y Android
+  - meta.description = Diseño y desarrollo de sitios web y aplicaciones Android de alta calidad con estándares modernos, rendimiento y seguridad.
+  - nav.home = Inicio
+  - nav.about = Sobre mí
+[ru] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — Профессиональная разработка веб и Android
+  - meta.description = Проектирование и разработка высококачественных веб‑сайтов и Android‑приложений по современным стандартам, с упором на производительность и безопасность.
+  - nav.home = Главная
+  - nav.about = О нас
+[zh] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — 专业的网站与 Android 开发
+  - meta.description = 按照现代标准设计与开发高质量网站和 Android 应用，兼顾高性能与安全。
+  - nav.home = 首页
+  - nav.about = 关于我们
+[it] keys=141 missing=0 extra=0
+  - _bismillah = به نام خداوند بخشنده مهربان
+  - meta.title = MahdiArts — Ingegneria Web e Android professionale
+  - meta.description = Progettazione e sviluppo di siti web e app Android di alta qualità con standard moderni, prestazioni e sicurezza.
+  - nav.home = Home
+  - nav.about = Chi siamo

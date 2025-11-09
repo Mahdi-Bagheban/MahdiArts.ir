@@ -1,12 +1,12 @@
 {
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
-    "title": "Mahdi Baghebanpour | Sviluppo Professionale di Siti Web e App | MahdiArts.ir",
-    "description": "Progettazione e sviluppo di siti web e app Android con 10 anni di esperienza. Servizi professionali, prezzi competitivi, supporto 24/7"
+    "title": "MahdiArts — Ingegneria Web e Android professionale",
+    "description": "Progettazione e sviluppo di siti web e app Android di alta qualità con standard moderni, prestazioni e sicurezza."
   },
   "nav": {
     "home": "Home",
-    "about": "Chi sono",
+    "about": "Chi siamo",
     "services": "Servizi",
     "pricing": "Prezzi",
     "contact": "Contatti",
@@ -14,185 +14,185 @@
   },
   "hero": {
     "badge": "Soluzioni innovative",
-    "title": "Mahdi Baghebanpour - Ingegnere Informatico Senior",
-    "description": "10 anni di esperienza nella progettazione e sviluppo professionale di siti web e app Android",
+    "title": "Mahdi Baghebanpour — Ingegnere informatico senior",
+    "description": "10 anni di esperienza nello sviluppo di siti web e app Android professionali",
     "cta": "Scopri di più"
   },
   "features": {
     "rapidDeployment": {
       "title": "Distribuzione rapida",
-      "text": "Implementazione rapida ed efficiente dei tuoi progetti utilizzando le ultime tecnologie"
+      "text": "Avvia i progetti in modo rapido ed efficiente utilizzando tecnologie moderne"
     },
     "advancedSecurity": {
       "title": "Sicurezza avanzata",
-      "text": "Protezione completa di dati e informazioni con standard di sicurezza attuali"
+      "text": "Protezione completa dei dati con pratiche di sicurezza standard"
     },
     "dedicatedSupport": {
       "title": "Supporto dedicato",
-      "text": "Supporto 24/7 per garantire prestazioni ottimali del sistema"
+      "text": "Supporto 24/7 per garantire le massime prestazioni del sistema"
     }
   },
   "about": {
-    "whoWeAre": "Chi sono",
-    "title": "Liberare il potenziale con strategia creativa",
-    "subtitle": "Con oltre 10 anni di esperienza nella progettazione e sviluppo di siti web e app mobili, mi impegno a fornire soluzioni innovative e di qualità.",
+    "whoWeAre": "About Me",
+    "title": "Chi sono",
+    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
     "points": [
-      "Progettazione e sviluppo di siti web Responsive moderni",
-      "Sviluppo di app Android native con prestazioni ottimali",
-      "Ottimizzazione SEO e miglioramento del ranking nei motori di ricerca",
-      "Supporto e manutenzione continui dei progetti"
+      "Design and development of modern Responsive websites",
+      "Native Android app development with optimal performance",
+      "SEO optimization and improved search engine rankings",
+      "Continuous support and maintenance of projects"
     ],
-    "readMore": "Leggi di più"
+    "readMore": "Read More"
   },
   "services": {
     "title": "Servizi",
-    "subtitle": "Servizi professionali di progettazione e sviluppo web e mobile",
+    "subtitle": "Professional web and mobile design and development services",
     "uiux": {
-      "title": "Progettazione UI/UX professionale",
-      "description": "Progettazione di interfaccia utente bella e funzionale con focus su esperienza utente ottimale"
+      "title": "Professional UI/UX Design",
+      "description": "Beautiful and functional user interface design with focus on optimal user experience"
     },
     "responsive": {
-      "title": "Sviluppo di siti web Responsive",
-      "description": "Creazione di siti web responsive che si visualizzano perfettamente su tutti i dispositivi"
+      "title": "Responsive Website Development",
+      "description": "Building responsive websites that display perfectly on all devices"
     },
     "android": {
-      "title": "Sviluppo di app Android native",
-      "description": "Sviluppo di app Android utilizzando tecnologie native per prestazioni ottimali"
+      "title": "Native Android App Development",
+      "description": "Android app development using Native technologies for optimal performance"
     },
     "support": {
-      "title": "Supporto e manutenzione continui",
-      "description": "Fornitura di servizi di supporto e aggiornamento continui per garantire il corretto funzionamento"
+      "title": "Continuous Support & Maintenance",
+      "description": "Providing continuous support and update services to ensure proper operation"
     },
     "seo": {
-      "title": "Ottimizzazione SEO e prestazioni",
-      "description": "Ottimizzazione del sito per i motori di ricerca e miglioramento di velocità e prestazioni"
+      "title": "SEO & Performance Optimization",
+      "description": "Site optimization for search engines and improved speed and performance"
     },
     "security": {
-      "title": "Sicurezza e stabilità del sito",
-      "description": "Implementazione di standard di sicurezza e garanzia di stabilità del sistema"
+      "title": "Security & Site Stability",
+      "description": "Implementation of security standards and system stability guarantee"
     }
   },
   "pricing": {
-    "title": "Prezzi",
-    "subtitle": "Piani adatti per ogni tipo di progetto",
+    "title": "Piani tariffari",
+    "subtitle": "Suitable plans for every type of project",
     "basic": {
-      "name": "Piano base",
+      "name": "Basic Plan",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "Adatto per piccoli progetti e pagine di destinazione",
+      "description": "Suitable for small projects and Landing Pages",
       "features": [
-        "Progettazione di pagina di destinazione a pagina singola",
-        "Responsive per mobile e tablet",
-        "Modulo di contatto semplice",
-        "Ottimizzazione SEO di base",
-        "Progettazione UI/UX semplice e intuitiva",
-        "Supporto per vari browser",
-        "3 mesi di supporto gratuito",
-        "Formazione sull'uso del sistema",
-        "Tempo di consegna: 7-10 giorni lavorativi"
+        "Single-page Landing Page design",
+        "Responsive for mobile and tablet",
+        "Simple contact form",
+        "Basic SEO optimization",
+        "Simple and user-friendly UI/UX design",
+        "Support for various browsers",
+        "3 months free support",
+        "System usage training",
+        "Delivery time: 7-10 business days"
       ],
-      "button": "Seleziona piano"
+      "button": "Select Plan"
     },
     "professional": {
-      "name": "Piano professionale",
+      "name": "Professional Plan",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "Adatto per aziende medie",
+      "description": "Suitable for medium businesses",
       "features": [
-        "Sito web multipagina (fino a 10 pagine)",
-        "Sistema di gestione contenuti (CMS)",
-        "Integrazione API",
-        "Sistema di autenticazione utenti",
-        "Ottimizzazione SEO avanzata",
-        "Progettazione UI/UX professionale e moderna",
-        "6 mesi di supporto gratuito",
-        "Formazione completa e documentazione tecnica",
-        "Tempo di consegna: 15-21 giorni lavorativi"
+        "Multi-page website (up to 10 pages)",
+        "Content Management System (CMS)",
+        "API integration",
+        "User authentication system",
+        "Advanced SEO optimization",
+        "Professional and modern UI/UX design",
+        "6 months free support",
+        "Complete training and technical documentation",
+        "Delivery time: 15-21 business days"
       ],
-      "button": "Seleziona piano",
-      "popular": "Più popolare"
+      "button": "Select Plan",
+      "popular": "Most Popular"
     },
     "enterprise": {
-      "name": "Piano enterprise",
+      "name": "Enterprise Plan",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "Adatto per progetti grandi e aziendali",
+      "description": "Suitable for large and enterprise projects",
       "features": [
-        "Sistema completo di sito web o app",
-        "Architettura microservizi e scalabile",
-        "Pannello di amministrazione avanzato",
-        "Integrazione completa con gateway di pagamento",
-        "Sistema di reporting e dashboard",
-        "Sicurezza di alto livello e crittografia",
-        "12 mesi di supporto gratuito + aggiornamenti",
-        "Consulente tecnico dedicato",
-        "Tempo di consegna: 30-45 giorni lavorativi"
+        "Complete website or app system",
+        "Microservices and scalable architecture",
+        "Advanced management panel",
+        "Complete payment gateway integration",
+        "Reporting system and dashboard",
+        "High-level security and encryption",
+        "12 months free support + updates",
+        "Dedicated technical consultant",
+        "Delivery time: 30-45 business days"
       ],
-      "button": "Seleziona piano"
+      "button": "Select Plan"
     }
   },
   "howWeWork": {
     "title": "Come lavoriamo",
-    "subtitle": "Consegniamo i tuoi progetti attraverso un processo strutturato e professionale",
+    "subtitle": "We deliver your projects through a structured and professional process",
     "steps": {
       "planning": {
-        "title": "Pianificazione del progetto",
-        "description": "Analisi dei requisiti, progettazione dell'architettura e pianificazione dettagliata per l'esecuzione riuscita del progetto"
+        "title": "Project Planning",
+        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
       },
       "development": {
-        "title": "Fase di sviluppo",
-        "description": "Implementazione del progetto utilizzando le migliori tecnologie e standard mondiali attuali"
+        "title": "Development Phase",
+        "description": "Implementing the project using the best technologies and current world standards"
       },
       "testing": {
-        "title": "Test e controllo qualità",
-        "description": "Test completi di funzionalità, sicurezza e esperienza utente per garantire alta qualità"
+        "title": "Testing & QA",
+        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
       },
       "launch": {
-        "title": "Lancio e supporto",
-        "description": "Lancio di successo del progetto e supporto continuo per la tua completa soddisfazione"
+        "title": "Launch & Support",
+        "description": "Successful project launch and continuous support for your complete satisfaction"
       }
     }
   },
   "faq": {
     "title": "Domande frequenti",
-    "subtitle": "Hai ancora domande?",
-    "description": "Siamo pronti a rispondere alle tue domande. Contattaci tramite email, chat o chiamata telefonica.",
+    "subtitle": "Still Have Questions?",
+    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
     "contactOptions": {
-      "email": "Supporto email",
-      "chat": "Chat live",
-      "phone": "Chiamaci"
+      "email": "Email Support",
+      "chat": "Live Chat",
+      "phone": "Call Us"
     },
     "questions": {
       "q1": {
-        "question": "Qual è il tempo di consegna del progetto?",
-        "answer": "Il tempo di consegna dipende dal tipo e dalla complessità del progetto. I progetti base richiedono 7-10 giorni lavorativi, i progetti professionali 15-21 giorni lavorativi e i progetti aziendali 30-45 giorni lavorativi."
+        "question": "What is the project delivery time?",
+        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
       },
       "q2": {
-        "question": "Viene fornito supporto dopo la consegna del progetto?",
-        "answer": "Sì, tutti i piani includono supporto gratuito. Il piano base include 3 mesi, il piano professionale 6 mesi e il piano aziendale 12 mesi di supporto gratuito."
+        "question": "Is support provided after project delivery?",
+        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
       },
       "q3": {
-        "question": "Posso richiedere modifiche al progetto?",
-        "answer": "Sì, durante il processo di sviluppo puoi richiedere modifiche e aggiustamenti secondo necessità. Queste modifiche saranno implementate in base al piano selezionato."
+        "question": "Can I request changes to the project?",
+        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
       },
       "q4": {
-        "question": "Quali metodi di pagamento accettate?",
-        "answer": "Accettiamo vari metodi di pagamento. Puoi contattarci tramite WhatsApp per discutere i dettagli del pagamento."
+        "question": "What payment methods do you accept?",
+        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
       }
     }
   },
   "contact": {
-    "title": "Contattaci",
-    "subtitle": "Mettiti in contatto con noi per iniziare il tuo progetto",
+    "title": "Contatti",
+    "subtitle": "Get in touch with us to start your project",
     "address": {
-      "title": "Indirizzo",
+      "title": "Address",
       "value": "Iran, Ahvaz"
     },
     "phone": {
-      "title": "Numero di contatto",
+      "title": "Contact Number",
       "value": "WhatsApp: +989306880801"
     },
     "email": {
@@ -201,28 +201,27 @@
     },
     "form": {
       "name": "Nome completo",
-      "email": "Email",
-      "whatsapp": "Numero WhatsApp con codice paese",
-      "service": "Seleziona piano",
-      "message": "Messaggio/Descrizione progetto",
-      "file": "Carica file (Opzionale)",
+      "email": "E‑mail",
+      "whatsapp": "Numero WhatsApp con prefisso internazionale",
+      "service": "Select Plan",
+      "message": "Messaggio / Dettagli del progetto",
+      "file": "Carica file (opzionale)",
       "submit": "Invia messaggio",
       "selectService": "Seleziona piano",
-      "basic": "Piano base",
-      "professional": "Piano professionale",
-      "enterprise": "Piano enterprise"
+      "basic": "Piano Base",
+      "professional": "Piano Professionale",
+      "enterprise": "Piano Enterprise"
     },
     "success": "Il tuo messaggio è stato inviato con successo. Grazie!",
-    "error": "Errore nell'invio del messaggio. Riprova."
+    "error": "Error sending message. Please try again."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "Progettazione e sviluppo di siti web e app mobili con qualità e standard mondiali attuali",
+    "description": "Progettazione e sviluppo di applicazioni web e mobile di alta qualità secondo gli standard moderni",
     "usefulLinks": "Link utili",
     "ourServices": "I nostri servizi",
     "copyright": "Tutti i diritti riservati",
-    "designedBy": "Progettato da"
+    "designedBy": "Design"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
-

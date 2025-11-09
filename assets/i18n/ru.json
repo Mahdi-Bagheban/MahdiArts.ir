@@ -1,12 +1,12 @@
 {
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
-    "title": "Махди Багхебанпур | Профессиональная разработка сайтов и приложений | MahdiArts.ir",
-    "description": "Дизайн и разработка веб-сайтов и Android приложений с 10-летним опытом. Профессиональные услуги, конкурентные цены, поддержка 24/7"
+    "title": "MahdiArts — Профессиональная разработка веб и Android",
+    "description": "Проектирование и разработка высококачественных веб‑сайтов и Android‑приложений по современным стандартам, с упором на производительность и безопасность."
   },
   "nav": {
     "home": "Главная",
-    "about": "Обо мне",
+    "about": "О нас",
     "services": "Услуги",
     "pricing": "Цены",
     "contact": "Контакты",
@@ -14,198 +14,198 @@
   },
   "hero": {
     "badge": "Инновационные решения",
-    "title": "Махди Багхебанпур - Старший инженер-программист",
-    "description": "10 лет опыта в профессиональном дизайне и разработке веб-сайтов и Android приложений",
+    "title": "Махди Багебанпур — Старший инженер‑программист",
+    "description": "10 лет опыта в создании профессиональных веб‑сайтов и Android‑приложений",
     "cta": "Узнать больше"
   },
   "features": {
     "rapidDeployment": {
-      "title": "Быстрое развертывание",
-      "text": "Быстрая и эффективная реализация ваших проектов с использованием новейших технологий"
+      "title": "Быстрый запуск",
+      "text": "Оперативный старт проектов с использованием современных технологий"
     },
     "advancedSecurity": {
       "title": "Продвинутая безопасность",
-      "text": "Полная защита данных и информации с текущими стандартами безопасности"
+      "text": "Комплексная защита данных согласно отраслевым стандартам"
     },
     "dedicatedSupport": {
       "title": "Выделенная поддержка",
-      "text": "Поддержка 24/7 для обеспечения оптимальной производительности системы"
+      "text": "Круглосуточная поддержка для стабильной работы системы"
     }
   },
   "about": {
-    "whoWeAre": "Обо мне",
-    "title": "Раскрытие потенциала с творческой стратегией",
-    "subtitle": "С более чем 10-летним опытом в дизайне и разработке веб-сайтов и мобильных приложений, я стремлюсь предоставлять инновационные и качественные решения.",
+    "whoWeAre": "About Me",
+    "title": "Обо мне",
+    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
     "points": [
-      "Дизайн и разработка современных адаптивных веб-сайтов",
-      "Разработка нативных Android приложений с оптимальной производительностью",
-      "SEO оптимизация и улучшение рейтинга в поисковых системах",
-      "Постоянная поддержка и обслуживание проектов"
+      "Design and development of modern Responsive websites",
+      "Native Android app development with optimal performance",
+      "SEO optimization and improved search engine rankings",
+      "Continuous support and maintenance of projects"
     ],
-    "readMore": "Читать далее"
+    "readMore": "Read More"
   },
   "services": {
     "title": "Услуги",
-    "subtitle": "Профессиональные услуги по дизайну и разработке веб и мобильных приложений",
+    "subtitle": "Professional web and mobile design and development services",
     "uiux": {
-      "title": "Профессиональный дизайн UI/UX",
-      "description": "Красивый и функциональный дизайн пользовательского интерфейса с фокусом на оптимальный пользовательский опыт"
+      "title": "Professional UI/UX Design",
+      "description": "Beautiful and functional user interface design with focus on optimal user experience"
     },
     "responsive": {
-      "title": "Разработка адаптивных веб-сайтов",
-      "description": "Создание адаптивных веб-сайтов, которые идеально отображаются на всех устройствах"
+      "title": "Responsive Website Development",
+      "description": "Building responsive websites that display perfectly on all devices"
     },
     "android": {
-      "title": "Разработка нативных Android приложений",
-      "description": "Разработка Android приложений с использованием нативных технологий для оптимальной производительности"
+      "title": "Native Android App Development",
+      "description": "Android app development using Native technologies for optimal performance"
     },
     "support": {
-      "title": "Постоянная поддержка и обслуживание",
-      "description": "Предоставление постоянных услуг поддержки и обновления для обеспечения правильной работы"
+      "title": "Continuous Support & Maintenance",
+      "description": "Providing continuous support and update services to ensure proper operation"
     },
     "seo": {
-      "title": "SEO и оптимизация производительности",
-      "description": "Оптимизация сайта для поисковых систем и улучшение скорости и производительности"
+      "title": "SEO & Performance Optimization",
+      "description": "Site optimization for search engines and improved speed and performance"
     },
     "security": {
-      "title": "Безопасность и стабильность сайта",
-      "description": "Внедрение стандартов безопасности и гарантия стабильности системы"
+      "title": "Security & Site Stability",
+      "description": "Implementation of security standards and system stability guarantee"
     }
   },
   "pricing": {
-    "title": "Цены",
-    "subtitle": "Подходящие планы для каждого типа проекта",
+    "title": "Тарифные планы",
+    "subtitle": "Suitable plans for every type of project",
     "basic": {
-      "name": "Базовый план",
+      "name": "Basic Plan",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "Подходит для небольших проектов и целевых страниц",
+      "description": "Suitable for small projects and Landing Pages",
       "features": [
-        "Дизайн одностраничной целевой страницы",
-        "Адаптивность для мобильных устройств и планшетов",
-        "Простая контактная форма",
-        "Базовая SEO оптимизация",
-        "Простой и удобный дизайн UI/UX",
-        "Поддержка различных браузеров",
-        "3 месяца бесплатной поддержки",
-        "Обучение использованию системы",
-        "Время доставки: 7-10 рабочих дней"
+        "Single-page Landing Page design",
+        "Responsive for mobile and tablet",
+        "Simple contact form",
+        "Basic SEO optimization",
+        "Simple and user-friendly UI/UX design",
+        "Support for various browsers",
+        "3 months free support",
+        "System usage training",
+        "Delivery time: 7-10 business days"
       ],
-      "button": "Выбрать план"
+      "button": "Select Plan"
     },
     "professional": {
-      "name": "Профессиональный план",
+      "name": "Professional Plan",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "Подходит для среднего бизнеса",
+      "description": "Suitable for medium businesses",
       "features": [
-        "Многостраничный веб-сайт (до 10 страниц)",
-        "Система управления контентом (CMS)",
-        "Интеграция API",
-        "Система аутентификации пользователей",
-        "Продвинутая SEO оптимизация",
-        "Профессиональный и современный дизайн UI/UX",
-        "6 месяцев бесплатной поддержки",
-        "Полное обучение и техническая документация",
-        "Время доставки: 15-21 рабочий день"
+        "Multi-page website (up to 10 pages)",
+        "Content Management System (CMS)",
+        "API integration",
+        "User authentication system",
+        "Advanced SEO optimization",
+        "Professional and modern UI/UX design",
+        "6 months free support",
+        "Complete training and technical documentation",
+        "Delivery time: 15-21 business days"
       ],
-      "button": "Выбрать план",
-      "popular": "Самый популярный"
+      "button": "Select Plan",
+      "popular": "Most Popular"
     },
     "enterprise": {
-      "name": "Корпоративный план",
+      "name": "Enterprise Plan",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "Подходит для крупных и корпоративных проектов",
+      "description": "Suitable for large and enterprise projects",
       "features": [
-        "Полная система веб-сайта или приложения",
-        "Микросервисная и масштабируемая архитектура",
-        "Продвинутая панель управления",
-        "Полная интеграция с платежными шлюзами",
-        "Система отчетности и панель управления",
-        "Высокий уровень безопасности и шифрование",
-        "12 месяцев бесплатной поддержки + обновления",
-        "Выделенный технический консультант",
-        "Время доставки: 30-45 рабочих дней"
+        "Complete website or app system",
+        "Microservices and scalable architecture",
+        "Advanced management panel",
+        "Complete payment gateway integration",
+        "Reporting system and dashboard",
+        "High-level security and encryption",
+        "12 months free support + updates",
+        "Dedicated technical consultant",
+        "Delivery time: 30-45 business days"
       ],
-      "button": "Выбрать план"
+      "button": "Select Plan"
     }
   },
   "howWeWork": {
     "title": "Как мы работаем",
-    "subtitle": "Мы выполняем ваши проекты через структурированный и профессиональный процесс",
+    "subtitle": "We deliver your projects through a structured and professional process",
     "steps": {
       "planning": {
-        "title": "Планирование проекта",
-        "description": "Анализ требований, проектирование архитектуры и детальное планирование для успешного выполнения проекта"
+        "title": "Project Planning",
+        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
       },
       "development": {
-        "title": "Фаза разработки",
-        "description": "Реализация проекта с использованием лучших технологий и современных мировых стандартов"
+        "title": "Development Phase",
+        "description": "Implementing the project using the best technologies and current world standards"
       },
       "testing": {
-        "title": "Тестирование и контроль качества",
-        "description": "Полное тестирование функциональности, безопасности и пользовательского опыта для обеспечения высокого качества"
+        "title": "Testing & QA",
+        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
       },
       "launch": {
-        "title": "Запуск и поддержка",
-        "description": "Успешный запуск проекта и постоянная поддержка для вашего полного удовлетворения"
+        "title": "Launch & Support",
+        "description": "Successful project launch and continuous support for your complete satisfaction"
       }
     }
   },
   "faq": {
-    "title": "Часто задаваемые вопросы",
-    "subtitle": "Все еще есть вопросы?",
-    "description": "Мы готовы ответить на ваши вопросы. Свяжитесь с нами по электронной почте, в чате или по телефону.",
+    "title": "Частые вопросы",
+    "subtitle": "Still Have Questions?",
+    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
     "contactOptions": {
-      "email": "Поддержка по электронной почте",
-      "chat": "Онлайн-чат",
-      "phone": "Позвоните нам"
+      "email": "Email Support",
+      "chat": "Live Chat",
+      "phone": "Call Us"
     },
     "questions": {
       "q1": {
-        "question": "Каков срок выполнения проекта?",
-        "answer": "Срок выполнения зависит от типа и сложности проекта. Базовые проекты занимают 7-10 рабочих дней, профессиональные проекты 15-21 рабочий день, а корпоративные проекты 30-45 рабочих дней."
+        "question": "What is the project delivery time?",
+        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
       },
       "q2": {
-        "question": "Предоставляется ли поддержка после сдачи проекта?",
-        "answer": "Да, все планы включают бесплатную поддержку. Базовый план включает 3 месяца, профессиональный план 6 месяцев, а корпоративный план 12 месяцев бесплатной поддержки."
+        "question": "Is support provided after project delivery?",
+        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
       },
       "q3": {
-        "question": "Могу ли я запросить изменения в проекте?",
-        "answer": "Да, в процессе разработки вы можете запросить изменения и модификации по мере необходимости. Эти изменения будут реализованы в соответствии с вашим выбранным планом."
+        "question": "Can I request changes to the project?",
+        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
       },
       "q4": {
-        "question": "Какие способы оплаты вы принимаете?",
-        "answer": "Мы принимаем различные способы оплаты. Вы можете связаться с нами через WhatsApp, чтобы обсудить детали оплаты."
+        "question": "What payment methods do you accept?",
+        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
       }
     }
   },
   "contact": {
-    "title": "Свяжитесь с нами",
-    "subtitle": "Свяжитесь с нами, чтобы начать ваш проект",
+    "title": "Контакты",
+    "subtitle": "Get in touch with us to start your project",
     "address": {
-      "title": "Адрес",
-      "value": "Иран, Ахваз"
+      "title": "Address",
+      "value": "Iran, Ahvaz"
     },
     "phone": {
-      "title": "Контактный номер",
+      "title": "Contact Number",
       "value": "WhatsApp: +989306880801"
     },
     "email": {
-      "title": "Электронная почта",
+      "title": "Email",
       "value": "info@mahdiarts.ir"
     },
     "form": {
       "name": "Полное имя",
-      "email": "Электронная почта",
+      "email": "E‑mail",
       "whatsapp": "Номер WhatsApp с кодом страны",
-      "service": "Выбрать план",
-      "message": "Сообщение/Описание проекта",
-      "file": "Загрузить файл (Необязательно)",
+      "service": "Select Plan",
+      "message": "Сообщение / Детали проекта",
+      "file": "Загрузить файл (необязательно)",
       "submit": "Отправить сообщение",
       "selectService": "Выбрать план",
       "basic": "Базовый план",
@@ -213,16 +213,15 @@
       "enterprise": "Корпоративный план"
     },
     "success": "Ваше сообщение успешно отправлено. Спасибо!",
-    "error": "Ошибка отправки сообщения. Пожалуйста, попробуйте снова."
+    "error": "Error sending message. Please try again."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "Дизайн и разработка веб-сайтов и мобильных приложений с качеством и текущими мировыми стандартами",
+    "description": "Проектирование и разработка высококачественных веб‑ и мобильных приложений по современным стандартам",
     "usefulLinks": "Полезные ссылки",
     "ourServices": "Наши услуги",
     "copyright": "Все права защищены",
-    "designedBy": "Разработано"
+    "designedBy": "Дизайн"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
-

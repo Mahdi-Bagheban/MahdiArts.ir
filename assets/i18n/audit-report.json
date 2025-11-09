@@ -1,0 +1,336 @@
+{
+  "referencePath": "assets/i18n/en.remote.json",
+  "totalKeys": 141,
+  "languages": {
+    "en": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "Mahdi Baghebanpour | Professional Website & App Development | MahdiArts.ir"
+        },
+        {
+          "key": "meta.description",
+          "value": "Website and Android app design and development with 10 years of experience. Professional services, competitive prices, 24/7 support"
+        },
+        {
+          "key": "nav.home",
+          "value": "Home"
+        },
+        {
+          "key": "nav.about",
+          "value": "About"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\en.json"
+    },
+    "fa": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — مهندسی حرفه‌ای وب و اندروید"
+        },
+        {
+          "key": "meta.description",
+          "value": "طراحی و توسعه وب‌سایت‌ها و اپلیکیشن‌های اندروید با استانداردهای روز، کارایی و امنیت."
+        },
+        {
+          "key": "nav.home",
+          "value": "خانه"
+        },
+        {
+          "key": "nav.about",
+          "value": "درباره"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\fa.json"
+    },
+    "ar": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — هندسة احترافية للويب والأندرويد"
+        },
+        {
+          "key": "meta.description",
+          "value": "تصميم وتطوير مواقع وتطبيقات أندرويد عالية الجودة وفقًا للمعايير الحديثة، الأداء والأمان."
+        },
+        {
+          "key": "nav.home",
+          "value": "الرئيسية"
+        },
+        {
+          "key": "nav.about",
+          "value": "من نحن"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\ar.json"
+    },
+    "tr": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — Profesyonel Web ve Android Mühendisliği"
+        },
+        {
+          "key": "meta.description",
+          "value": "Modern standartlara uygun, yüksek kaliteli web siteleri ve Android uygulamaları tasarlayıp geliştiriyoruz; performans ve güvenliği ön planda tutarız."
+        },
+        {
+          "key": "nav.home",
+          "value": "Ana Sayfa"
+        },
+        {
+          "key": "nav.about",
+          "value": "Hakkında"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\tr.json"
+    },
+    "de": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — Professionelles Web- & Android-Engineering"
+        },
+        {
+          "key": "meta.description",
+          "value": "Entwicklung moderner, leistungsstarker und sicherer Websites und Android-Apps nach aktuellen Standards."
+        },
+        {
+          "key": "nav.home",
+          "value": "Startseite"
+        },
+        {
+          "key": "nav.about",
+          "value": "Über uns"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\de.json"
+    },
+    "fr": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — Ingénierie Web et Android professionnelle"
+        },
+        {
+          "key": "meta.description",
+          "value": "Conception et développement de sites web et d’applications Android de haute qualité selon les standards modernes, avec performance et sécurité."
+        },
+        {
+          "key": "nav.home",
+          "value": "Accueil"
+        },
+        {
+          "key": "nav.about",
+          "value": "À propos"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\fr.json"
+    },
+    "es": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — Ingeniería profesional Web y Android"
+        },
+        {
+          "key": "meta.description",
+          "value": "Diseño y desarrollo de sitios web y aplicaciones Android de alta calidad con estándares modernos, rendimiento y seguridad."
+        },
+        {
+          "key": "nav.home",
+          "value": "Inicio"
+        },
+        {
+          "key": "nav.about",
+          "value": "Sobre mí"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\es.json"
+    },
+    "ru": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — Профессиональная разработка веб и Android"
+        },
+        {
+          "key": "meta.description",
+          "value": "Проектирование и разработка высококачественных веб‑сайтов и Android‑приложений по современным стандартам, с упором на производительность и безопасность."
+        },
+        {
+          "key": "nav.home",
+          "value": "Главная"
+        },
+        {
+          "key": "nav.about",
+          "value": "О нас"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\ru.json"
+    },
+    "zh": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — 专业的网站与 Android 开发"
+        },
+        {
+          "key": "meta.description",
+          "value": "按照现代标准设计与开发高质量网站和 Android 应用，兼顾高性能与安全。"
+        },
+        {
+          "key": "nav.home",
+          "value": "首页"
+        },
+        {
+          "key": "nav.about",
+          "value": "关于我们"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\zh.json"
+    },
+    "it": {
+      "exists": true,
+      "valid": true,
+      "error": null,
+      "keyCount": 141,
+      "missingCount": 0,
+      "extraCount": 0,
+      "missingKeys": [],
+      "extraKeys": [],
+      "firstFive": [
+        {
+          "key": "_bismillah",
+          "value": "به نام خداوند بخشنده مهربان"
+        },
+        {
+          "key": "meta.title",
+          "value": "MahdiArts — Ingegneria Web e Android professionale"
+        },
+        {
+          "key": "meta.description",
+          "value": "Progettazione e sviluppo di siti web e app Android di alta qualità con standard moderni, prestazioni e sicurezza."
+        },
+        {
+          "key": "nav.home",
+          "value": "Home"
+        },
+        {
+          "key": "nav.about",
+          "value": "Chi siamo"
+        }
+      ],
+      "filePath": "C:\\Users\\Mahdi\\Desktop\\MahdiArts\\MahdiArts Website\\MahdiArts.ir\\assets\\i18n\\it.json"
+    }
+  }
+}

@@ -1,210 +1,210 @@
 {
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
-    "title": "مهدی باغبان‌پور | طراحی سایت و اپلیکیشن حرفه‌ای | MahdiArts.ir",
-    "description": "طراحی و پیاده‌سازی وب‌سایت و اپلیکیشن اندروید با ۱۰ سال تجربه. خدمات حرفه‌ای، قیمت مناسب، پشتیبانی ۲۴/۷"
+    "title": "MahdiArts — مهندسی حرفه‌ای وب و اندروید",
+    "description": "طراحی و توسعه وب‌سایت‌ها و اپلیکیشن‌های اندروید با استانداردهای روز، کارایی و امنیت."
   },
   "nav": {
     "home": "خانه",
-    "about": "درباره من",
+    "about": "درباره",
     "services": "خدمات",
-    "pricing": "قیمت‌گذاری",
-    "contact": "تماس با ما",
+    "pricing": "تعرفه‌ها",
+    "contact": "تماس",
     "getStarted": "شروع کنید"
   },
   "hero": {
     "badge": "راهکارهای نوآورانه",
-    "title": "مهدی باغبان‌پور - مهندس ارشد کامپیوتر",
-    "description": "۱۰ سال تجربه در طراحی و پیاده‌سازی وب‌سایت و اپلیکیشن اندروید حرفه‌ای",
+    "title": "مهدی باغبان‌پور — مهندس ارشد کامپیوتر",
+    "description": "۱۰ سال تجربه در ساخت وب‌سایت‌ها و اپلیکیشن‌های حرفه‌ای اندروید",
     "cta": "بیشتر بدانید"
   },
   "features": {
     "rapidDeployment": {
-      "title": "استقرار سریع",
-      "text": "پیاده‌سازی سریع و کارآمد پروژه‌های شما با استفاده از آخرین تکنولوژی‌ها"
+      "title": "انتشار سریع",
+      "text": "راه‌اندازی سریع و کارآمد پروژه‌ها با استفاده از فناوری‌های روز"
     },
     "advancedSecurity": {
       "title": "امنیت پیشرفته",
-      "text": "حفاظت کامل از داده‌ها و اطلاعات با استانداردهای امنیتی روز دنیا"
+      "text": "حفاظت جامع از داده‌ها با رعایت استانداردهای صنعت"
     },
     "dedicatedSupport": {
       "title": "پشتیبانی اختصاصی",
-      "text": "پشتیبانی ۲۴/۷ برای اطمینان از عملکرد بهینه سیستم شما"
+      "text": "پشتیبانی ۲۴/۷ برای عملکرد بهینه سیستم شما"
     }
   },
   "about": {
-    "whoWeAre": "درباره من",
-    "title": "راه‌اندازی پتانسیل با استراتژی خلاقانه",
-    "subtitle": "با بیش از ۱۰ سال تجربه در زمینه طراحی و توسعه وب‌سایت و اپلیکیشن‌های موبایل، من متعهد به ارائه راهکارهای نوآورانه و با کیفیت هستم.",
+    "whoWeAre": "About Me",
+    "title": "درباره من",
+    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
     "points": [
-      "طراحی و توسعه وب‌سایت‌های Responsive و مدرن",
-      "ساخت اپلیکیشن‌های اندروید Native با عملکرد بهینه",
-      "بهینه‌سازی SEO و بهبود رتبه در موتورهای جستجو",
-      "پشتیبانی و نگهداری مستمر پروژه‌ها"
+      "Design and development of modern Responsive websites",
+      "Native Android app development with optimal performance",
+      "SEO optimization and improved search engine rankings",
+      "Continuous support and maintenance of projects"
     ],
-    "readMore": "بیشتر بخوانید"
+    "readMore": "Read More"
   },
   "services": {
     "title": "خدمات",
-    "subtitle": "خدمات حرفه‌ای طراحی و توسعه وب و موبایل",
+    "subtitle": "Professional web and mobile design and development services",
     "uiux": {
-      "title": "طراحی UI/UX حرفه‌ای",
-      "description": "طراحی رابط کاربری زیبا و کاربردی با تمرکز بر تجربه کاربری بهینه"
+      "title": "Professional UI/UX Design",
+      "description": "Beautiful and functional user interface design with focus on optimal user experience"
     },
     "responsive": {
-      "title": "توسعه وب‌سایت‌های Responsive",
-      "description": "ساخت وب‌سایت‌های واکنش‌گرا که در تمام دستگاه‌ها به بهترین شکل نمایش داده می‌شوند"
+      "title": "Responsive Website Development",
+      "description": "Building responsive websites that display perfectly on all devices"
     },
     "android": {
-      "title": "ساخت اپلیکیشن اندروید Native",
-      "description": "توسعه اپلیکیشن‌های اندروید با استفاده از تکنولوژی‌های Native برای عملکرد بهینه"
+      "title": "Native Android App Development",
+      "description": "Android app development using Native technologies for optimal performance"
     },
     "support": {
-      "title": "پشتیبانی و نگهداری مستمر",
-      "description": "ارائه خدمات پشتیبانی و به‌روزرسانی مداوم برای اطمینان از عملکرد صحیح"
+      "title": "Continuous Support & Maintenance",
+      "description": "Providing continuous support and update services to ensure proper operation"
     },
     "seo": {
-      "title": "بهینه‌سازی SEO و عملکرد",
-      "description": "بهینه‌سازی سایت برای موتورهای جستجو و بهبود سرعت و عملکرد"
+      "title": "SEO & Performance Optimization",
+      "description": "Site optimization for search engines and improved speed and performance"
     },
     "security": {
-      "title": "امنیت و پایداری سایت",
-      "description": "پیاده‌سازی استانداردهای امنیتی و تضمین پایداری سیستم"
+      "title": "Security & Site Stability",
+      "description": "Implementation of security standards and system stability guarantee"
     }
   },
   "pricing": {
-    "title": "قیمت‌گذاری",
-    "subtitle": "پلن‌های مناسب برای هر نوع پروژه",
+    "title": "پلن‌های قیمت‌گذاری",
+    "subtitle": "Suitable plans for every type of project",
     "basic": {
-      "name": "پلن پایه",
+      "name": "Basic Plan",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "مناسب برای پروژه‌های کوچک و Landing Page",
+      "description": "Suitable for small projects and Landing Pages",
       "features": [
-        "طراحی Landing Page تک‌صفحه‌ای",
-        "Responsive برای موبایل و تبلت",
-        "فرم تماس ساده",
-        "بهینه‌سازی SEO پایه",
-        "طراحی UI/UX ساده و کاربرپسند",
-        "پشتیبانی از مرورگرهای مختلف",
-        "۳ ماه پشتیبانی رایگان",
-        "آموزش استفاده از سیستم",
-        "زمان تحویل: ۷-۱۰ روز کاری"
+        "Single-page Landing Page design",
+        "Responsive for mobile and tablet",
+        "Simple contact form",
+        "Basic SEO optimization",
+        "Simple and user-friendly UI/UX design",
+        "Support for various browsers",
+        "3 months free support",
+        "System usage training",
+        "Delivery time: 7-10 business days"
       ],
-      "button": "انتخاب پلن"
+      "button": "Select Plan"
     },
     "professional": {
-      "name": "پلن حرفه‌ای",
+      "name": "Professional Plan",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "مناسب برای کسب‌وکارهای متوسط",
+      "description": "Suitable for medium businesses",
       "features": [
-        "وب‌سایت چند صفحه‌ای (تا ۱۰ صفحه)",
-        "پنل مدیریت محتوا (CMS)",
-        "یکپارچه‌سازی با API ها",
-        "سیستم احراز هویت کاربران",
-        "بهینه‌سازی SEO پیشرفته",
-        "طراحی UI/UX حرفه‌ای و مدرن",
-        "۶ ماه پشتیبانی رایگان",
-        "آموزش کامل و مستندات فنی",
-        "زمان تحویل: ۱۵-۲۱ روز کاری"
+        "Multi-page website (up to 10 pages)",
+        "Content Management System (CMS)",
+        "API integration",
+        "User authentication system",
+        "Advanced SEO optimization",
+        "Professional and modern UI/UX design",
+        "6 months free support",
+        "Complete training and technical documentation",
+        "Delivery time: 15-21 business days"
       ],
-      "button": "انتخاب پلن",
-      "popular": "محبوب‌ترین"
+      "button": "Select Plan",
+      "popular": "Most Popular"
     },
     "enterprise": {
-      "name": "پلن سازمانی",
+      "name": "Enterprise Plan",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "مناسب برای پروژه‌های بزرگ و سازمانی",
+      "description": "Suitable for large and enterprise projects",
       "features": [
-        "سیستم کامل وب‌سایت یا اپلیکیشن",
-        "معماری میکروسرویس و مقیاس‌پذیر",
-        "پنل مدیریت پیشرفته",
-        "یکپارچه‌سازی کامل با درگاه‌های پرداخت",
-        "سیستم گزارش‌گیری و داشبورد",
-        "امنیت سطح بالا و رمزنگاری",
-        "۱۲ ماه پشتیبانی رایگان + به‌روزرسانی",
-        "اختصاص مشاور فنی",
-        "زمان تحویل: ۳۰-۴۵ روز کاری"
+        "Complete website or app system",
+        "Microservices and scalable architecture",
+        "Advanced management panel",
+        "Complete payment gateway integration",
+        "Reporting system and dashboard",
+        "High-level security and encryption",
+        "12 months free support + updates",
+        "Dedicated technical consultant",
+        "Delivery time: 30-45 business days"
       ],
-      "button": "انتخاب پلن"
+      "button": "Select Plan"
     }
   },
   "howWeWork": {
     "title": "نحوه کار ما",
-    "subtitle": "ما با یک فرآیند ساختاریافته و حرفه‌ای پروژه‌های شما را به سرانجام می‌رسانیم",
+    "subtitle": "We deliver your projects through a structured and professional process",
     "steps": {
       "planning": {
-        "title": "برنامه‌ریزی پروژه",
-        "description": "تحلیل نیازها، طراحی معماری و برنامه‌ریزی دقیق برای اجرای موفق پروژه"
+        "title": "Project Planning",
+        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
       },
       "development": {
-        "title": "فاز توسعه",
-        "description": "پیاده‌سازی پروژه با استفاده از بهترین تکنولوژی‌ها و استانداردهای روز دنیا"
+        "title": "Development Phase",
+        "description": "Implementing the project using the best technologies and current world standards"
       },
       "testing": {
-        "title": "تست و کنترل کیفیت",
-        "description": "تست کامل عملکرد، امنیت و تجربه کاربری برای اطمینان از کیفیت بالا"
+        "title": "Testing & QA",
+        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
       },
       "launch": {
-        "title": "راه‌اندازی و پشتیبانی",
-        "description": "راه‌اندازی موفق پروژه و ارائه پشتیبانی مستمر برای رضایت کامل شما"
+        "title": "Launch & Support",
+        "description": "Successful project launch and continuous support for your complete satisfaction"
       }
     }
   },
   "faq": {
-    "title": "سوالات متداول",
-    "subtitle": "هنوز سوالی دارید؟",
-    "description": "ما آماده پاسخگویی به سوالات شما هستیم. با ما از طریق ایمیل، چت یا تماس تلفنی در ارتباط باشید.",
+    "title": "سؤالات متداول",
+    "subtitle": "Still Have Questions?",
+    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
     "contactOptions": {
-      "email": "پشتیبانی ایمیل",
-      "chat": "چت آنلاین",
-      "phone": "تماس با ما"
+      "email": "Email Support",
+      "chat": "Live Chat",
+      "phone": "Call Us"
     },
     "questions": {
       "q1": {
-        "question": "زمان تحویل پروژه چقدر است؟",
-        "answer": "زمان تحویل بستگی به نوع و پیچیدگی پروژه دارد. پروژه‌های پایه ۷-۱۰ روز کاری، پروژه‌های حرفه‌ای ۱۵-۲۱ روز کاری و پروژه‌های سازمانی ۳۰-۴۵ روز کاری زمان می‌برند."
+        "question": "What is the project delivery time?",
+        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
       },
       "q2": {
-        "question": "آیا پس از تحویل پروژه پشتیبانی ارائه می‌شود؟",
-        "answer": "بله، همه پلن‌ها شامل پشتیبانی رایگان هستند. پلن پایه ۳ ماه، پلن حرفه‌ای ۶ ماه و پلن سازمانی ۱۲ ماه پشتیبانی رایگان دارد."
+        "question": "Is support provided after project delivery?",
+        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
       },
       "q3": {
-        "question": "آیا می‌توانم تغییراتی در پروژه درخواست کنم؟",
-        "answer": "بله، در طول فرآیند توسعه می‌توانید تغییرات و اصلاحات مورد نظر خود را درخواست دهید. این تغییرات بر اساس پلن انتخابی شما انجام می‌شود."
+        "question": "Can I request changes to the project?",
+        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
       },
       "q4": {
-        "question": "چه روش‌های پرداختی دارید؟",
-        "answer": "ما روش‌های مختلف پرداخت را می‌پذیریم. می‌توانید از طریق واتساپ با ما در تماس باشید تا جزئیات پرداخت را بررسی کنیم."
+        "question": "What payment methods do you accept?",
+        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
       }
     }
   },
   "contact": {
-    "title": "تماس با ما",
-    "subtitle": "برای شروع پروژه خود با ما در ارتباط باشید",
+    "title": "تماس",
+    "subtitle": "Get in touch with us to start your project",
     "address": {
-      "title": "آدرس",
-      "value": "ایران ، اهواز"
+      "title": "Address",
+      "value": "Iran, Ahvaz"
     },
     "phone": {
-      "title": "شماره تماس",
-      "value": "واتساپ: +989306880801"
+      "title": "Contact Number",
+      "value": "WhatsApp: +989306880801"
     },
     "email": {
-      "title": "ایمیل",
+      "title": "Email",
       "value": "info@mahdiarts.ir"
     },
     "form": {
-      "name": "نام و نام خانوادگی",
+      "name": "نام کامل",
       "email": "ایمیل",
-      "whatsapp": "شماره واتساپ با کد کشور",
-      "service": "انتخاب پلن",
-      "message": "متن پیام/توضیحات پروژه",
+      "whatsapp": "شماره واتساپ به‌همراه کد کشور",
+      "service": "Select Plan",
+      "message": "پیام / توضیحات پروژه",
       "file": "آپلود فایل (اختیاری)",
       "submit": "ارسال پیام",
       "selectService": "انتخاب پلن",
@@ -212,17 +212,16 @@
       "professional": "پلن حرفه‌ای",
       "enterprise": "پلن سازمانی"
     },
-    "success": "پیام شما با موفقیت ارسال شد. متشکریم!",
-    "error": "خطا در ارسال پیام. لطفاً دوباره تلاش کنید."
+    "success": "پیام شما با موفقیت ارسال شد. سپاسگزاریم!",
+    "error": "Error sending message. Please try again."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "طراحی و توسعه وب‌سایت و اپلیکیشن‌های موبایل با کیفیت و استانداردهای روز دنیا",
+    "description": "طراحی و توسعه وب و موبایل با کیفیت بالا مطابق استانداردهای روز",
     "usefulLinks": "لینک‌های مفید",
     "ourServices": "خدمات ما",
-    "copyright": "تمام حقوق محفوظ است",
-    "designedBy": "طراحی شده توسط"
+    "copyright": "© تمام حقوق محفوظ است",
+    "designedBy": "طراحی"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
-

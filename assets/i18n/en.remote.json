@@ -1,40 +1,40 @@
 {
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
-    "title": "MahdiArts — هندسة احترافية للويب والأندرويد",
-    "description": "تصميم وتطوير مواقع وتطبيقات أندرويد عالية الجودة وفقًا للمعايير الحديثة، الأداء والأمان."
+    "title": "Mahdi Baghebanpour | Professional Website & App Development | MahdiArts.ir",
+    "description": "Website and Android app design and development with 10 years of experience. Professional services, competitive prices, 24/7 support"
   },
   "nav": {
-    "home": "الرئيسية",
-    "about": "من نحن",
-    "services": "الخدمات",
-    "pricing": "الأسعار",
-    "contact": "اتصل بنا",
-    "getStarted": "ابدأ الآن"
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "getStarted": "Get Started"
   },
   "hero": {
-    "badge": "حلول مبتكرة",
-    "title": "مهدي باغبان‌بور — مهندس كمبيوتر أول",
-    "description": "10 سنوات من الخبرة في بناء مواقع وتطبيقات أندرويد احترافية",
-    "cta": "اعرف المزيد"
+    "badge": "Innovative Solutions",
+    "title": "Mahdi Baghebanpour - Senior Computer Engineer",
+    "description": "10 years of experience in professional website and Android app design and development",
+    "cta": "Discover More"
   },
   "features": {
     "rapidDeployment": {
-      "title": "نشر سريع",
-      "text": "إطلاق المشاريع بسرعة وكفاءة باستخدام أحدث التقنيات"
+      "title": "Rapid Deployment",
+      "text": "Fast and efficient implementation of your projects using the latest technologies"
     },
     "advancedSecurity": {
-      "title": "أمن متقدم",
-      "text": "حماية شاملة للبيانات وفقًا لممارسات الأمان القياسية"
+      "title": "Advanced Security",
+      "text": "Complete protection of data and information with current security standards"
     },
     "dedicatedSupport": {
-      "title": "دعم مخصص",
-      "text": "دعم على مدار الساعة لضمان أفضل أداء للنظام"
+      "title": "Dedicated Support",
+      "text": "24/7 support to ensure optimal system performance"
     }
   },
   "about": {
     "whoWeAre": "About Me",
-    "title": "من نحن",
+    "title": "Unleashing Potential with Creative Strategy",
     "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
     "points": [
       "Design and development of modern Responsive websites",
@@ -45,7 +45,7 @@
     "readMore": "Read More"
   },
   "services": {
-    "title": "الخدمات",
+    "title": "Services",
     "subtitle": "Professional web and mobile design and development services",
     "uiux": {
       "title": "Professional UI/UX Design",
@@ -73,7 +73,7 @@
     }
   },
   "pricing": {
-    "title": "خطط الأسعار",
+    "title": "Pricing",
     "subtitle": "Suitable plans for every type of project",
     "basic": {
       "name": "Basic Plan",
@@ -135,7 +135,7 @@
     }
   },
   "howWeWork": {
-    "title": "كيف نعمل",
+    "title": "How We Work",
     "subtitle": "We deliver your projects through a structured and professional process",
     "steps": {
       "planning": {
@@ -157,7 +157,7 @@
     }
   },
   "faq": {
-    "title": "الأسئلة الشائعة",
+    "title": "Frequently Asked Questions",
     "subtitle": "Still Have Questions?",
     "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
     "contactOptions": {
@@ -185,7 +185,7 @@
     }
   },
   "contact": {
-    "title": "اتصل بنا",
+    "title": "Contact Us",
     "subtitle": "Get in touch with us to start your project",
     "address": {
       "title": "Address",
@@ -200,28 +200,29 @@
       "value": "info@mahdiarts.ir"
     },
     "form": {
-      "name": "الاسم الكامل",
-      "email": "البريد الإلكتروني",
-      "whatsapp": "رقم واتساب مع رمز الدولة",
+      "name": "Full Name",
+      "email": "Email",
+      "whatsapp": "WhatsApp Number with Country Code",
       "service": "Select Plan",
-      "message": "الرسالة / تفاصيل المشروع",
-      "file": "رفع ملف (اختياري)",
-      "submit": "إرسال الرسالة",
-      "selectService": "اختر الخطة",
-      "basic": "الخطة الأساسية",
-      "professional": "الخطة الاحترافية",
-      "enterprise": "الخطة المؤسسية"
+      "message": "Message/Project Description",
+      "file": "Upload File (Optional)",
+      "submit": "Send Message",
+      "selectService": "Select Plan",
+      "basic": "Basic Plan",
+      "professional": "Professional Plan",
+      "enterprise": "Enterprise Plan"
     },
-    "success": "تم إرسال رسالتك بنجاح. شكرًا لك!",
+    "success": "Your message has been sent successfully. Thank you!",
     "error": "Error sending message. Please try again."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "تصميم وتطوير تطبيقات الويب والموبايل عالية الجودة وفقًا للمعايير الحديثة",
-    "usefulLinks": "روابط مفيدة",
-    "ourServices": "خدماتنا",
-    "copyright": "جميع الحقوق محفوظة",
-    "designedBy": "التصميم"
+    "description": "Website and mobile app design and development with quality and current world standards",
+    "usefulLinks": "Useful Links",
+    "ourServices": "Our Services",
+    "copyright": "All Rights Reserved",
+    "designedBy": "Designed by"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
+
