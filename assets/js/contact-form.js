@@ -332,8 +332,10 @@
       successDiv.style.display = 'none';
       
       try {
-        // دریافت توکن Turnstile
-        const turnstileToken = this.querySelector('[name="cf-turnstile-response"]')?.value || '';
+        // دریافت توکن Turnstile (اولویت با فیلد پیش‌فرض، سپس fallback به input مخفی)
+        const turnstileToken = this.querySelector('[name="cf-turnstile-response"]')?.value
+          || document.getElementById('captcha-token')?.value
+          || '';
         if (!turnstileToken || turnstileToken.trim() === '') {
           errorDiv.style.display = 'block';
           errorDiv.textContent = 'لطفاً کپچا را تأیید کنید';

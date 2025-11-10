@@ -157,9 +157,23 @@ ALLOWED_ORIGINS = "https://mahdiarts.ir,https://www.mahdiarts.ir"
 | `FROM_EMAIL` | ایمیل فرستنده با دامنه تأیید‌شده در Resend | `noreply@mahdiarts.ir` |
 | `ADMIN_EMAIL` | ایمیل مدیر | `info@mahdiarts.ir` |
 | `ALLOWED_ORIGINS` | دامنه‌های مجاز CORS | `https://mahdiarts.ir` |
+| `TURNSTILE_SECRET_KEY` | کلید Secret کپچا Turnstile (از Cloudflare) | `1x0000000000000000000000000000000AA` |
 
 یادداشت:
 - `MAILGUN_DOMAIN` در این پروژه نیاز نیست و حذف شده است.
+
+### تنظیم Turnstile Secret
+برای فعال شدن اعتبارسنجی کپچا در Worker، باید Secret مربوط به Turnstile را تنظیم کنید:
+
+```bash
+# محیط توسعه
+wrangler secret put TURNSTILE_SECRET_KEY
+
+# محیط تولید
+wrangler secret put TURNSTILE_SECRET_KEY --env production
+```
+
+کلید Secret را از Cloudflare داشبورد (Turnstile > Site > Settings) دریافت کنید. دقت کنید که این مقدار با Site Key متفاوت است و فقط در سمت سرور استفاده می‌شود.
 
 ### فایل‌های ترجمه
 فایل‌های ترجمه در `assets/i18n/` قرار دارند. برای افزودن زبان جدید:
