@@ -141,14 +141,18 @@ function validateFile(file) {
     'image/jpg',
     'image/png',
     'image/gif',
-    'image/webp',
     'text/plain',
     'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'audio/mpeg',
+    'audio/mp3',
+    'audio/wav',
+    'audio/x-wav',
+    'audio/wave'
   ];
 
   // پسوندهای مجاز
-  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.webp', '.txt', '.doc', '.docx'];
+  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.txt', '.doc', '.docx', '.mp3', '.wav'];
   const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
 
   // بررسی نوع فایل
@@ -156,7 +160,7 @@ function validateFile(file) {
                       allowedExtensions.includes(fileExtension);
   
   if (!isValidType) {
-    errors.push('نوع فایل مجاز نیست. فقط فایل‌های PDF، تصاویر و متن مجاز هستند');
+    errors.push('نوع فایل مجاز نیست. فقط اسناد (PDF/DOC/DOCX/TXT)، تصاویر (JPG/PNG/GIF) و صوتی (MP3/WAV) مجاز هستند');
   }
 
   // بررسی حجم فایل (حداکثر 5MB)
@@ -521,10 +525,15 @@ function createAdminNotificationEmail(name, email, whatsapp, plan, message, ip, 
         </div>
         <div class="message-box">${message}</div>
         
-        ${hasFile && fileName ? `
+        ${hasFile && Array.isArray(fileName) ? `
         <div class="detail-row">
-          <span class="detail-label">فایل ضمیمه:</span>
-          <span class="detail-value"><strong>${fileName}</strong> (فایل در attachment ایمیل موجود است)</span>
+          <span class="detail-label">فایل‌های ضمیمه:</span>
+          <span class="detail-value">
+            ${fileName.length === 1 
+              ? `<strong>${fileName[0]}</strong>` 
+              : fileName.map(fn => `<div><strong>${fn}</strong></div>`).join('')}
+            <div>(فایل‌ها در attachment ایمیل موجود است)</div>
+          </span>
         </div>
         ` : ''}
         
@@ -740,15 +749,15 @@ export default {
         const bodyText = await request.text();
         console.log(`[Worker] Request body received (length: ${bodyText.length})`);
         console.log(`[Worker] Request body preview: ${bodyText.substring(0, 200)}`);
-        // محدودیت حجم بدنه: 1MB
-        const MAX_BODY_BYTES = 1_000_000; // 1MB
-        const bodyBytes = new TextEncoder().encode(bodyText).length; // اندازه واقعی بر حسب بایت
+        // محدودیت حجم بدنه: افزایش برای پشتیبانی از چند فایل
+        const MAX_BODY_BYTES = 40_000_000; // ~40MB
+        const bodyBytes = new TextEncoder().encode(bodyText).length;
         if (bodyBytes > MAX_BODY_BYTES) {
           console.error(`[Worker] Request body too large: ${bodyBytes} bytes`);
           return new Response(
             JSON.stringify({ 
               success: false, 
-              error: 'حجم بدنه درخواست بیش از حد مجاز (1MB) است.' 
+              error: 'حجم بدنه درخواست بیش از حد مجاز (40MB) است.' 
             }),
             {
               status: 413,
@@ -782,7 +791,7 @@ export default {
       }
 
       // استخراج فیلدها
-      const { name, email, whatsapp, plan, message, file } = body;
+      const { name, email, whatsapp, plan, message, file, files } = body;
       console.log(`[Worker] Extracted fields:`, { 
         name: name ? 'present' : 'missing',
         email: email ? 'present' : 'missing',
@@ -794,32 +803,39 @@ export default {
 
       // اعتبارسنجی فایل در صورت وجود
       let fileAttachment = null;
-      if (file) {
-        console.log('[Worker] Validating file...');
+      let fileNames = [];
+      if (Array.isArray(files) && files.length > 0) {
+        console.log(`[Worker] Validating ${files.length} files...`);
+        if (files.length > 5) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'حداکثر ۵ فایل قابل آپلود است' }),
+            { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        for (const f of files) {
+          const v = validateFile(f);
+          if (!v.isValid) {
+            return new Response(
+              JSON.stringify({ success: false, error: v.errors.join(' | ') }),
+              { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+            );
+          }
+        }
+        fileAttachment = files.map(f => ({ filename: f.name, content: f.content }));
+        fileNames = files.map(f => f.name);
+        console.log(`[Worker] Files validated:`, fileNames);
+      } else if (file) {
+        console.log('[Worker] Validating single file...');
         const fileValidation = validateFile(file);
         if (!fileValidation.isValid) {
           console.error('[Worker] File validation failed:', fileValidation.errors);
           return new Response(
-            JSON.stringify({ 
-              success: false, 
-              error: fileValidation.errors.join(' | ') 
-            }),
-            {
-              status: 400,
-              headers: { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': corsOrigin,
-                'Vary': 'Origin'
-              }
-            }
+            JSON.stringify({ success: false, error: fileValidation.errors.join(' | ') }),
+            { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }
-        
-        // آماده‌سازی attachment برای Resend API
-        fileAttachment = [{
-          filename: file.name,
-          content: file.content // base64 encoded content
-        }];
+        fileAttachment = [{ filename: file.name, content: file.content }];
+        fileNames = [file.name];
         console.log(`[Worker] File validated: ${file.name} (${file.size} bytes)`);
       }
 
@@ -884,13 +900,13 @@ export default {
         clientIP,
         timestamp,
         !!fileAttachment,
-        file ? file.name : null
+        fileNames
       );
       
       // اضافه کردن اطلاعات فایل به ایمیل ادمین در صورت وجود
       let adminEmailSubject = `پیام جدید از فرم تماس - ${sanitized.name} (${subject})`;
       if (fileAttachment) {
-        adminEmailSubject += ` [با فایل: ${file.name}]`;
+        adminEmailSubject += fileNames.length > 1 ? ` [با ${fileNames.length} فایل]` : ` [با فایل: ${fileNames[0]}]`;
       }
       
       const adminEmailResult = await sendEmailWithResend(

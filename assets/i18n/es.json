@@ -37,46 +37,47 @@
     "title": "Sobre mí",
     "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
     "points": [
-      "Design and development of modern Responsive websites",
-      "Native Android app development with optimal performance",
-      "SEO optimization and improved search engine rankings",
-      "Continuous support and maintenance of projects"
+      "Diseño y desarrollo de sitios web modernos y responsivos",
+      "Desarrollo nativo de apps Android con rendimiento óptimo",
+      "Optimización SEO y mejora del posicionamiento",
+      "Soporte continuo y mantenimiento de proyectos"
     ],
-    "readMore": "Read More"
+    "readMore": "Leer más"
   },
   "services": {
     "title": "Servicios",
-    "subtitle": "Professional web and mobile design and development services",
+    "subtitle": "Servicios profesionales de diseño y desarrollo web y móvil",
     "uiux": {
-      "title": "Professional UI/UX Design",
-      "description": "Beautiful and functional user interface design with focus on optimal user experience"
+      "title": "Diseño UI/UX profesional",
+      "description": "Interfaces bellas y funcionales con foco en una experiencia óptima"
     },
     "responsive": {
-      "title": "Responsive Website Development",
-      "description": "Building responsive websites that display perfectly on all devices"
+      "title": "Desarrollo de sitios web responsivos",
+      "description": "Sitios responsivos que se ven perfectos en todos los dispositivos"
     },
     "android": {
-      "title": "Native Android App Development",
-      "description": "Android app development using Native technologies for optimal performance"
+      "title": "Desarrollo nativo de apps Android",
+      "description": "Desarrollo con tecnologías nativas para máximo rendimiento"
     },
     "support": {
-      "title": "Continuous Support & Maintenance",
-      "description": "Providing continuous support and update services to ensure proper operation"
+      "title": "Soporte y mantenimiento continuo",
+      "description": "Actualizaciones periódicas y soporte fiable para un funcionamiento sin fallos"
     },
     "seo": {
-      "title": "SEO & Performance Optimization",
-      "description": "Site optimization for search engines and improved speed and performance"
+      "title": "Optimización SEO y rendimiento",
+      "description": "Optimización para buscadores y mejora de velocidad y performance"
     },
     "security": {
-      "title": "Security & Site Stability",
-      "description": "Implementation of security standards and system stability guarantee"
+      "title": "Seguridad y estabilidad del sistema",
+      "description": "Implementación de estándares de seguridad y garantía de estabilidad"
     }
   },
   "pricing": {
     "title": "Planes de precios",
-    "subtitle": "Suitable plans for every type of project",
+    "subtitle": "Planes adecuados para cada tipo de proyecto",
+    "featuresTitle": "Incluye:",
     "basic": {
-      "name": "Basic Plan",
+      "name": "Plan Básico",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
@@ -92,10 +93,10 @@
         "System usage training",
         "Delivery time: 7-10 business days"
       ],
-      "button": "Select Plan"
+      "button": "Elegir plan"
     },
     "professional": {
-      "name": "Professional Plan",
+      "name": "Plan Profesional",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
@@ -111,11 +112,11 @@
         "Complete training and technical documentation",
         "Delivery time: 15-21 business days"
       ],
-      "button": "Select Plan",
-      "popular": "Most Popular"
+      "button": "Elegir plan",
+      "popular": "El más popular"
     },
     "enterprise": {
-      "name": "Enterprise Plan",
+      "name": "Plan Empresarial",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
@@ -131,28 +132,28 @@
         "Dedicated technical consultant",
         "Delivery time: 30-45 business days"
       ],
-      "button": "Select Plan"
+      "button": "Elegir plan"
     }
   },
   "howWeWork": {
     "title": "Cómo trabajamos",
-    "subtitle": "We deliver your projects through a structured and professional process",
+    "subtitle": "Entregamos tus proyectos mediante un proceso estructurado y profesional",
     "steps": {
       "planning": {
-        "title": "Project Planning",
-        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
+        "title": "Planificación del proyecto",
+        "description": "Análisis de requisitos, diseño de arquitectura y planificación detallada para una ejecución exitosa"
       },
       "development": {
-        "title": "Development Phase",
-        "description": "Implementing the project using the best technologies and current world standards"
+        "title": "Fase de desarrollo",
+        "description": "Implementación con las mejores tecnologías y estándares actuales"
       },
       "testing": {
-        "title": "Testing & QA",
-        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
+        "title": "Pruebas y QA",
+        "description": "Pruebas completas de funcionalidad, seguridad y experiencia de usuario para asegurar alta calidad"
       },
       "launch": {
-        "title": "Launch & Support",
-        "description": "Successful project launch and continuous support for your complete satisfaction"
+        "title": "Lanzamiento y soporte",
+        "description": "Lanzamiento exitoso y soporte continuo para tu total satisfacción"
       }
     }
   },
@@ -186,42 +187,74 @@
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "Get in touch with us to start your project",
+    "subtitle": "Ponte en contacto para iniciar tu proyecto",
     "address": {
-      "title": "Address",
+      "title": "Dirección",
       "value": "Iran, Ahvaz"
     },
     "phone": {
-      "title": "Contact Number",
+      "title": "Número de contacto",
       "value": "WhatsApp: +989306880801"
     },
     "email": {
-      "title": "Email",
+      "title": "Correo electrónico",
       "value": "info@mahdiarts.ir"
     },
     "form": {
       "name": "Nombre completo",
       "email": "Correo electrónico",
       "whatsapp": "Número de WhatsApp con código de país",
-      "service": "Select Plan",
+      "service": "Elegir plan",
       "message": "Mensaje / Detalles del proyecto",
       "file": "Subir archivo (opcional)",
-      "submit": "Enviar mensaje",
+      "fileHelp": "Máx. 5 MB — Permitidos: documentos, imágenes y audio",
+      "uploader": {
+        "dropHint": "Arrastra y suelta archivos aquí o usa el botón",
+        "selectFiles": "Seleccionar archivos",
+        "remove": "Eliminar",
+        "uploadingAndSending": "Subiendo y enviando...",
+        "sending": "Enviando...",
+        "processingFiles": "Procesando archivos..."
+      },
+      "errors": {
+        "nameMin": "El nombre debe tener al menos 2 caracteres",
+        "nameMax": "El nombre no debe superar 100 caracteres",
+        "emailInvalid": "Introduce un correo electrónico válido",
+        "whatsappInvalid": "Introduce un número de WhatsApp válido",
+        "planInvalid": "Selecciona un plan válido",
+        "messageMin": "El mensaje debe tener al menos 10 caracteres",
+        "messageMax": "El mensaje no debe superar 5000 caracteres",
+        "maxFiles": "Se pueden subir hasta 5 archivos",
+        "fileType": "Tipos permitidos: documentos (PDF/DOC/DOCX/TXT), imágenes (JPG/PNG/GIF), audio (MP3/WAV)",
+        "fileSize": "El tamaño del archivo debe ser menor de 5 MB",
+        "fileProcessing": "Error al procesar los archivos. Inténtalo de nuevo.",
+        "invalidServerResponse": "Respuesta inválida del servidor. Inténtalo de nuevo."
+      },
+      "feedback": {
+        "rateLimited": "Demasiadas solicitudes. Inténtalo de nuevo en una hora.",
+        "validationError": "Completa correctamente todos los campos.",
+        "serverError": "Error del servidor. Inténtalo más tarde.",
+        "networkError": "Error de conexión. Verifica tu internet e inténtalo de nuevo.",
+        "submitError": "Error al enviar el mensaje. Inténtalo de nuevo."
+      },
+      "submit": "Enviar",
       "selectService": "Seleccionar plan",
       "basic": "Plan Básico",
       "professional": "Plan Profesional",
-      "enterprise": "Plan Enterprise"
+      "enterprise": "Plan Empresarial"
     },
     "success": "Tu mensaje se ha enviado correctamente. ¡Gracias!",
-    "error": "Error sending message. Please try again."
+    "error": "Error al enviar el mensaje. Vuelve a intentarlo."
   },
   "footer": {
     "about": "MahdiArts",
     "description": "Diseño y desarrollo de aplicaciones web y móviles de alta calidad siguiendo estándares modernos",
     "usefulLinks": "Enlaces útiles",
     "ourServices": "Nuestros servicios",
+    "whatsappLabel": "WhatsApp:",
+    "emailLabel": "Correo electrónico:",
     "copyright": "Todos los derechos reservados",
-    "designedBy": "Diseño"
+    "designedBy": "Diseñado y desarrollado por"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

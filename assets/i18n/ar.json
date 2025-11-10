@@ -1,8 +1,8 @@
 {
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
-    "title": "MahdiArts — هندسة احترافية للويب والأندرويد",
-    "description": "تصميم وتطوير مواقع وتطبيقات أندرويد عالية الجودة وفقًا للمعايير الحديثة، الأداء والأمان."
+    "title": "MahdiArts — هندسة ويب وأندرويد احترافية",
+    "description": "نصمم ونبني مواقع وتطبيقات أندرويد عالية الجودة وفقًا للمعايير الحديثة مع أداء قوي وأمان موثوق."
   },
   "nav": {
     "home": "الرئيسية",
@@ -14,214 +14,247 @@
   },
   "hero": {
     "badge": "حلول مبتكرة",
-    "title": "مهدي باغبان‌بور — مهندس كمبيوتر أول",
-    "description": "10 سنوات من الخبرة في بناء مواقع وتطبيقات أندرويد احترافية",
+    "title": "مهدي باغهبانبور — مهندس برمجيات أول",
+    "description": "أكثر من 10 سنوات في بناء مواقع وتطبيقات أندرويد موثوقة تحقق نتائج فعلية للأعمال.",
     "cta": "اعرف المزيد"
   },
   "features": {
     "rapidDeployment": {
       "title": "نشر سريع",
-      "text": "إطلاق المشاريع بسرعة وكفاءة باستخدام أحدث التقنيات"
+      "text": "إطلاق أسرع بعملية واضحة وأدوات حديثة"
     },
     "advancedSecurity": {
       "title": "أمن متقدم",
-      "text": "حماية شاملة للبيانات وفقًا لممارسات الأمان القياسية"
+      "text": "بنية محصّنة وتشفير وممارسات موثوقة لحماية البيانات"
     },
     "dedicatedSupport": {
       "title": "دعم مخصص",
-      "text": "دعم على مدار الساعة لضمان أفضل أداء للنظام"
+      "text": "مساندة استباقية وصيانة موثوقة لضمان الاستمرارية"
     }
   },
   "about": {
-    "whoWeAre": "About Me",
-    "title": "من نحن",
-    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
+    "whoWeAre": "نبذة عني",
+    "title": "استراتيجية إبداعية وهندسة عملية",
+    "subtitle": "أصمّم وأطوّر وأحافظ على منتجات رقمية حديثة تركّز على الوضوح والسرعة والموثوقية.",
     "points": [
-      "Design and development of modern Responsive websites",
-      "Native Android app development with optimal performance",
-      "SEO optimization and improved search engine rankings",
-      "Continuous support and maintenance of projects"
+      "تصميم وتطوير مواقع حديثة ومتجاوبة",
+      "تطبيقات أندرويد أصلية مُحسّنة للأداء",
+      "تحسين SEO وزيادة الظهور في البحث",
+      "دعم مستمر وصيانة دورة الحياة"
     ],
-    "readMore": "Read More"
+    "readMore": "اقرأ المزيد"
   },
   "services": {
     "title": "الخدمات",
-    "subtitle": "Professional web and mobile design and development services",
+    "subtitle": "تصميم وتطوير احترافي للويب والموبايل",
     "uiux": {
-      "title": "Professional UI/UX Design",
-      "description": "Beautiful and functional user interface design with focus on optimal user experience"
+      "title": "تصميم واجهات وتجربة مستخدم احترافية",
+      "description": "واجهات أنيقة ومفيدة تركّز على تجربة سلسة وواضحة"
     },
     "responsive": {
-      "title": "Responsive Website Development",
-      "description": "Building responsive websites that display perfectly on all devices"
+      "title": "تطوير مواقع متجاوبة",
+      "description": "مواقع قوية تبدو رائعة وتعمل بسلاسة على كل الأجهزة"
     },
     "android": {
-      "title": "Native Android App Development",
-      "description": "Android app development using Native technologies for optimal performance"
+      "title": "تطوير تطبيقات أندرويد أصلية",
+      "description": "تطبيقات أندرويد عالية الأداء مبنية بتقنيات أصلية"
     },
     "support": {
-      "title": "Continuous Support & Maintenance",
-      "description": "Providing continuous support and update services to ensure proper operation"
+      "title": "دعم وصيانة مستمرة",
+      "description": "تحديثات في الوقت المناسب ومراقبة وإصلاحات لضمان الاعتمادية"
     },
     "seo": {
-      "title": "SEO & Performance Optimization",
-      "description": "Site optimization for search engines and improved speed and performance"
+      "title": "تحسين SEO والأداء",
+      "description": "ترتيب أفضل وسرعات تحميل أعلى عبر تحسينات دقيقة"
     },
     "security": {
-      "title": "Security & Site Stability",
-      "description": "Implementation of security standards and system stability guarantee"
+      "title": "الأمان واستقرار الموقع",
+      "description": "معايير أمان وتحصين وضمان استقرار يمنحك راحة البال"
     }
   },
   "pricing": {
     "title": "خطط الأسعار",
-    "subtitle": "Suitable plans for every type of project",
+    "subtitle": "باقات مرنة حسب احتياج مشروعك",
+    "featuresTitle": "تشمل:",
     "basic": {
-      "name": "Basic Plan",
+      "name": "الخطة الأساسية",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "Suitable for small projects and Landing Pages",
+      "description": "مثالية للمشاريع الصغيرة وصفحات الهبوط",
       "features": [
-        "Single-page Landing Page design",
-        "Responsive for mobile and tablet",
-        "Simple contact form",
-        "Basic SEO optimization",
-        "Simple and user-friendly UI/UX design",
-        "Support for various browsers",
-        "3 months free support",
-        "System usage training",
-        "Delivery time: 7-10 business days"
+        "تصميم صفحة هبوط أحادية",
+        "متجاوبة للهاتف واللوحي",
+        "نموذج تواصل بسيط",
+        "تحسين SEO أساسي",
+        "واجهة بسيطة وسهلة الاستخدام",
+        "دعم لمتصفحات متعددة",
+        "3 أشهر دعم مجاني",
+        "تدريب على الاستخدام",
+        "مدة التسليم: 7–10 أيام عمل"
       ],
-      "button": "Select Plan"
+      "button": "اختر الخطة"
     },
     "professional": {
-      "name": "Professional Plan",
+      "name": "الخطة الاحترافية",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "Suitable for medium businesses",
+      "description": "مناسبة للفرق النامية والأعمال المتوسطة",
       "features": [
-        "Multi-page website (up to 10 pages)",
-        "Content Management System (CMS)",
-        "API integration",
-        "User authentication system",
-        "Advanced SEO optimization",
-        "Professional and modern UI/UX design",
-        "6 months free support",
-        "Complete training and technical documentation",
-        "Delivery time: 15-21 business days"
+        "موقع متعدد الصفحات (حتى 10 صفحات)",
+        "نظام إدارة محتوى (CMS)",
+        "تكاملات API",
+        "نظام تسجيل دخول المستخدم",
+        "تحسين SEO متقدم",
+        "واجهة حديثة واحترافية",
+        "6 أشهر دعم مجاني",
+        "تدريب ووثائق تقنية",
+        "مدة التسليم: 15–21 يوم عمل"
       ],
-      "button": "Select Plan",
-      "popular": "Most Popular"
+      "button": "اختر الخطة",
+      "popular": "الأكثر شيوعًا"
     },
     "enterprise": {
-      "name": "Enterprise Plan",
+      "name": "خطة المؤسسات",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "Suitable for large and enterprise projects",
+      "description": "مخصّصة للأنظمة المعقدة والمشاريع المؤسسية",
       "features": [
-        "Complete website or app system",
-        "Microservices and scalable architecture",
-        "Advanced management panel",
-        "Complete payment gateway integration",
-        "Reporting system and dashboard",
-        "High-level security and encryption",
-        "12 months free support + updates",
-        "Dedicated technical consultant",
-        "Delivery time: 30-45 business days"
+        "نظام موقع أو تطبيق كامل",
+        "هندسة خدمات مصغّرة قابلة للتوسّع",
+        "لوحة إدارة متقدمة",
+        "تكامل بوابات الدفع",
+        "تقارير ولوحات معلومات",
+        "أمان عالي المستوى وتشفير",
+        "12 شهرًا دعم مجاني + تحديثات",
+        "مستشار تقني مخصّص",
+        "مدة التسليم: 30–45 يوم عمل"
       ],
-      "button": "Select Plan"
+      "button": "اختر الخطة"
     }
   },
   "howWeWork": {
     "title": "كيف نعمل",
-    "subtitle": "We deliver your projects through a structured and professional process",
+    "subtitle": "عملية واضحة واحترافية من الفكرة حتى الإطلاق",
     "steps": {
       "planning": {
-        "title": "Project Planning",
-        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
+        "title": "تخطيط المشروع",
+        "description": "استكشاف المتطلبات وتصميم البنية ووضع خارطة طريق عملية للتسليم"
       },
       "development": {
-        "title": "Development Phase",
-        "description": "Implementing the project using the best technologies and current world standards"
+        "title": "مرحلة التطوير",
+        "description": "تنفيذ تدريجي باستخدام أُطر حديثة واختبارات ووثائق واضحة"
       },
       "testing": {
-        "title": "Testing & QA",
-        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
+        "title": "الاختبارات وضمان الجودة",
+        "description": "اختبارات وظيفية وأمنية وتجربة مستخدم لضمان الجودة عبر الأجهزة"
       },
       "launch": {
-        "title": "Launch & Support",
-        "description": "Successful project launch and continuous support for your complete satisfaction"
+        "title": "الإطلاق والدعم",
+        "description": "إطلاق سلس ومراقبة ودعم مستمر لنجاح طويل الأمد"
       }
     }
   },
   "faq": {
     "title": "الأسئلة الشائعة",
-    "subtitle": "Still Have Questions?",
-    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
+    "subtitle": "هل لديك أسئلة أخرى؟",
+    "description": "نحن هنا للمساعدة. تواصل عبر البريد الإلكتروني أو الدردشة أو اتصال سريع.",
     "contactOptions": {
-      "email": "Email Support",
-      "chat": "Live Chat",
-      "phone": "Call Us"
+      "email": "دعم عبر البريد",
+      "chat": "دردشة مباشرة",
+      "phone": "اتصل بنا"
     },
     "questions": {
       "q1": {
-        "question": "What is the project delivery time?",
-        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
+        "question": "ما مدة تسليم المشروع؟",
+        "answer": "تختلف المدة حسب النطاق والخطة: الأساسية (7–10 أيام)، الاحترافية (15–21 يومًا)، المؤسسات (30–45 يومًا)."
       },
       "q2": {
-        "question": "Is support provided after project delivery?",
-        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
+        "question": "هل يتوفر دعم بعد التسليم؟",
+        "answer": "نعم، كل خطة تتضمن دعمًا مجانيًا: الأساسية (3 أشهر)، الاحترافية (6 أشهر)، المؤسسات (12 شهرًا)."
       },
       "q3": {
-        "question": "Can I request changes to the project?",
-        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
+        "question": "هل يمكن طلب تغييرات أثناء التنفيذ؟",
+        "answer": "بالتأكيد. نتعاون على التغييرات المنطقية خلال التطوير بما يتوافق مع خطتك."
       },
       "q4": {
-        "question": "What payment methods do you accept?",
-        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
+        "question": "ما طرق الدفع المتاحة؟",
+        "answer": "ندعم طرق الدفع الشائعة ويمكننا دمج بوابات الدفع عند الحاجة."
       }
     }
   },
   "contact": {
     "title": "اتصل بنا",
-    "subtitle": "Get in touch with us to start your project",
+    "subtitle": "تواصل معنا لبدء مشروعك",
     "address": {
-      "title": "Address",
+      "title": "العنوان",
       "value": "Iran, Ahvaz"
     },
     "phone": {
-      "title": "Contact Number",
+      "title": "رقم التواصل",
       "value": "WhatsApp: +989306880801"
     },
     "email": {
-      "title": "Email",
+      "title": "البريد الإلكتروني",
       "value": "info@mahdiarts.ir"
     },
     "form": {
       "name": "الاسم الكامل",
       "email": "البريد الإلكتروني",
       "whatsapp": "رقم واتساب مع رمز الدولة",
-      "service": "Select Plan",
-      "message": "الرسالة / تفاصيل المشروع",
+      "service": "اختيار الخطة",
+      "message": "رسالة / تفاصيل المشروع",
       "file": "رفع ملف (اختياري)",
+      "fileHelp": "الحد الأقصى ٥ ميجابايت — المسموح: المستندات، الصور، والصوت",
+      "uploader": {
+        "dropHint": "اسحب وأفلت الملفات هنا أو استخدم الزر",
+        "selectFiles": "اختيار الملفات",
+        "remove": "إزالة",
+        "uploadingAndSending": "جارٍ الرفع والإرسال...",
+        "sending": "جارٍ الإرسال...",
+        "processingFiles": "جارٍ معالجة الملفات..."
+      },
+      "errors": {
+        "nameMin": "يجب أن يكون الاسم ٢ أحرف على الأقل",
+        "nameMax": "يجب ألا يتجاوز الاسم ١٠٠ حرف",
+        "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+        "whatsappInvalid": "أدخل رقم واتساب صالح",
+        "planInvalid": "يرجى اختيار خطة صالحة",
+        "messageMin": "يجب أن تكون الرسالة ١٠ أحرف على الأقل",
+        "messageMax": "يجب ألا تتجاوز الرسالة ٥٠٠٠ حرف",
+        "maxFiles": "يمكن رفع حتى ٥ ملفات",
+        "fileType": "الأنواع المسموحة: مستندات (PDF/DOC/DOCX/TXT)، صور (JPG/PNG/GIF)، صوت (MP3/WAV)",
+        "fileSize": "يجب أن يكون حجم الملف أقل من ٥ ميجابايت",
+        "fileProcessing": "حدث خطأ في معالجة الملفات. يرجى المحاولة مرة أخرى.",
+        "invalidServerResponse": "استجابة غير صالحة من الخادم. يرجى المحاولة مرة أخرى."
+      },
+      "feedback": {
+        "rateLimited": "طلبات كثيرة. يرجى المحاولة بعد ساعة.",
+        "validationError": "يرجى ملء جميع الحقول بشكل صحيح.",
+        "serverError": "خطأ في الخادم. يرجى المحاولة لاحقًا.",
+        "networkError": "خطأ في الاتصال. تحقق من الإنترنت ثم حاول مرة أخرى.",
+        "submitError": "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى."
+      },
       "submit": "إرسال الرسالة",
       "selectService": "اختر الخطة",
       "basic": "الخطة الأساسية",
       "professional": "الخطة الاحترافية",
-      "enterprise": "الخطة المؤسسية"
+      "enterprise": "خطة المؤسسات"
     },
     "success": "تم إرسال رسالتك بنجاح. شكرًا لك!",
-    "error": "Error sending message. Please try again."
+    "error": "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "تصميم وتطوير تطبيقات الويب والموبايل عالية الجودة وفقًا للمعايير الحديثة",
+    "description": "تصميم وتطوير تطبيقات ويب وموبايل عالية الجودة وفقًا للمعايير الحديثة",
     "usefulLinks": "روابط مفيدة",
     "ourServices": "خدماتنا",
+    "whatsappLabel": "واتساب:",
+    "emailLabel": "البريد الإلكتروني:",
     "copyright": "جميع الحقوق محفوظة",
-    "designedBy": "التصميم"
+    "designedBy": "مصمم ومطور بواسطة"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

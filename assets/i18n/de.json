@@ -2,7 +2,7 @@
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "MahdiArts — Professionelles Web- & Android-Engineering",
-    "description": "Entwicklung moderner, leistungsstarker und sicherer Websites und Android-Apps nach aktuellen Standards."
+    "description": "Wir entwerfen und entwickeln moderne, leistungsstarke und sichere Websites und Android‑Apps nach aktuellen Standards."
   },
   "nav": {
     "home": "Startseite",
@@ -33,195 +33,228 @@
     }
   },
   "about": {
-    "whoWeAre": "About Me",
+    "whoWeAre": "Über mich",
     "title": "Über mich",
-    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
+    "subtitle": "Mit über 10 Jahren Erfahrung in Web‑ und App‑Entwicklung liefere ich innovative, hochwertige Lösungen.",
     "points": [
-      "Design and development of modern Responsive websites",
-      "Native Android app development with optimal performance",
-      "SEO optimization and improved search engine rankings",
-      "Continuous support and maintenance of projects"
+      "Konzeption und Entwicklung moderner, responsiver Websites",
+      "Native Android‑App‑Entwicklung mit optimaler Performance",
+      "SEO‑Optimierung und bessere Platzierungen in Suchmaschinen",
+      "Fortlaufender Support und Wartung Ihrer Projekte"
     ],
-    "readMore": "Read More"
+    "readMore": "Mehr lesen"
   },
   "services": {
     "title": "Leistungen",
-    "subtitle": "Professional web and mobile design and development services",
+    "subtitle": "Professionelle Services für Web‑ und Mobile‑Design & Entwicklung",
     "uiux": {
-      "title": "Professional UI/UX Design",
-      "description": "Beautiful and functional user interface design with focus on optimal user experience"
+      "title": "Professionelles UI/UX‑Design",
+      "description": "Ästhetische und funktionale Oberflächen mit Fokus auf bestmögliche Nutzererfahrung"
     },
     "responsive": {
-      "title": "Responsive Website Development",
-      "description": "Building responsive websites that display perfectly on all devices"
+      "title": "Responsives Web‑Development",
+      "description": "Auf allen Geräten perfekt dargestellte, responsive Websites"
     },
     "android": {
-      "title": "Native Android App Development",
-      "description": "Android app development using Native technologies for optimal performance"
+      "title": "Native Android‑App‑Entwicklung",
+      "description": "Android‑Apps mit nativen Technologien für maximale Leistung"
     },
     "support": {
-      "title": "Continuous Support & Maintenance",
-      "description": "Providing continuous support and update services to ensure proper operation"
+      "title": "Durchgehender Support & Wartung",
+      "description": "Regelmäßige Updates und zuverlässiger Support für reibungslosen Betrieb"
     },
     "seo": {
-      "title": "SEO & Performance Optimization",
-      "description": "Site optimization for search engines and improved speed and performance"
+      "title": "SEO‑ & Performance‑Optimierung",
+      "description": "Optimierung für Suchmaschinen sowie höhere Geschwindigkeit und Performance"
     },
     "security": {
-      "title": "Security & Site Stability",
-      "description": "Implementation of security standards and system stability guarantee"
+      "title": "Sicherheit & Systemstabilität",
+      "description": "Umsetzung von Sicherheitsstandards und Gewährleistung stabiler Systeme"
     }
   },
   "pricing": {
     "title": "Preispakete",
-    "subtitle": "Suitable plans for every type of project",
+    "subtitle": "Passende Pakete für jedes Projekt",
+    "featuresTitle": "Enthalten:",
     "basic": {
-      "name": "Basic Plan",
+      "name": "Basis‑Paket",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "Suitable for small projects and Landing Pages",
+      "description": "Ideal für kleine Projekte und Landing‑Pages",
       "features": [
-        "Single-page Landing Page design",
-        "Responsive for mobile and tablet",
-        "Simple contact form",
-        "Basic SEO optimization",
-        "Simple and user-friendly UI/UX design",
-        "Support for various browsers",
-        "3 months free support",
-        "System usage training",
-        "Delivery time: 7-10 business days"
+        "Einseitige Landing‑Page‑Gestaltung",
+        "Responsiv für Smartphone und Tablet",
+        "Einfaches Kontaktformular",
+        "Basis‑SEO‑Optimierung",
+        "Schlichtes, nutzerfreundliches UI/UX",
+        "Unterstützung in gängigen Browsern",
+        "3 Monate kostenloser Support",
+        "Einweisung in die Nutzung",
+        "Lieferzeit: 7–10 Werktage"
       ],
-      "button": "Select Plan"
+      "button": "Paket wählen"
     },
     "professional": {
-      "name": "Professional Plan",
+      "name": "Professional‑Paket",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "Suitable for medium businesses",
+      "description": "Geeignet für mittelgroße Unternehmen",
       "features": [
-        "Multi-page website (up to 10 pages)",
-        "Content Management System (CMS)",
-        "API integration",
-        "User authentication system",
-        "Advanced SEO optimization",
-        "Professional and modern UI/UX design",
-        "6 months free support",
-        "Complete training and technical documentation",
-        "Delivery time: 15-21 business days"
+        "Mehrseitige Website (bis zu 10 Seiten)",
+        "Content‑Management‑System (CMS)",
+        "API‑Integrationen",
+        "Benutzer‑Authentifizierungssystem",
+        "Erweiterte SEO‑Optimierung",
+        "Professionelles, modernes UI/UX",
+        "6 Monate kostenloser Support",
+        "Schulung und technische Dokumentation",
+        "Lieferzeit: 15–21 Werktage"
       ],
-      "button": "Select Plan",
-      "popular": "Most Popular"
+      "button": "Paket wählen",
+      "popular": "Am beliebtesten"
     },
     "enterprise": {
-      "name": "Enterprise Plan",
+      "name": "Enterprise‑Paket",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "Suitable for large and enterprise projects",
+      "description": "Für große und unternehmenskritische Projekte",
       "features": [
-        "Complete website or app system",
-        "Microservices and scalable architecture",
-        "Advanced management panel",
-        "Complete payment gateway integration",
-        "Reporting system and dashboard",
-        "High-level security and encryption",
-        "12 months free support + updates",
-        "Dedicated technical consultant",
-        "Delivery time: 30-45 business days"
+        "Komplettes Website‑ oder App‑System",
+        "Microservices und skalierbare Architektur",
+        "Erweitertes Admin‑Panel",
+        "Zahlungs‑Gateway‑Integrationen",
+        "Reporting‑System und Dashboard",
+        "Hohe Sicherheit und Verschlüsselung",
+        "12 Monate kostenloser Support + Updates",
+        "Persönlicher technischer Berater",
+        "Lieferzeit: 30–45 Werktage"
       ],
-      "button": "Select Plan"
+      "button": "Paket wählen"
     }
   },
   "howWeWork": {
     "title": "Unsere Arbeitsweise",
-    "subtitle": "We deliver your projects through a structured and professional process",
+    "subtitle": "Wir liefern Ihre Projekte durch einen strukturierten, professionellen Prozess",
     "steps": {
       "planning": {
-        "title": "Project Planning",
-        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
+        "title": "Projektplanung",
+        "description": "Anforderungsanalyse, Architekturdesign und detaillierte Planung für erfolgreiche Umsetzung"
       },
       "development": {
-        "title": "Development Phase",
-        "description": "Implementing the project using the best technologies and current world standards"
+        "title": "Entwicklungsphase",
+        "description": "Umsetzung mit modernen Technologien und aktuellen Standards"
       },
       "testing": {
-        "title": "Testing & QA",
-        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
+        "title": "Testing & Qualitätssicherung",
+        "description": "Umfassende Tests zu Funktionalität, Sicherheit und Nutzererlebnis — für höchste Qualität"
       },
       "launch": {
         "title": "Launch & Support",
-        "description": "Successful project launch and continuous support for your complete satisfaction"
+        "description": "Erfolgreicher Start und fortlaufender Support für volle Zufriedenheit"
       }
     }
   },
   "faq": {
     "title": "Häufige Fragen",
-    "subtitle": "Still Have Questions?",
-    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
+    "subtitle": "Noch Fragen?",
+    "description": "Wir beantworten Ihre Fragen gerne. Kontakt per E‑Mail, Chat oder Telefon.",
     "contactOptions": {
-      "email": "Email Support",
-      "chat": "Live Chat",
-      "phone": "Call Us"
+      "email": "E‑Mail‑Support",
+      "chat": "Live‑Chat",
+      "phone": "Anrufen"
     },
     "questions": {
       "q1": {
-        "question": "What is the project delivery time?",
-        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
+        "question": "Wie lange ist die Projektlaufzeit?",
+        "answer": "Die Dauer hängt von Art und Komplexität ab. Basis‑Projekte: 7–10 Werktage, Professional: 15–21 Werktage, Enterprise: 30–45 Werktage."
       },
       "q2": {
-        "question": "Is support provided after project delivery?",
-        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
+        "question": "Gibt es Support nach dem Launch?",
+        "answer": "Ja, alle Pakete enthalten kostenlosen Support: Basis 3 Monate, Professional 6 Monate, Enterprise 12 Monate."
       },
       "q3": {
-        "question": "Can I request changes to the project?",
-        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
+        "question": "Kann ich Änderungen am Projekt wünschen?",
+        "answer": "Ja, während der Entwicklung sind Anpassungen möglich. Umsetzung erfolgt gemäß dem gewählten Paket."
       },
       "q4": {
-        "question": "What payment methods do you accept?",
-        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
+        "question": "Welche Zahlungsmethoden akzeptieren Sie?",
+        "answer": "Wir akzeptieren verschiedene Zahlungsmethoden. Details klären wir gerne via WhatsApp."
       }
     }
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Get in touch with us to start your project",
+    "subtitle": "Starten Sie Ihr Projekt — schreiben Sie uns",
     "address": {
-      "title": "Address",
+      "title": "Adresse",
       "value": "Iran, Ahvaz"
     },
     "phone": {
-      "title": "Contact Number",
+      "title": "Kontaktnummer",
       "value": "WhatsApp: +989306880801"
     },
     "email": {
-      "title": "Email",
+      "title": "E‑Mail",
       "value": "info@mahdiarts.ir"
     },
     "form": {
       "name": "Vollständiger Name",
       "email": "E‑Mail",
       "whatsapp": "WhatsApp‑Nummer mit Ländercode",
-      "service": "Select Plan",
+      "service": "Plan wählen",
       "message": "Nachricht / Projektdetails",
       "file": "Datei hochladen (optional)",
-      "submit": "Nachricht senden",
+      "fileHelp": "Max. 5 MB — Erlaubt: Dokumente, Bilder und Audio",
+      "uploader": {
+        "dropHint": "Dateien hierher ziehen und ablegen oder Button nutzen",
+        "selectFiles": "Dateien auswählen",
+        "remove": "Entfernen",
+        "uploadingAndSending": "Wird hochgeladen und gesendet...",
+        "sending": "Wird gesendet...",
+        "processingFiles": "Dateien werden verarbeitet..."
+      },
+      "errors": {
+        "nameMin": "Name muss mindestens 2 Zeichen haben",
+        "nameMax": "Name darf 100 Zeichen nicht überschreiten",
+        "emailInvalid": "Bitte eine gültige E-Mail-Adresse eingeben",
+        "whatsappInvalid": "Gültige WhatsApp-Nummer eingeben",
+        "planInvalid": "Bitte einen gültigen Plan auswählen",
+        "messageMin": "Nachricht muss mindestens 10 Zeichen haben",
+        "messageMax": "Nachricht darf 5000 Zeichen nicht überschreiten",
+        "maxFiles": "Bis zu 5 Dateien können hochgeladen werden",
+        "fileType": "Erlaubte Typen: Dokumente (PDF/DOC/DOCX/TXT), Bilder (JPG/PNG/GIF), Audio (MP3/WAV)",
+        "fileSize": "Dateigröße muss unter 5 MB liegen",
+        "fileProcessing": "Fehler bei der Verarbeitung der Dateien. Bitte erneut versuchen.",
+        "invalidServerResponse": "Ungültige Serverantwort. Bitte erneut versuchen."
+      },
+      "feedback": {
+        "rateLimited": "Zu viele Anfragen. Bitte in einer Stunde erneut versuchen.",
+        "validationError": "Bitte alle Felder korrekt ausfüllen.",
+        "serverError": "Serverfehler. Bitte später erneut versuchen.",
+        "networkError": "Verbindungsfehler. Internet prüfen und erneut versuchen.",
+        "submitError": "Fehler beim Senden der Nachricht. Bitte erneut versuchen."
+      },
+      "submit": "Senden",
       "selectService": "Plan wählen",
-      "basic": "Basic‑Plan",
-      "professional": "Professional‑Plan",
-      "enterprise": "Enterprise‑Plan"
+      "basic": "Basis‑Paket",
+      "professional": "Professional‑Paket",
+      "enterprise": "Enterprise‑Paket"
     },
     "success": "Ihre Nachricht wurde erfolgreich gesendet. Vielen Dank!",
-    "error": "Error sending message. Please try again."
+    "error": "Fehler beim Senden der Nachricht. Bitte erneut versuchen."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "Entwicklung hochwertiger Web‑ und Mobile‑Anwendungen nach modernen Standards",
+    "description": "Hochwertige Web‑ und Mobile‑Anwendungen nach modernen Standards",
     "usefulLinks": "Nützliche Links",
     "ourServices": "Unsere Leistungen",
+    "whatsappLabel": "WhatsApp:",
+    "emailLabel": "E‑Mail:",
     "copyright": "Alle Rechte vorbehalten",
-    "designedBy": "Design"
+    "designedBy": "Entworfen und entwickelt von"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

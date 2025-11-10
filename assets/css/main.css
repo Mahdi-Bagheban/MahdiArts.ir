@@ -9,7 +9,6 @@
 
 /*--------------------------------------------------------------
 # Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -3166,4 +3165,18 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .contact .form-wrapper .error-message,
 .contact .form-wrapper .sent-message {
   display: none;
+}
+
+/* uploader-actions: چیدمان دکمه‌های آپلود و ارسال کنار هم، هماهنگ با سبک پروژه */
+.uploader-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* فاصله مناسب بین دکمه‌ها */
+}
+
+/* جلوگیری از فاصله‌های ناخواسته داخل دراپ‌زون */
+#file-drop-zone .uploader-actions .btn {
+  margin: 0;
 }

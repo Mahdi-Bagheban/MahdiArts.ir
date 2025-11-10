@@ -2,7 +2,7 @@
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
     "title": "MahdiArts — Profesyonel Web ve Android Mühendisliği",
-    "description": "Modern standartlara uygun, yüksek kaliteli web siteleri ve Android uygulamaları tasarlayıp geliştiriyoruz; performans ve güvenliği ön planda tutarız."
+    "description": "Modern standartlara uygun, yüksek kaliteli web siteleri ve Android uygulamaları tasarlıyor ve geliştiriyoruz; performans ve güvenliği daima önceliklendiriyoruz."
   },
   "nav": {
     "home": "Ana Sayfa",
@@ -15,213 +15,246 @@
   "hero": {
     "badge": "Yenilikçi çözümler",
     "title": "Mahdi Baghebanpour — Kıdemli Bilgisayar Mühendisi",
-    "description": "Profesyonel web siteleri ve Android uygulamaları geliştirmede 10 yıllık deneyim",
-    "cta": "Daha fazlası"
+    "description": "Profesyonel web siteleri ve Android uygulamaları geliştirmede 10+ yıllık deneyim",
+    "cta": "Detayları gör"
   },
   "features": {
     "rapidDeployment": {
       "title": "Hızlı Yayına Alma",
-      "text": "En yeni teknolojilerle projelerinizi hızlı ve verimli şekilde yayına alın"
+      "text": "En yeni teknolojilerle projelerinizi hızlı ve verimli şekilde yayına alırız"
     },
     "advancedSecurity": {
       "title": "Gelişmiş Güvenlik",
-      "text": "Sektör standartlarına uygun kapsamlı veri koruması"
+      "text": "Sektör standartlarına uygun kapsamlı veri koruması ve sertleştirme"
     },
     "dedicatedSupport": {
       "title": "Özel Destek",
-      "text": "Sisteminizin en iyi performansı için 7/24 destek"
+      "text": "Sisteminizin en iyi performansı için 7/24 kesintisiz destek"
     }
   },
   "about": {
-    "whoWeAre": "About Me",
+    "whoWeAre": "Hakkımda",
     "title": "Hakkımda",
-    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
+    "subtitle": "Web sitesi ve mobil uygulama tasarımı/geliştirmede 10+ yıllık deneyimle yenilikçi ve kaliteli çözümler sunuyorum.",
     "points": [
-      "Design and development of modern Responsive websites",
-      "Native Android app development with optimal performance",
-      "SEO optimization and improved search engine rankings",
-      "Continuous support and maintenance of projects"
+      "Modern, duyarlı (Responsive) web sitelerinin tasarımı ve geliştirilmesi",
+      "En iyi performansla yerel (Native) Android uygulama geliştirme",
+      "SEO iyileştirmeleri ve arama motoru sıralamalarının geliştirilmesi",
+      "Projelerin sürekli destek ve bakımı"
     ],
-    "readMore": "Read More"
+    "readMore": "Daha fazla oku"
   },
   "services": {
     "title": "Hizmetler",
-    "subtitle": "Professional web and mobile design and development services",
+    "subtitle": "Profesyonel web ve mobil tasarım–geliştirme hizmetleri",
     "uiux": {
-      "title": "Professional UI/UX Design",
-      "description": "Beautiful and functional user interface design with focus on optimal user experience"
+      "title": "Profesyonel UI/UX Tasarımı",
+      "description": "Estetik ve işlevsel arayüz tasarımları; en iyi kullanıcı deneyimine odaklanır"
     },
     "responsive": {
-      "title": "Responsive Website Development",
-      "description": "Building responsive websites that display perfectly on all devices"
+      "title": "Duyarlı (Responsive) Web Geliştirme",
+      "description": "Tüm cihazlarda kusursuz görüntülenen, duyarlı web siteleri inşa ediyoruz"
     },
     "android": {
-      "title": "Native Android App Development",
-      "description": "Android app development using Native technologies for optimal performance"
+      "title": "Yerel (Native) Android Uygulama",
+      "description": "En iyi performans için yerel teknolojilerle Android uygulama geliştirme"
     },
     "support": {
-      "title": "Continuous Support & Maintenance",
-      "description": "Providing continuous support and update services to ensure proper operation"
+      "title": "Sürekli Destek ve Bakım",
+      "description": "Sorunsuz çalışmayı sağlamak için düzenli güncelleme ve kesintisiz destek"
     },
     "seo": {
-      "title": "SEO & Performance Optimization",
-      "description": "Site optimization for search engines and improved speed and performance"
+      "title": "SEO ve Performans Optimizasyonu",
+      "description": "Arama motorları için site optimizasyonu; hız ve performans artırımı"
     },
     "security": {
-      "title": "Security & Site Stability",
-      "description": "Implementation of security standards and system stability guarantee"
+      "title": "Güvenlik ve Sistem Kararlılığı",
+      "description": "Güvenlik standartlarının uygulanması ve sistem kararlılığı garantisi"
     }
   },
   "pricing": {
     "title": "Fiyat Planları",
-    "subtitle": "Suitable plans for every type of project",
+    "subtitle": "Her tür proje için uygun planlar",
+    "featuresTitle": "Şunları içerir:",
     "basic": {
-      "name": "Basic Plan",
+      "name": "Temel Plan",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "Suitable for small projects and Landing Pages",
+      "description": "Küçük projeler ve açılış (landing) sayfaları için uygun",
       "features": [
-        "Single-page Landing Page design",
-        "Responsive for mobile and tablet",
-        "Simple contact form",
-        "Basic SEO optimization",
-        "Simple and user-friendly UI/UX design",
-        "Support for various browsers",
-        "3 months free support",
-        "System usage training",
-        "Delivery time: 7-10 business days"
+        "Tek sayfa landing tasarımı",
+        "Mobil ve tablet için duyarlı yapı",
+        "Basit iletişim formu",
+        "Temel SEO optimizasyonu",
+        "Basit ve kullanıcı dostu UI/UX",
+        "Çeşitli tarayıcı desteği",
+        "3 ay ücretsiz destek",
+        "Sistem kullanım eğitimi",
+        "Teslim süresi: 7–10 iş günü"
       ],
-      "button": "Select Plan"
+      "button": "Planı seç"
     },
     "professional": {
-      "name": "Professional Plan",
+      "name": "Profesyonel Plan",
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "Suitable for medium businesses",
+      "description": "Orta ölçekli işletmeler için ideal",
       "features": [
-        "Multi-page website (up to 10 pages)",
-        "Content Management System (CMS)",
-        "API integration",
-        "User authentication system",
-        "Advanced SEO optimization",
-        "Professional and modern UI/UX design",
-        "6 months free support",
-        "Complete training and technical documentation",
-        "Delivery time: 15-21 business days"
+        "Çok sayfalı web sitesi (en fazla 10 sayfa)",
+        "İçerik Yönetim Sistemi (CMS)",
+        "API entegrasyonları",
+        "Kullanıcı kimlik doğrulama sistemi",
+        "Gelişmiş SEO optimizasyonu",
+        "Profesyonel ve modern UI/UX",
+        "6 ay ücretsiz destek",
+        "Eğitim ve teknik dokümantasyon",
+        "Teslim süresi: 15–21 iş günü"
       ],
-      "button": "Select Plan",
-      "popular": "Most Popular"
+      "button": "Planı seç",
+      "popular": "En Popüler"
     },
     "enterprise": {
-      "name": "Enterprise Plan",
+      "name": "Kurumsal Plan",
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "Suitable for large and enterprise projects",
+      "description": "Büyük ve kurumsal projeler için uygundur",
       "features": [
-        "Complete website or app system",
-        "Microservices and scalable architecture",
-        "Advanced management panel",
-        "Complete payment gateway integration",
-        "Reporting system and dashboard",
-        "High-level security and encryption",
-        "12 months free support + updates",
-        "Dedicated technical consultant",
-        "Delivery time: 30-45 business days"
+        "Tam kapsamlı web veya uygulama sistemi",
+        "Mikroservis ve ölçeklenebilir mimari",
+        "Gelişmiş yönetim paneli",
+        "Ödeme altyapısı entegrasyonları",
+        "Raporlama sistemi ve gösterge paneli",
+        "Üst düzey güvenlik ve şifreleme",
+        "12 ay ücretsiz destek + güncellemeler",
+        "Özel teknik danışman",
+        "Teslim süresi: 30–45 iş günü"
       ],
-      "button": "Select Plan"
+      "button": "Planı seç"
     }
   },
   "howWeWork": {
     "title": "Nasıl çalışıyoruz",
-    "subtitle": "We deliver your projects through a structured and professional process",
+    "subtitle": "Projelerinizi yapılandırılmış ve profesyonel bir süreçle teslim ederiz",
     "steps": {
       "planning": {
-        "title": "Project Planning",
-        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
+        "title": "Proje Planlama",
+        "description": "Gereksinim analizi, mimari tasarım ve başarı için detaylı planlama"
       },
       "development": {
-        "title": "Development Phase",
-        "description": "Implementing the project using the best technologies and current world standards"
+        "title": "Geliştirme Aşaması",
+        "description": "Projeyi en iyi teknolojiler ve güncel dünya standartlarıyla hayata geçirme"
       },
       "testing": {
-        "title": "Testing & QA",
-        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
+        "title": "Test ve Kalite Güvencesi",
+        "description": "İşlevsellik, güvenlik ve kullanıcı deneyiminin eksiksiz testi; yüksek kalite güvencesi"
       },
       "launch": {
-        "title": "Launch & Support",
-        "description": "Successful project launch and continuous support for your complete satisfaction"
+        "title": "Yayın ve Destek",
+        "description": "Başarılı lansman ve tam memnuniyet için kesintisiz destek"
       }
     }
   },
   "faq": {
     "title": "Sıkça Sorulan Sorular",
-    "subtitle": "Still Have Questions?",
-    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
+    "subtitle": "Hâlâ sorunuz mu var?",
+    "description": "Sorularınızı yanıtlamaya hazırız. E‑posta, sohbet veya telefonla bize ulaşabilirsiniz.",
     "contactOptions": {
-      "email": "Email Support",
-      "chat": "Live Chat",
-      "phone": "Call Us"
+      "email": "E‑posta Desteği",
+      "chat": "Canlı Sohbet",
+      "phone": "Bizi Arayın"
     },
     "questions": {
       "q1": {
-        "question": "What is the project delivery time?",
-        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
+        "question": "Proje teslim süresi nedir?",
+        "answer": "Teslim süresi projenin türüne ve karmaşıklığına bağlıdır. Temel projeler 7–10 iş günü, profesyonel projeler 15–21 iş günü, kurumsal projeler 30–45 iş günü sürer."
       },
       "q2": {
-        "question": "Is support provided after project delivery?",
-        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
+        "question": "Teslimden sonra destek sağlanıyor mu?",
+        "answer": "Evet, tüm planlar ücretsiz destek içerir. Temel planda 3 ay, profesyonel planda 6 ay, kurumsal planda 12 ay ücretsiz destek sağlanır."
       },
       "q3": {
-        "question": "Can I request changes to the project?",
-        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
+        "question": "Projede değişiklik talep edebilir miyim?",
+        "answer": "Evet, geliştirme süreci boyunca gerektikçe değişiklik talep edebilirsiniz. Değişiklikler seçtiğiniz plana göre uygulanır."
       },
       "q4": {
-        "question": "What payment methods do you accept?",
-        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
+        "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+        "answer": "Çeşitli ödeme yöntemlerini kabul ediyoruz. Ödeme detaylarını görüşmek için WhatsApp üzerinden bizimle iletişime geçebilirsiniz."
       }
     }
   },
   "contact": {
     "title": "İletişim",
-    "subtitle": "Get in touch with us to start your project",
+    "subtitle": "Projenizi başlatmak için bizimle iletişime geçin",
     "address": {
-      "title": "Address",
-      "value": "Iran, Ahvaz"
+      "title": "Adres",
+      "value": "İran, Ahvaz"
     },
     "phone": {
-      "title": "Contact Number",
+      "title": "İletişim Numarası",
       "value": "WhatsApp: +989306880801"
     },
     "email": {
-      "title": "Email",
+      "title": "E‑posta",
       "value": "info@mahdiarts.ir"
     },
     "form": {
       "name": "Tam ad",
       "email": "E‑posta",
       "whatsapp": "Ülke kodu ile WhatsApp numarası",
-      "service": "Select Plan",
+      "service": "Plan Seç",
       "message": "Mesaj / Proje Detayları",
       "file": "Dosya yükle (opsiyonel)",
-      "submit": "Mesaj gönder",
+      "fileHelp": "Maks. 5 MB — İzin verilen: belgeler, görseller ve ses",
+      "uploader": {
+        "dropHint": "Dosyaları buraya sürükleyip bırakın veya butonu kullanın",
+        "selectFiles": "Dosyaları seç",
+        "remove": "Kaldır",
+        "uploadingAndSending": "Yükleniyor ve gönderiliyor...",
+        "sending": "Gönderiliyor...",
+        "processingFiles": "Dosyalar işleniyor..."
+      },
+      "errors": {
+        "nameMin": "Ad en az 2 karakter olmalı",
+        "nameMax": "Ad 100 karakteri geçmemeli",
+        "emailInvalid": "Geçerli bir e‑posta adresi girin",
+        "whatsappInvalid": "Geçerli bir WhatsApp numarası girin",
+        "planInvalid": "Geçerli bir plan seçin",
+        "messageMin": "Mesaj en az 10 karakter olmalı",
+        "messageMax": "Mesaj 5000 karakteri geçmemeli",
+        "maxFiles": "En fazla 5 dosya yüklenebilir",
+        "fileType": "İzin verilen türler: belgeler (PDF/DOC/DOCX/TXT), görseller (JPG/PNG/GIF), ses (MP3/WAV)",
+        "fileSize": "Dosya boyutu 5 MB’dan küçük olmalı",
+        "fileProcessing": "Dosyalar işlenirken hata oluştu. Lütfen tekrar deneyin.",
+        "invalidServerResponse": "Geçersiz sunucu yanıtı. Lütfen tekrar deneyin."
+      },
+      "feedback": {
+        "rateLimited": "Çok fazla istek. Lütfen bir saat sonra tekrar deneyin.",
+        "validationError": "Lütfen tüm alanları doğru doldurun.",
+        "serverError": "Sunucu hatası. Lütfen daha sonra tekrar deneyin.",
+        "networkError": "Bağlantı hatası. İnterneti kontrol edip tekrar deneyin.",
+        "submitError": "Mesaj gönderilirken hata oluştu. Lütfen tekrar deneyin."
+      },
+      "submit": "Gönder",
       "selectService": "Plan seç",
-      "basic": "Basic Plan",
-      "professional": "Professional Plan",
-      "enterprise": "Enterprise Plan"
+      "basic": "Temel Plan",
+      "professional": "Profesyonel Plan",
+      "enterprise": "Kurumsal Plan"
     },
     "success": "Mesajınız başarıyla gönderildi. Teşekkürler!",
-    "error": "Error sending message. Please try again."
+    "error": "Mesaj gönderilirken hata oluştu. Lütfen tekrar deneyin."
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "Modern standartlara uygun yüksek kaliteli web ve mobil uygulama tasarım ve geliştirme",
+    "description": "Modern standartlara uygun, yüksek kaliteli web ve mobil uygulama tasarım–geliştirme",
     "usefulLinks": "Faydalı bağlantılar",
     "ourServices": "Hizmetlerimiz",
+    "whatsappLabel": "WhatsApp:",
+    "emailLabel": "E‑posta:",
     "copyright": "Tüm hakları saklıdır",
-    "designedBy": "Tasarım"
+    "designedBy": "Tasarım ve geliştirme:"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

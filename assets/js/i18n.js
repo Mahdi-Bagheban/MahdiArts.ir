@@ -10,7 +10,12 @@ class I18n {
     this.currentLanguage = localStorage.getItem('mahdiarts_lang') || 'fa';
     this.translations = {};
     this.rtlLanguages = ['fa', 'ar', 'he'];
-    this.init();
+    // Ensure DOM is ready before initializing UI-related features
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.init());
+    } else {
+      this.init();
+    }
   }
 
   /**

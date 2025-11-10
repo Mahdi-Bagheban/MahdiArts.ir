@@ -8,6 +8,9 @@
 (function() {
   'use strict';
 
+  // Helper translator
+  const t = (key, def = '') => (window.i18n && typeof window.i18n.t === 'function') ? window.i18n.t(key, def) : (def || key);
+
   // مدیریت انتخاب پلن از دکمه‌های pricing
   document.querySelectorAll('.select-plan-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
@@ -47,14 +50,18 @@
       'image/jpg',
       'image/png',
       'image/gif',
-      'image/webp',
       'text/plain',
       'application/msword',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'audio/mpeg',
+      'audio/mp3',
+      'audio/wav',
+      'audio/x-wav',
+      'audio/wave'
     ];
     
     // پسوندهای مجاز
-    const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.webp', '.txt', '.doc', '.docx'];
+    const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.txt', '.doc', '.docx', '.mp3', '.wav'];
     const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
     
     // بررسی نوع فایل
@@ -62,13 +69,13 @@
                         allowedExtensions.includes(fileExtension);
     
     if (!isValidType) {
-      errors.push('فقط فایل‌های PDF، تصاویر و متن با حداکثر حجم ۵ مگابایت مجاز هستند');
+      errors.push(t('contact.errors.fileType'));
     }
     
     // بررسی حجم فایل (حداکثر 5MB)
     const maxSize = 5 * 1024 * 1024; // 5MB
     if (file.size > maxSize) {
-      errors.push('فقط فایل‌های PDF، تصاویر و متن با حداکثر حجم ۵ مگابایت مجاز هستند');
+      errors.push(t('contact.errors.fileSize'));
     }
     
     return {
@@ -96,20 +103,20 @@
   /**
    * اعتبارسنجی فرم در سمت کلاینت
    */
-  function validateForm(name, email, whatsapp, plan, message, file) {
+  function validateForm(name, email, whatsapp, plan, message, files) {
     const errors = [];
     
     // اعتبارسنجی نام
     if (!name || name.trim().length < 2) {
-      errors.push('نام باید حداقل 2 کاراکتر باشد');
+      errors.push(t('contact.errors.nameMin'));
     } else if (name.trim().length > 100) {
-      errors.push('نام نباید بیشتر از 100 کاراکتر باشد');
+      errors.push(t('contact.errors.nameMax'));
     }
     
     // اعتبارسنجی ایمیل
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email.trim())) {
-      errors.push('لطفاً یک ایمیل معتبر وارد کنید');
+      errors.push(t('contact.errors.emailInvalid'));
     }
     
     // اعتبارسنجی واتساپ (اختیاری اما اگر وارد شده باشد باید معتبر باشد)
@@ -117,29 +124,35 @@
       const whatsappRegex = /^[\d\s\-\+\(\)]+$/;
       const digitsOnly = whatsapp.replace(/\D/g, '');
       if (!whatsappRegex.test(whatsapp.trim()) || digitsOnly.length < 10) {
-        errors.push('شماره واتساپ معتبر وارد کنید');
+        errors.push(t('contact.errors.whatsappInvalid'));
       }
     }
     
     // اعتبارسنجی انتخاب پلن
     const validPlans = ['basic', 'professional', 'enterprise'];
     if (!plan || plan.trim() === '' || !validPlans.includes(plan.trim())) {
-      errors.push('لطفاً یک پلن معتبر انتخاب کنید');
+      errors.push(t('contact.errors.planInvalid'));
     }
     
     // اعتبارسنجی پیام
     if (!message || message.trim().length < 10) {
-      errors.push('پیام باید حداقل 10 کاراکتر باشد');
+      errors.push(t('contact.errors.messageMin'));
     } else if (message.trim().length > 5000) {
-      errors.push('پیام نباید بیشتر از 5000 کاراکتر باشد');
+      errors.push(t('contact.errors.messageMax'));
     }
     
-    // اعتبارسنجی فایل در صورت وجود
-    if (file) {
-      const fileValidation = validateFile(file);
-      if (!fileValidation.isValid) {
-        errors.push(...fileValidation.errors);
+    // اعتبارسنجی فایل‌ها
+    const MAX_FILES = 5;
+    if (Array.isArray(files)) {
+      if (files.length > MAX_FILES) {
+        errors.push(t('contact.errors.maxFiles'));
       }
+      files.forEach(f => {
+        const v = validateFile(f);
+        if (!v.isValid) {
+          errors.push(`«${f.name}»: ${v.errors.join(' | ')}`);
+        }
+      });
     }
     
     return {
@@ -149,6 +162,123 @@
   }
 
   // مدیریت فرم تماس
+  // حالت انتخاب فایل‌ها در UI
+  const selectedFiles = [];
+
+  function renderFileList() {
+    const listEl = document.getElementById('file-list');
+    const errorEl = document.getElementById('file-error');
+    if (!listEl) return;
+    listEl.innerHTML = '';
+    if (selectedFiles.length === 0) {
+      errorEl && (errorEl.style.display = 'none');
+      return;
+    }
+    const fragment = document.createDocumentFragment();
+    selectedFiles.forEach((file, index) => {
+      const item = document.createElement('div');
+      item.className = 'd-flex align-items-center justify-content-between border rounded p-2 mb-2';
+      const info = document.createElement('div');
+      info.className = 'd-flex align-items-center gap-2';
+      if (file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.alt = file.name;
+        img.style.width = '40px';
+        img.style.height = '40px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '4px';
+        info.appendChild(img);
+      }
+      const text = document.createElement('div');
+      const sizeKB = Math.round(file.size / 1024);
+      text.textContent = `${file.name} — ${sizeKB} KB`;
+      info.appendChild(text);
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'btn btn-sm btn-outline-danger';
+      removeBtn.textContent = t('contact.form.uploader.remove');
+      removeBtn.addEventListener('click', () => {
+        selectedFiles.splice(index, 1);
+        renderFileList();
+      });
+      item.appendChild(info);
+      item.appendChild(removeBtn);
+      fragment.appendChild(item);
+    });
+    listEl.appendChild(fragment);
+  }
+
+  function addFiles(files) {
+    const errorEl = document.getElementById('file-error');
+    const MAX_FILES = 5;
+    const errors = [];
+    const incoming = Array.from(files);
+    for (const f of incoming) {
+      if (selectedFiles.length >= MAX_FILES) {
+        errors.push(t('contact.errors.maxFiles'));
+        break;
+      }
+      const v = validateFile(f);
+      if (!v.isValid) {
+        errors.push(`«${f.name}»: ${v.errors.join(' | ')}`);
+        continue;
+      }
+      selectedFiles.push(f);
+    }
+    if (errors.length > 0 && errorEl) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = errors.join(' | ');
+    } else if (errorEl) {
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+    }
+    renderFileList();
+  }
+
+  // اتصال رویداد‌ها برای درگ‌ودرآپ و انتخاب فایل
+  window.addEventListener('load', () => {
+    const dropZone = document.getElementById('file-drop-zone');
+    const inputEl = document.getElementById('attachments');
+    const selectBtn = document.getElementById('file-select-btn');
+    if (selectBtn && inputEl) {
+      selectBtn.addEventListener('click', () => inputEl.click());
+    }
+    if (dropZone) {
+      ['dragenter','dragover'].forEach(evt => {
+        dropZone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.style.borderColor = '#0d6efd';
+          dropZone.style.background = 'rgba(13,110,253,0.05)';
+        });
+      });
+      ['dragleave','drop'].forEach(evt => {
+        dropZone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.style.borderColor = '#6c757d';
+          dropZone.style.background = 'transparent';
+        });
+      });
+      dropZone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        if (dt && dt.files) {
+          addFiles(dt.files);
+        }
+      });
+    }
+    if (inputEl) {
+      inputEl.addEventListener('change', (e) => {
+        const files = e.target.files;
+        if (files && files.length) {
+          addFiles(files);
+          inputEl.value = '';
+        }
+      });
+    }
+  });
+
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -167,11 +297,11 @@
       const whatsapp = (this.querySelector('#whatsapp')?.value || '').trim();
       const plan = (this.querySelector('#service-select')?.value || '').trim();
       const message = (this.querySelector('#message')?.value || '').trim();
-      const fileInput = this.querySelector('#file');
-      const file = fileInput?.files?.[0] || null;
+      // فایل‌ها از state داخلی انتخاب فایل‌ها خوانده می‌شوند
+      const files = selectedFiles.slice();
       
       // اعتبارسنجی فرم (شامل فایل)
-      const validation = validateForm(name, email, whatsapp, plan, message, file);
+      const validation = validateForm(name, email, whatsapp, plan, message, files);
       if (!validation.isValid) {
         errorDiv.style.display = 'block';
         errorDiv.textContent = validation.errors.join(' | ');
@@ -183,7 +313,7 @@
       // نمایش loading state
       submitBtn.disabled = true;
       const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = file ? 'در حال آپلود و ارسال...' : 'در حال ارسال...';
+      submitBtn.textContent = files.length ? t('contact.form.uploader.uploadingAndSending') : t('contact.form.uploader.sending');
       loadingDiv.style.display = 'block';
       errorDiv.style.display = 'none';
       successDiv.style.display = 'none';
@@ -198,39 +328,43 @@
           message: message
         };
         
-        // تبدیل فایل به base64 در صورت وجود
-        if (file) {
-          console.log('Processing file:', file.name, file.size, 'bytes');
-          submitBtn.textContent = 'در حال پردازش فایل...';
-          
+        // تبدیل همه فایل‌ها به base64 در صورت وجود
+        if (files.length) {
+          console.log('Processing files:', files.map(f => f.name));
+          submitBtn.textContent = t('contact.form.uploader.processingFiles');
           try {
-            const base64Content = await fileToBase64(file);
-            formData.file = {
-              name: file.name,
-              type: file.type,
-              size: file.size,
-              content: base64Content
-            };
-            console.log('File converted to base64, size:', base64Content.length, 'characters');
+            const encoded = await Promise.all(files.map(async (f) => {
+              const base64Content = await fileToBase64(f);
+              return {
+                name: f.name,
+                type: f.type,
+                size: f.size,
+                content: base64Content
+              };
+            }));
+            formData.files = encoded;
+            // برای سازگاری عقب‌رو: اولی را به صورت تک‌فایل نیز ارسال می‌کنیم
+            formData.file = encoded[0];
           } catch (fileError) {
-            console.error('Error converting file to base64:', fileError);
-            throw new Error('خطا در پردازش فایل. لطفاً دوباره تلاش کنید.');
+            console.error('Error converting files to base64:', fileError);
+            throw new Error(t('contact.errors.fileProcessing'));
           }
         }
         
         console.log('Sending form data:', {
           ...formData,
-          file: formData.file ? { name: formData.file.name, size: formData.file.size } : null
+          file: formData.file ? { name: formData.file.name, size: formData.file.size } : null,
+          files: formData.files ? formData.files.map(f => ({ name: f.name, size: f.size })) : null
         });
         
-        // ارسال به Cloudflare Worker
-const workerUrl = 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev/api/contact';
-        submitBtn.textContent = 'در حال ارسال...';
+        // ارسال به Cloudflare Worker (انتخاب پویا براساس دامنه)
+        const workerUrl = (location.hostname === 'mahdiarts.ir' || location.hostname === 'www.mahdiarts.ir')
+          ? 'https://mahdiarts.ir/api/contact'
+          : 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev/api/contact';
+        submitBtn.textContent = t('contact.form.uploader.sending');
         const response = await fetch(workerUrl, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         });
         
@@ -242,7 +376,7 @@ const workerUrl = 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev
           result = await response.json();
         } catch (jsonError) {
           console.error('Error parsing JSON response:', jsonError);
-          throw new Error('پاسخ نامعتبر از سرور دریافت شد. لطفاً دوباره تلاش کنید.');
+          throw new Error(t('contact.errors.invalidServerResponse'));
         }
         
         console.log('Response data:', result);
@@ -255,6 +389,9 @@ const workerUrl = 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev
           
           // پاک کردن فرم
           this.reset();
+          // پاک کردن فایل‌های انتخاب‌شده
+          selectedFiles.length = 0;
+          renderFileList();
           
           // پاک کردن selected plan از localStorage
           localStorage.removeItem('selectedPlan');
@@ -265,17 +402,17 @@ const workerUrl = 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev
           }, 100);
         } else {
           // مدیریت خطاهای مختلف
-          let errorMessage = 'خطا در ارسال پیام. لطفاً دوباره تلاش کنید.';
+          let errorMessage = t('contact.feedback.submitError');
           
           if (response.status === 429) {
             // Rate limiting
-            errorMessage = result.error || 'تعداد درخواست‌های شما بیش از حد مجاز است. لطفاً یک ساعت دیگر دوباره تلاش کنید.';
+            errorMessage = result.error || t('contact.feedback.rateLimited');
           } else if (response.status === 400) {
             // خطای اعتبارسنجی
-            errorMessage = result.error || 'لطفاً تمام فیلدها را به درستی پر کنید.';
+            errorMessage = result.error || t('contact.feedback.validationError');
           } else if (response.status === 500) {
             // خطای سرور
-            errorMessage = result.error || 'خطا در سرور. لطفاً بعداً دوباره تلاش کنید.';
+            errorMessage = result.error || t('contact.feedback.serverError');
           } else if (result.error) {
             errorMessage = result.error;
           }
@@ -289,11 +426,11 @@ const workerUrl = 'https://mahdiarts-contact-form.mahdi-bagheban-d18.workers.dev
         errorDiv.style.display = 'block';
         
         if (error.name === 'TypeError' && error.message.includes('fetch')) {
-          errorDiv.textContent = 'خطا در اتصال به سرور. لطفاً اتصال اینترنت خود را بررسی کنید و دوباره تلاش کنید.';
+          errorDiv.textContent = t('contact.feedback.networkError');
         } else if (error.message) {
           errorDiv.textContent = error.message;
         } else {
-          errorDiv.textContent = 'خطا در ارسال پیام. لطفاً دوباره تلاش کنید.';
+          errorDiv.textContent = t('contact.feedback.submitError');
         }
         
         submitBtn.textContent = originalBtnText;

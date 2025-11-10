@@ -1,8 +1,8 @@
 {
   "_bismillah": "به نام خداوند بخشنده مهربان",
   "meta": {
-    "title": "Mahdi Baghebanpour | Professional Website & App Development | MahdiArts.ir",
-    "description": "Website and Android app design and development with 10 years of experience. Professional services, competitive prices, 24/7 support"
+    "title": "MahdiArts — Professional Web & Android Engineering",
+    "description": "Design and build high‑quality websites and Android apps with modern standards, performance, and security."
   },
   "nav": {
     "home": "Home",
@@ -14,83 +14,84 @@
   },
   "hero": {
     "badge": "Innovative Solutions",
-    "title": "Mahdi Baghebanpour - Senior Computer Engineer",
-    "description": "10 years of experience in professional website and Android app design and development",
-    "cta": "Discover More"
+    "title": "Mahdi Baghebanpour — Senior Software Engineer",
+    "description": "10+ years crafting reliable websites and Android applications for real business outcomes.",
+    "cta": "Learn More"
   },
   "features": {
     "rapidDeployment": {
       "title": "Rapid Deployment",
-      "text": "Fast and efficient implementation of your projects using the latest technologies"
+      "text": "Ship faster with a streamlined process and modern tooling."
     },
     "advancedSecurity": {
       "title": "Advanced Security",
-      "text": "Complete protection of data and information with current security standards"
+      "text": "Hardened architecture, encryption, and best practices to protect data."
     },
     "dedicatedSupport": {
       "title": "Dedicated Support",
-      "text": "24/7 support to ensure optimal system performance"
+      "text": "Proactive assistance and reliable maintenance to keep you running."
     }
   },
   "about": {
     "whoWeAre": "About Me",
-    "title": "Unleashing Potential with Creative Strategy",
-    "subtitle": "With over 10 years of experience in website and mobile app design and development, I am committed to delivering innovative and quality solutions.",
+    "title": "Creative Strategy, Practical Engineering",
+    "subtitle": "I design, develop, and maintain modern digital products focused on clarity, speed, and trust.",
     "points": [
-      "Design and development of modern Responsive websites",
-      "Native Android app development with optimal performance",
-      "SEO optimization and improved search engine rankings",
-      "Continuous support and maintenance of projects"
+      "Modern, responsive website design and development",
+      "Native Android apps tuned for performance",
+      "SEO improvements and better search visibility",
+      "Continuous support and lifecycle maintenance"
     ],
     "readMore": "Read More"
   },
   "services": {
     "title": "Services",
-    "subtitle": "Professional web and mobile design and development services",
+    "subtitle": "Professional web and mobile design and development",
     "uiux": {
       "title": "Professional UI/UX Design",
-      "description": "Beautiful and functional user interface design with focus on optimal user experience"
+      "description": "Useful, elegant interfaces with a focus on clear, delightful experiences."
     },
     "responsive": {
       "title": "Responsive Website Development",
-      "description": "Building responsive websites that display perfectly on all devices"
+      "description": "Robust sites that look great and work smoothly on every device."
     },
     "android": {
       "title": "Native Android App Development",
-      "description": "Android app development using Native technologies for optimal performance"
+      "description": "High‑performance Android apps built with native technologies."
     },
     "support": {
       "title": "Continuous Support & Maintenance",
-      "description": "Providing continuous support and update services to ensure proper operation"
+      "description": "Timely updates, monitoring, and fixes to ensure reliability."
     },
     "seo": {
       "title": "SEO & Performance Optimization",
-      "description": "Site optimization for search engines and improved speed and performance"
+      "description": "Better rankings and faster load times through careful optimization."
     },
     "security": {
       "title": "Security & Site Stability",
-      "description": "Implementation of security standards and system stability guarantee"
+      "description": "Security standards, hardening, and stability guarantees for peace of mind."
     }
   },
   "pricing": {
     "title": "Pricing",
-    "subtitle": "Suitable plans for every type of project",
+    "subtitle": "Flexible plans tailored to your project",
+    "featuresTitle": "Includes:",
     "basic": {
       "name": "Basic Plan",
       "originalPrice": "$100",
       "discount": "20%",
       "finalPrice": "$80",
-      "description": "Suitable for small projects and Landing Pages",
+      "description": "Ideal for small projects and landing pages.",
       "features": [
-        "Single-page Landing Page design",
+        "Single‑page landing design",
         "Responsive for mobile and tablet",
         "Simple contact form",
-        "Basic SEO optimization",
-        "Simple and user-friendly UI/UX design",
-        "Support for various browsers",
+        "Basic SEO",
+        "Clean, user‑friendly UI/UX",
+        "Cross‑browser support",
         "3 months free support",
-        "System usage training",
-        "Delivery time: 7-10 business days"
+        "Usage training",
+        "Delivery: 7–10 business days"
       ],
       "button": "Select Plan"
     },
@@ -99,17 +100,17 @@
       "originalPrice": "$200",
       "discount": "15%",
       "finalPrice": "$170",
-      "description": "Suitable for medium businesses",
+      "description": "Great for growing teams and mid‑size businesses.",
       "features": [
-        "Multi-page website (up to 10 pages)",
+        "Multi‑page website (up to 10 pages)",
         "Content Management System (CMS)",
-        "API integration",
-        "User authentication system",
-        "Advanced SEO optimization",
-        "Professional and modern UI/UX design",
+        "API integrations",
+        "User authentication",
+        "Advanced SEO",
+        "Professional, modern UI/UX",
         "6 months free support",
-        "Complete training and technical documentation",
-        "Delivery time: 15-21 business days"
+        "Training and technical docs",
+        "Delivery: 15–21 business days"
       ],
       "button": "Select Plan",
       "popular": "Most Popular"
@@ -119,47 +120,47 @@
       "originalPrice": "$500",
       "discount": "10%",
       "finalPrice": "$450",
-      "description": "Suitable for large and enterprise projects",
+      "description": "Built for complex systems and enterprise‑grade projects.",
       "features": [
-        "Complete website or app system",
-        "Microservices and scalable architecture",
-        "Advanced management panel",
-        "Complete payment gateway integration",
-        "Reporting system and dashboard",
-        "High-level security and encryption",
+        "Full website or app system",
+        "Scalable microservices architecture",
+        "Advanced admin panel",
+        "Payment gateway integrations",
+        "Reporting and dashboard",
+        "High‑level security and encryption",
         "12 months free support + updates",
         "Dedicated technical consultant",
-        "Delivery time: 30-45 business days"
+        "Delivery: 30–45 business days"
       ],
       "button": "Select Plan"
     }
   },
   "howWeWork": {
     "title": "How We Work",
-    "subtitle": "We deliver your projects through a structured and professional process",
+    "subtitle": "A clear, professional process from idea to launch",
     "steps": {
       "planning": {
         "title": "Project Planning",
-        "description": "Analyzing requirements, designing architecture, and detailed planning for successful project execution"
+        "description": "Discovery, requirements, architecture design, and a practical delivery roadmap."
       },
       "development": {
         "title": "Development Phase",
-        "description": "Implementing the project using the best technologies and current world standards"
+        "description": "Iterative implementation with modern frameworks, testing, and documentation."
       },
       "testing": {
         "title": "Testing & QA",
-        "description": "Complete testing of functionality, security, and user experience to ensure high quality"
+        "description": "Functional, security, and UX checks to ensure quality across devices."
       },
       "launch": {
         "title": "Launch & Support",
-        "description": "Successful project launch and continuous support for your complete satisfaction"
+        "description": "Smooth rollout, monitoring, and continuous support for long‑term success."
       }
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Still Have Questions?",
-    "description": "We are ready to answer your questions. Contact us via email, chat, or phone call.",
+    "description": "We’re here to help. Reach out via email, chat, or a quick call.",
     "contactOptions": {
       "email": "Email Support",
       "chat": "Live Chat",
@@ -168,25 +169,25 @@
     "questions": {
       "q1": {
         "question": "What is the project delivery time?",
-        "answer": "Delivery time depends on the type and complexity of the project. Basic projects take 7-10 business days, professional projects take 15-21 business days, and enterprise projects take 30-45 business days."
+        "answer": "Timelines depend on scope and plan: Basic (7–10 days), Professional (15–21 days), Enterprise (30–45 days)."
       },
       "q2": {
         "question": "Is support provided after project delivery?",
-        "answer": "Yes, all plans include free support. Basic plan includes 3 months, professional plan includes 6 months, and enterprise plan includes 12 months of free support."
+        "answer": "Yes. Each plan includes free support—Basic (3 months), Professional (6 months), Enterprise (12 months)."
       },
       "q3": {
         "question": "Can I request changes to the project?",
-        "answer": "Yes, during the development process you can request changes and modifications as needed. These changes will be implemented based on your selected plan."
+        "answer": "Absolutely. We collaborate on reasonable changes during development, aligned with your plan."
       },
       "q4": {
         "question": "What payment methods do you accept?",
-        "answer": "We accept various payment methods. You can contact us via WhatsApp to discuss payment details."
+        "answer": "We support common payment methods and can integrate gateways as needed."
       }
     }
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Get in touch with us to start your project",
+    "subtitle": "Get in touch to start your project",
     "address": {
       "title": "Address",
       "value": "Iran, Ahvaz"
@@ -204,8 +205,38 @@
       "email": "Email",
       "whatsapp": "WhatsApp Number with Country Code",
       "service": "Select Plan",
-      "message": "Message/Project Description",
+      "message": "Message / Project Details",
       "file": "Upload File (Optional)",
+      "fileHelp": "Max 5 MB — Allowed: documents, images, and audio",
+      "uploader": {
+        "dropHint": "Drag and drop files here or use the button",
+        "selectFiles": "Select Files",
+        "remove": "Remove",
+        "uploadingAndSending": "Uploading and sending...",
+        "sending": "Sending...",
+        "processingFiles": "Processing files..."
+      },
+      "errors": {
+        "nameMin": "Name must be at least 2 characters",
+        "nameMax": "Name must not exceed 100 characters",
+        "emailInvalid": "Please enter a valid email address",
+        "whatsappInvalid": "Enter a valid WhatsApp number",
+        "planInvalid": "Please select a valid plan",
+        "messageMin": "Message must be at least 10 characters",
+        "messageMax": "Message must not exceed 5000 characters",
+        "maxFiles": "Up to 5 files can be uploaded",
+        "fileType": "Allowed types: documents (PDF/DOC/DOCX/TXT), images (JPG/PNG/GIF), audio (MP3/WAV)",
+        "fileSize": "File size must be less than 5 MB",
+        "fileProcessing": "Error processing files. Please try again.",
+        "invalidServerResponse": "Invalid server response. Please try again."
+      },
+      "feedback": {
+        "rateLimited": "Too many requests. Please try again in an hour",
+        "validationError": "Please fill all fields correctly.",
+        "serverError": "Server error. Please try again later.",
+        "networkError": "Connection error. Check your internet and try again.",
+        "submitError": "Error sending message. Please try again."
+      },
       "submit": "Send Message",
       "selectService": "Select Plan",
       "basic": "Basic Plan",
@@ -217,11 +248,13 @@
   },
   "footer": {
     "about": "MahdiArts",
-    "description": "Website and mobile app design and development with quality and current world standards",
+    "description": "Design and development of high‑quality web and mobile apps with modern standards.",
     "usefulLinks": "Useful Links",
     "ourServices": "Our Services",
-    "copyright": "All Rights Reserved",
-    "designedBy": "Designed by"
+    "whatsappLabel": "WhatsApp:",
+    "emailLabel": "Email:",
+    "copyright": "All rights reserved",
+    "designedBy": "Designed and developed by"
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
