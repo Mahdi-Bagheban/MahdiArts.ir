@@ -659,6 +659,31 @@ async function sendEmailWithResend(to, subject, html, env, attachments = null) {
   }
 }
 
+// اعتبارسنجی توکن Turnstile در سمت سرور
+async function verifyTurnstileToken(token, ip, env) {
+  const secret = env.TURNSTILE_SECRET_KEY;
+  if (!secret) return false;
+
+  try {
+    const formData = new URLSearchParams();
+    formData.append('secret', secret);
+    formData.append('response', token);
+    if (ip) formData.append('remoteip', ip);
+
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formData.toString()
+    });
+
+    const data = await response.json();
+    return data.success === true;
+  } catch (error) {
+    console.error('Turnstile verification error:', error);
+    return false;
+  }
+}
+
 /**
  * تابع اصلی Worker
  */
@@ -791,15 +816,32 @@ export default {
       }
 
       // استخراج فیلدها
-      const { name, email, whatsapp, plan, message, file, files } = body;
+      const { name, email, whatsapp, plan, message, file, files, captchaToken } = body;
       console.log(`[Worker] Extracted fields:`, { 
         name: name ? 'present' : 'missing',
         email: email ? 'present' : 'missing',
         whatsapp: whatsapp ? 'present' : 'missing',
         plan: plan ? 'present' : 'missing',
         message: message ? 'present' : 'missing',
-        file: file ? 'present' : 'missing'
+        file: file ? 'present' : 'missing',
+        files: Array.isArray(files) ? `count:${files.length}` : 'missing',
+        captchaToken: captchaToken ? 'present' : 'missing'
       });
+
+      // بررسی کپچا
+      if (!captchaToken || typeof captchaToken !== 'string' || captchaToken.trim().length === 0) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'لطفاً کپچا را تأیید کنید' }),
+          { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+        );
+      }
+      const captchaOk = await verifyTurnstileToken(captchaToken.trim(), clientIP, env);
+      if (!captchaOk) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'اعتبارسنجی کپچا ناموفق بود؛ دوباره تلاش کنید.' }),
+          { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+        );
+      }
 
       // اعتبارسنجی فایل در صورت وجود
       let fileAttachment = null;
