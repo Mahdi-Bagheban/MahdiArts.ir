@@ -11,7 +11,16 @@ workers_dev = true
 # تنظیمات Production
 [env.production]
 name = "mahdiarts-contact-form"
-route = { pattern = "mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" }
+routes = [
+  { pattern = "mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" },
+  { pattern = "www.mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" }
+]
+
+[env.production.vars]
+# Only production domains for CORS
+ALLOWED_ORIGINS = "https://mahdiarts.ir,https://www.mahdiarts.ir"
+# Ensure FROM_EMAIL exists in production
+FROM_EMAIL = "noreply@mahdiarts.ir"
 
 # تنظیمات Dev (برای تست و ذخیره Secret های محیط dev)
 [env.dev]

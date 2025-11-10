@@ -124,10 +124,42 @@ wrangler publish
 
 ### متغیرهای محیطی Worker
 در Cloudflare Dashboard → Workers → Settings → Variables:
-- `MAILGUN_API_KEY`: کلید API Mailgun
-- `MAILGUN_DOMAIN`: دامنه Mailgun
+- `RESEND_API_KEY`: کلید API Resend (به‌صورت Secret)
+- `FROM_EMAIL`: ایمیل فرستنده با دامنه تأیید‌شده Resend (مثلاً `noreply@mahdiarts.ir`)
 - `ADMIN_EMAIL`: ایمیل مدیر
-- `ALLOWED_ORIGINS`: دامنه‌های مجاز
+- `ALLOWED_ORIGINS`: دامنه‌های مجاز برای CORS
+
+### تنظیم Resend Secrets
+برای تنظیم Secretهای Resend در محیط توسعه و تولید:
+
+```bash
+wrangler secret put RESEND_API_KEY
+wrangler secret put RESEND_API_KEY --env production
+```
+
+متن: برای جلوگیری از خطا و اسپم، دامنه ارسال را در Resend Dashboard تأیید کنید (DNS/DKIM) و از `FROM_EMAIL` با همان دامنه استفاده کنید.
+
+نمونه تنظیم متغیرهای غیرسری در `wrangler.toml`:
+
+```toml
+[vars]
+FROM_EMAIL = "noreply@mahdiarts.ir"
+ADMIN_EMAIL = "info@mahdiarts.ir"
+ALLOWED_ORIGINS = "https://mahdiarts.ir,https://www.mahdiarts.ir"
+```
+
+### Environment Variables
+این جدول متغیرهای موردنیاز Worker را به‌صورت شفاف نشان می‌دهد:
+
+| متغیر | توضیحات | مثال |
+|-------|---------|------|
+| `RESEND_API_KEY` | کلید API از `resend.com` | `re_xxxx` |
+| `FROM_EMAIL` | ایمیل فرستنده با دامنه تأیید‌شده در Resend | `noreply@mahdiarts.ir` |
+| `ADMIN_EMAIL` | ایمیل مدیر | `info@mahdiarts.ir` |
+| `ALLOWED_ORIGINS` | دامنه‌های مجاز CORS | `https://mahdiarts.ir` |
+
+یادداشت:
+- `MAILGUN_DOMAIN` در این پروژه نیاز نیست و حذف شده است.
 
 ### فایل‌های ترجمه
 فایل‌های ترجمه در `assets/i18n/` قرار دارند. برای افزودن زبان جدید:
@@ -146,7 +178,7 @@ wrangler publish
 
 ## 📄 لایسنس
 
-Template Base: [Invent by BootstrapMade](https://bootstrapmade.com/invent-bootstrap-business-template/)
+تمام حقوق و لایسنس این پروژه متعلق به MahdiArts است.
 
 ## 👤 توسعه‌دهنده
 

@@ -1,0 +1,13 @@
+{
+  "name": "Test File Valid",
+  "email": "test@example.com",
+  "whatsapp": "+989301234567",
+  "plan": "professional",
+  "message": "Testing file with valid base64 content",
+  "file": {
+    "name": "hello.txt",
+    "type": "text/plain",
+    "size": 12,
+    "content": "SGVsbG8gV29ybGQh"
+  }
+}

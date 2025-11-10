@@ -7,7 +7,7 @@
 - **تکنولوژی**: HTML5, CSS3, Vanilla JavaScript
 - **Backend**: Cloudflare Workers
 - **Email Service**: Resend API (رایگان)
-- **Template Base**: BootstrapMade Invent
+ 
 
 ## ساختار فایل‌ها
 ```
@@ -101,6 +101,38 @@ text
 - تست در حداقل 2 زبان (فارسی + انگلیسی)
 - تست فرم با و بدون فایل
 - بررسی در DevTools Console
+
+## چک‌لیست Production Deployment
+- پیش‌نیازها:
+  - دامنه `mahdiarts.ir` روی Cloudflare اضافه و فعال (Orange cloud) باشد.
+  - TLS فعال و وب‌سایت از طریق Cloudflare سرو می‌شود.
+  - رکورد `www` فعال باشد، اگر از ساب‌دامین استفاده می‌کنید.
+  - `wrangler` نصب و لاگین شده است.
+  - متغیرها و Secrets برای محیط production ست شده‌اند.
+- کارهای قبل از دیپلوی:
+  - بررسی `wrangler.toml` برای `[env.production]` و `routes`:
+    - `mahdiarts.ir/api/contact`
+    - `www.mahdiarts.ir/api/contact`
+  - اطمینان از اینکه `ALLOWED_ORIGINS` فقط دامنه‌های production هستند.
+  - ست کردن Secrets:
+    - `wrangler secret put RESEND_API_KEY --env production`
+  - ست کردن متغیرها در صورت نیاز:
+    - `FROM_EMAIL` و `ADMIN_EMAIL` در `[env.production.vars]` یا سطح global.
+- دستورات دیپلوی:
+  - `wrangler deploy --env production`
+  - بررسی خروجی برای موفقیت و ثبت Routeها.
+- کارهای بعد از دیپلوی:
+  - تست CORS با Origin `https://mahdiarts.ir`:
+    - `curl.exe -i -X POST https://mahdiarts.ir/api/contact -H "Origin: https://mahdiarts.ir" -H "Content-Type: application/json" --data-binary @payload.json`
+  - بررسی هدرها:
+    - `Access-Control-Allow-Origin: https://mahdiarts.ir`
+    - `Vary: Origin, accept-encoding`
+  - تست سناریوهای خطا (validation: فایل غیرمجاز، محتوای غیر-base64).
+  - بررسی لاگ‌ها در Cloudflare Dashboard (Workers > Logs).
+- مراحل Rollback:
+  - بازگشت به نسخه قبلی: اگر نسخه قبلی در دسترس است، `wrangler deploy --env production --dry-run` را بررسی کنید یا نسخه قبلی را مجدد دیپلوی کنید.
+  - غیرفعال کردن Routeها در صورت نیاز: موقتاً پاک/ویرایش Route در `wrangler.toml` و دیپلوی.
+  - استفاده از `wrangler undeploy --env production` برای حذف Worker از Routeها (در صورت بحرانی بودن).
 
 ---
 
