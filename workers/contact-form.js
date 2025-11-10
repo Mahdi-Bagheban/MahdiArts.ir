@@ -33,6 +33,25 @@ function validateEmail(email) {
 }
 
 /**
+ * اعتبارسنجی رشته base64
+ * از regex و تلاش برای decode جهت بررسی صحت استفاده می‌کند
+ */
+function isValidBase64(str) {
+  // اگر رشته نباشد یا خالی باشد، نامعتبر است
+  if (typeof str !== 'string' || str.length === 0) return false;
+  // regex برای کاراکترهای مجاز و padding صحیح
+  const base64Regex = /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}(?:==)?|[A-Za-z0-9+\/]{3}=)?$/;
+  if (!base64Regex.test(str)) return false;
+  // تلاش برای decode؛ در صورت خطا یعنی رشته نامعتبر است
+  try {
+    atob(str);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+/**
  * اعتبارسنجی کامل فرم
  * فیلدهای مورد نیاز: name, email, whatsapp, plan, message
  */
@@ -149,6 +168,11 @@ function validateFile(file) {
   // بررسی base64 content
   if (!file.content || typeof file.content !== 'string') {
     errors.push('محتوای فایل نامعتبر است');
+  }
+
+  // اعتبارسنجی صحت base64
+  if (file.content && typeof file.content === 'string' && !isValidBase64(file.content)) {
+    errors.push('محتوای فایل به‌صورت base64 نامعتبر است');
   }
 
   return {
@@ -639,7 +663,7 @@ export default {
     
     const allowedOrigins = (env.ALLOWED_ORIGINS || 'https://mahdiarts.ir,https://www.mahdiarts.ir').split(',').map(o => o.trim());
     const isAllowedOrigin = origin && allowedOrigins.includes(origin);
-    const corsOrigin = isAllowedOrigin ? origin : allowedOrigins[0] || '*';
+    const corsOrigin = isAllowedOrigin ? origin : '*'; // اگر Origin نامعتبر باشد، از wildcard استفاده شود
     
     console.log(`[Worker] CORS origin: ${corsOrigin}`);
 
@@ -651,7 +675,8 @@ export default {
         headers: {
           'Access-Control-Allow-Origin': corsOrigin,
           'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With', // گسترش هدرهای مجاز برای درخواست‌های AJAX
+          'Vary': 'Origin', // پاسخ‌ها بسته به Origin متفاوت است
           'Access-Control-Max-Age': '86400'
         }
       });
@@ -669,7 +694,8 @@ export default {
           status: 405,
           headers: { 
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': corsOrigin
+            'Access-Control-Allow-Origin': corsOrigin,
+            'Vary': 'Origin'
           }
         }
       );
@@ -690,7 +716,8 @@ export default {
           status: 404,
           headers: { 
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': corsOrigin
+            'Access-Control-Allow-Origin': corsOrigin,
+            'Vary': 'Origin'
           }
         }
       );
@@ -713,6 +740,26 @@ export default {
         const bodyText = await request.text();
         console.log(`[Worker] Request body received (length: ${bodyText.length})`);
         console.log(`[Worker] Request body preview: ${bodyText.substring(0, 200)}`);
+        // محدودیت حجم بدنه: 1MB
+        const MAX_BODY_BYTES = 1_000_000; // 1MB
+        const bodyBytes = new TextEncoder().encode(bodyText).length; // اندازه واقعی بر حسب بایت
+        if (bodyBytes > MAX_BODY_BYTES) {
+          console.error(`[Worker] Request body too large: ${bodyBytes} bytes`);
+          return new Response(
+            JSON.stringify({ 
+              success: false, 
+              error: 'حجم بدنه درخواست بیش از حد مجاز (1MB) است.' 
+            }),
+            {
+              status: 413,
+              headers: { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': corsOrigin,
+                'Vary': 'Origin'
+              }
+            }
+          );
+        }
         
         body = JSON.parse(bodyText);
         console.log(`[Worker] Parsed body:`, JSON.stringify(body));
@@ -727,7 +774,8 @@ export default {
             status: 400,
             headers: { 
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': corsOrigin
+              'Access-Control-Allow-Origin': corsOrigin,
+              'Vary': 'Origin'
             }
           }
         );
@@ -760,7 +808,8 @@ export default {
               status: 400,
               headers: { 
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': corsOrigin
+                'Access-Control-Allow-Origin': corsOrigin,
+                'Vary': 'Origin'
               }
             }
           );
@@ -789,7 +838,8 @@ export default {
             status: 400,
             headers: { 
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': corsOrigin
+              'Access-Control-Allow-Origin': corsOrigin,
+              'Vary': 'Origin'
             }
           }
         );
@@ -864,7 +914,8 @@ export default {
           status: 200,
           headers: { 
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': corsOrigin
+            'Access-Control-Allow-Origin': corsOrigin,
+            'Vary': 'Origin'
           }
         }
       );
@@ -889,7 +940,8 @@ export default {
           status: 500,
           headers: { 
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': corsOrigin
+            'Access-Control-Allow-Origin': corsOrigin,
+            'Vary': 'Origin'
           }
         }
       );
