@@ -279,6 +279,19 @@
     }
   });
 
+  // هندلرهای کپچا Turnstile برای ذخیره توکن در فیلد مخفی
+  window.onTurnstileSuccess = function(token) {
+    const el = document.getElementById('captcha-token');
+    if (el) el.value = token;
+  };
+  window.onTurnstileError = function() {
+    console.error('Turnstile error');
+  };
+  window.onTurnstileExpired = function() {
+    const el = document.getElementById('captcha-token');
+    if (el) el.value = '';
+  };
+
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -319,13 +332,24 @@
       successDiv.style.display = 'none';
       
       try {
+        // دریافت توکن Turnstile
+        const turnstileToken = this.querySelector('[name="cf-turnstile-response"]')?.value || '';
+        if (!turnstileToken || turnstileToken.trim() === '') {
+          errorDiv.style.display = 'block';
+          errorDiv.textContent = 'لطفاً کپچا را تأیید کنید';
+          successDiv.style.display = 'none';
+          loadingDiv.style.display = 'none';
+          return;
+        }
+
         // آماده‌سازی داده‌های JSON
         const formData = {
           name: name,
           email: email,
           whatsapp: whatsapp || '', // اختیاری
           plan: plan,
-          message: message
+          message: message,
+          captchaToken: turnstileToken
         };
         
         // تبدیل همه فایل‌ها به base64 در صورت وجود
@@ -436,6 +460,13 @@
         submitBtn.textContent = originalBtnText;
       } finally {
         submitBtn.disabled = false;
+        // ریست کردن ویجت کپچا در صورت وجود
+        if (window.turnstile) {
+          try {
+            const widget = this.querySelector('.cf-turnstile');
+            if (widget) window.turnstile.reset(widget);
+          } catch (e) {}
+        }
       }
     });
   }
@@ -454,4 +485,3 @@
 })();
 
 /* ساخته شده توسط مهدی باغبان‌پور */
-
