@@ -20,6 +20,7 @@
   "devDependencies": {
     "wrangler": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@microsoft/clarity": "^1.0.0"
+  }
 }
-
