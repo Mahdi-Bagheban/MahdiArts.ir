@@ -60,6 +60,14 @@
   --accent-color: #5d57f4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+  /* RGB variables for progressive enhancement and fallbacks */
+  --accent-rgb: 93, 87, 244;     /* #5d57f4 */
+  --default-rgb: 33, 37, 41;     /* #212529 */
+  --heading-rgb: 50, 53, 58;     /* #32353a */
+  --contrast-rgb: 255, 255, 255; /* #ffffff */
+  --surface-rgb: 255, 255, 255;  /* #ffffff */
+  --background-rgb: 255, 255, 255; /* #ffffff */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -173,8 +181,8 @@ a {
 }
 
 a:hover {
-  color: rgba(93, 87, 244, 0.75); /* Fallback for browsers < Chrome 111 */
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: rgba(var(--accent-rgb), 0.75);
+  /* color: color-mix(in srgb, var(--accent-color), transparent 25%); حذف برای سازگاری با Chrome < 111 */
   text-decoration: none;
 }
 
@@ -280,8 +288,7 @@ body.rtl button {
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
-  background: rgba(93, 87, 244, 0.85); /* Fallback for browsers < Chrome 111 */
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: rgba(var(--accent-rgb), 0.85);
 }
 
 @media (max-width: 1200px) {
@@ -477,8 +484,8 @@ body.rtl button {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    background-color: rgba(var(--accent-rgb), 0.1);
+    /* background-color: color-mix(in srgb, var(--accent-color), transparent 90%); */
   }
 
   .navmenu a i:hover,
@@ -507,7 +514,8 @@ body.rtl button {
     padding: 10px 0;
     margin: 10px 20px;
     background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border: 1px solid rgba(var(--default-rgb), 0.1);
+    /* border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); */
     box-shadow: none;
     transition: all 0.5s ease-in-out;
   }
@@ -592,9 +600,9 @@ body.rtl button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid rgba(var(--default-rgb), 0.5);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(var(--default-rgb), 0.8);
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -638,7 +646,7 @@ body.rtl button {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: rgba(var(--default-rgb), 0.7);
   display: inline-block;
   line-height: 1;
 }
@@ -653,7 +661,7 @@ body.rtl button {
 
 .footer .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid rgba(var(--default-rgb), 0.1);
 }
 
 .footer .copyright p {
@@ -724,7 +732,7 @@ body.rtl button {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: rgba(var(--accent-rgb), 0.8);
   color: var(--contrast-color);
 }
 
@@ -754,7 +762,8 @@ body.rtl button {
 
 .page-title .heading {
   padding: 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid rgba(var(--default-rgb), 0.1); /* Fallback for browsers < Chrome 111 */
+  /* border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); */
 }
 
 .page-title .heading h1 {
@@ -763,7 +772,8 @@ body.rtl button {
 }
 
 .page-title nav {
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  background-color: rgba(var(--default-rgb), 0.04); /* Fallback for browsers < Chrome 111 */
+  /* background-color: color-mix(in srgb, var(--default-color), transparent 96%); */
   padding: 20px 0;
 }
 
@@ -785,7 +795,8 @@ body.rtl button {
   content: "/";
   display: inline-block;
   padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: rgba(var(--default-rgb), 0.3); /* Fallback for browsers < Chrome 111 */
+  /* color: color-mix(in srgb, var(--default-color), transparent 70%); */
 }
 
 /*--------------------------------------------------------------
@@ -831,7 +842,7 @@ section,
   display: block;
   width: 160px;
   height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
+  background: rgba(var(--default-rgb), 0.4);
   left: 0;
   right: 0;
   bottom: 1px;
@@ -862,23 +873,20 @@ section,
   padding-top: 120px;
   position: relative;
   overflow: hidden;
-  background-color: rgba(93, 87, 244, 0.05); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background-color: rgba(var(--accent-rgb), 0.05);
   padding-bottom: 60px;
 }
 
 .hero .badge-wrapper .d-inline-flex {
   padding: 0.5rem 0.75rem;
-  border-color: rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
-  border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-color: rgba(var(--accent-rgb), 0.2);
 }
 
 .hero .badge-wrapper .d-inline-flex .icon-circle {
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background-color: rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  background-color: rgba(var(--accent-rgb), 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -944,8 +952,8 @@ section,
 }
 
 .hero .cta-wrapper .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
-  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -974,8 +982,7 @@ section,
   padding: 1.5rem;
   border-radius: 12px;
   background-color: var(--surface-color);
-  border: 1px solid rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
   height: 100%;
   transition: all 0.3s ease;
   display: flex;
@@ -1001,8 +1008,7 @@ section,
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: rgba(var(--accent-rgb), 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1060,7 +1066,7 @@ section,
 .about .content .who-we-are {
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: rgba(var(--default-rgb), 0.6);
 }
 
 .about .content h3 {
@@ -1110,8 +1116,7 @@ section,
 }
 
 .about .content .read-more:hover {
-  background: rgba(93, 87, 244, 0.8); /* Fallback for browsers < Chrome 111 */
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: rgba(var(--accent-rgb), 0.8);
   padding-right: 19px;
 }
 
@@ -1147,8 +1152,8 @@ section,
 .how-we-work .process-item .content {
   width: 100%;
   position: relative;
-  background: linear-gradient(145deg, color-mix(in srgb, var(--accent-color), transparent 95%), var(--surface-color));
-  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.05), var(--surface-color));
+  border: 2px solid rgba(var(--accent-rgb), 0.15);
   border-radius: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1159,7 +1164,7 @@ section,
 }
 
 .how-we-work .process-item .content:hover .step-icon {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 15%), var(--accent-color));
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.85), var(--accent-color));
   transform: rotate(10deg);
 }
 
@@ -1198,7 +1203,7 @@ section,
   display: grid;
   place-items: center;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.3);
 }
 
 .how-we-work .process-item .step-icon i {
@@ -1214,15 +1219,14 @@ section,
 }
 
 .how-we-work .process-item .step-content p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: rgba(var(--default-rgb), 0.75);
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
 }
 
 .how-we-work .process-item .arrow {
-  color: rgba(93, 87, 244, 0.5); /* Fallback for browsers < Chrome 111 */
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  color: rgba(var(--accent-rgb), 0.5);
   margin: 1rem 0;
   width: 100px;
   height: 100px;
@@ -1341,8 +1345,7 @@ section,
   width: 70px;
   height: 70px;
   border-radius: 12px;
-  background-color: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: rgba(var(--accent-rgb), 0.1);
   color: var(--accent-color);
   display: flex;
   align-items: center;
@@ -1369,7 +1372,7 @@ section,
 
 .services .service-content p {
   margin-bottom: 1rem;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(var(--default-rgb), 0.8);
 }
 
 .services .service-link {
@@ -1390,8 +1393,7 @@ section,
 }
 
 .services .service-link:hover {
-  color: rgba(93, 87, 244, 0.75); /* Fallback for browsers < Chrome 111 */
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: rgba(var(--accent-rgb), 0.75);
 }
 
 @media (max-width: 767.98px) {
@@ -1460,8 +1462,7 @@ section,
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: rgba(93, 87, 244, 0.75); /* Fallback for browsers < Chrome 111 */
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: rgba(var(--accent-rgb), 0.75);
 }
 
 .services-alt .content-block .title {
@@ -1491,7 +1492,7 @@ section,
 }
 
 .services-alt .content-block .button-wrapper .btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  background-color: var(--accent-color);
   transform: translateY(-3px);
 }
 
@@ -1505,7 +1506,7 @@ section,
 .services-alt .services-list .service-item {
   position: relative;
   padding: 2.5rem 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid rgba(var(--default-rgb), 0.15);
 }
 
 .services-alt .services-list .service-item:first-child {
@@ -1612,7 +1613,7 @@ section,
   height: 80%;
   bottom: -30px;
   right: -30px;
-  background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--accent-color), transparent 98%), color-mix(in srgb, var(--accent-color), transparent 98%) 10px, color-mix(in srgb, var(--accent-color), transparent 95%) 10px, color-mix(in srgb, var(--accent-color), transparent 95%) 20px);
+  background: repeating-linear-gradient(45deg, rgba(var(--accent-rgb), 0.02), rgba(var(--accent-rgb), 0.02) 10px, rgba(var(--accent-rgb), 0.05) 10px, rgba(var(--accent-rgb), 0.05) 20px);
   z-index: 1;
   border-radius: 1rem;
 }
@@ -1632,7 +1633,7 @@ section,
 .call-to-action-2 .cta-content .lead {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(var(--default-rgb), 0.8);
 }
 
 .call-to-action-2 .cta-features {
@@ -1664,8 +1665,8 @@ section,
 }
 
 .call-to-action-2 .cta-action .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 10%);
-  border-color: color-mix(in srgb, var(--accent-color), black 10%);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .call-to-action-2 .cta-action .btn-outline-primary {
@@ -1726,14 +1727,13 @@ section,
   padding: 8px 20px;
   cursor: pointer;
   border-radius: 4px;
-  background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
+  background-color: rgba(var(--surface-rgb), 0.5);
   color: var(--default-color);
   transition: all 0.3s ease-in-out;
 }
 
 .portfolio .portfolio-filters li:hover {
-  background-color: rgba(93, 87, 244, 0.15); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  background-color: rgba(var(--accent-rgb), 0.15);
   color: var(--accent-color);
   transform: translateY(-2px);
 }
@@ -1846,7 +1846,7 @@ section,
 
 .portfolio .portfolio-card .portfolio-content p {
   font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: rgba(var(--default-rgb), 0.7);
   margin: 0;
   line-height: 1.6;
 }
@@ -1918,7 +1918,7 @@ section,
 }
 
 .pricing .pricing-card.popular .btn-light:hover {
-  background: color-mix(in srgb, var(--contrast-color), transparent 10%);
+  background: rgba(var(--contrast-rgb), 0.9);
 }
 
 .pricing .pricing-card .popular-badge {
@@ -1959,7 +1959,7 @@ section,
 
 .pricing .pricing-card .price .period {
   font-size: 1rem;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: rgba(var(--default-rgb), 0.6);
 }
 
 .pricing .pricing-card .description {
@@ -2008,8 +2008,7 @@ section,
 }
 
 .pricing .pricing-card .btn.btn-primary:hover {
-  background: rgba(93, 87, 244, 0.85); /* Fallback for browsers < Chrome 111 */
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: rgba(var(--accent-rgb), 0.85);
 }
 
 /*--------------------------------------------------------------
@@ -2087,7 +2086,7 @@ section,
 
 .faq .faq-contact-card {
   height: 100%;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 30%));
+  background: linear-gradient(135deg, var(--accent-color), rgba(var(--accent-rgb), 0.7));
   border-radius: 10px;
   padding: 40px 30px;
   display: flex;
@@ -2102,7 +2101,7 @@ section,
 
 .faq .faq-contact-card .card-icon i {
   font-size: 48px;
-  color: color-mix(in srgb, var(--contrast-color), transparent 10%);
+  color: rgba(var(--contrast-rgb), 0.9);
 }
 
 .faq .faq-contact-card .card-content h3 {
@@ -2113,7 +2112,7 @@ section,
 }
 
 .faq .faq-contact-card .card-content p {
-  color: color-mix(in srgb, var(--contrast-color), transparent 10%);
+  color: rgba(var(--contrast-rgb), 0.9);
   margin-bottom: 30px;
   font-size: 16px;
   line-height: 1.6;
@@ -2249,8 +2248,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(93, 87, 244, 0.2); /* Fallback for browsers < Chrome 111 */
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: rgba(var(--accent-rgb), 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2288,7 +2286,7 @@ section,
   transform: translateY(20px);
   opacity: 0;
   transition: all 0.3s ease;
-  border: 1px solid color-mix(in srgb, var(--contrast-color), transparent 80%);
+  border: 1px solid rgba(var(--contrast-rgb), 0.2);
 }
 
 .team .team-social a:hover {
@@ -2310,8 +2308,7 @@ section,
 .team .team-content .position {
   display: inline-block;
   padding: 0.35rem 1rem;
-  background-color: rgba(93, 87, 244, 0.15); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  background-color: rgba(var(--accent-rgb), 0.15);
   border-radius: 30px;
   font-size: 0.875rem;
   color: var(--accent-color);
@@ -2343,7 +2340,7 @@ section,
   background: var(--surface-color);
   border-radius: 15px;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid rgba(var(--default-rgb), 0.1);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -2366,7 +2363,7 @@ section,
   position: relative;
   z-index: 1;
   margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  color: rgba(var(--default-rgb), 0.9);
 }
 
 .testimonials .testimonial-content .quote-icon {
@@ -2374,16 +2371,15 @@ section,
   top: 15px;
   left: 30px;
   font-size: 42px;
-  color: rgba(93, 87, 244, 0.15); /* Fallback for browsers < Chrome 111 */
-  color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: rgba(var(--accent-rgb), 0.15);
   z-index: 0;
   opacity: 0.8;
 }
 
 .testimonials .testimonial-profile {
   padding: 20px 30px;
-  background-color: color-mix(in srgb, var(--heading-color), transparent 95%);
-  border-top: 1px solid color-mix(in srgb, var(--heading-color), transparent 90%);
+  background-color: rgba(var(--heading-rgb), 0.05);
+  border-top: 1px solid rgba(var(--heading-rgb), 0.1);
 }
 
 .testimonials .rating {
@@ -2424,7 +2420,7 @@ section,
 .testimonials .profile-info h4 {
   margin: 0;
   font-size: 13px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: rgba(var(--default-rgb), 0.7);
   font-weight: 500;
 }
 
@@ -2436,8 +2432,7 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: rgba(93, 87, 244, 0.4); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+  background-color: rgba(var(--accent-rgb), 0.4);
   opacity: 1;
 }
 
@@ -2480,7 +2475,7 @@ section,
   text-align: center;
   height: 100%;
   border-radius: 10px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid rgba(var(--default-rgb), 0.1);
   transition: all 0.3s ease-in-out;
 }
 
@@ -2496,8 +2491,7 @@ section,
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: rgba(93, 87, 244, 0.08); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  background-color: rgba(var(--accent-rgb), 0.08);
 }
 
 .contact .info-card .icon-box i {
@@ -2513,15 +2507,15 @@ section,
 
 .contact .info-card p {
   margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(var(--default-rgb), 0.8);
   font-size: 15px;
   line-height: 1.6;
 }
 
 .contact .form-wrapper .input-group .input-group-text {
   color: var(--accent-color);
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: rgba(var(--default-rgb), 0.04);
+  border-color: rgba(var(--default-rgb), 0.15);
   border-radius: 8px 0 0 8px;
   padding: 12px 15px;
 }
@@ -2532,7 +2526,7 @@ section,
   border-radius: 0 8px 8px 0;
   box-shadow: none;
   font-size: 14px;
-  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  border-color: rgba(var(--default-rgb), 0.15);
   padding: 12px 15px;
 }
 
@@ -2541,7 +2535,7 @@ section,
 }
 
 .contact .form-wrapper .input-group .form-control::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: rgba(var(--default-rgb), 0.3);
   text-align: center;
 }
 
@@ -2594,8 +2588,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .contact .form-wrapper button:hover {
-  background-color: rgba(93, 87, 244, 0.8); /* Fallback for browsers < Chrome 111 */
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: rgba(var(--accent-rgb), 0.8);
 }
 
 /*--------------------------------------------------------------
@@ -2650,7 +2643,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .portfolio-details .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: rgba(var(--default-rgb), 0.15);
   opacity: 1;
 }
 
@@ -2692,7 +2685,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .portfolio-details .portfolio-info ul strong {
   text-transform: uppercase;
   font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: rgba(var(--default-rgb), 0.5);
   font-size: 14px;
 }
 
@@ -2705,8 +2698,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .portfolio-details .portfolio-info .btn-visit:hover {
-  background: rgba(93, 87, 244, 0.8); /* Fallback for browsers < Chrome 111 */
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: rgba(var(--accent-rgb), 0.8);
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -2722,7 +2714,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .portfolio-details .portfolio-description .testimonial-item {
   padding: 30px 30px 0 30px;
   position: relative;
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  background: rgba(var(--default-rgb), 0.03);
   margin-bottom: 50px;
 }
 
@@ -2749,8 +2741,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
-  color: rgba(93, 87, 244, 0.5); /* Fallback for browsers < Chrome 111 */
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  color: rgba(var(--accent-rgb), 0.5);
   font-size: 26px;
   line-height: 0;
 }
@@ -2834,8 +2825,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .service-details .service-main-content .section-header .section-subtitle {
   display: inline-block;
   padding: 8px 16px;
-  background: rgba(93, 87, 244, 0.1); /* Fallback for browsers < Chrome 111 */
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background: rgba(var(--accent-rgb), 0.1);
   color: var(--accent-color);
   border-radius: 50px;
   font-size: 14px;
@@ -2861,7 +2851,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .service-details .service-main-content p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: rgba(var(--default-rgb), 0.75);
   margin-bottom: 20px;
 }
 
@@ -2903,15 +2893,23 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
     flex-wrap: nowrap;
     white-space: nowrap;
     overflow-x: auto;
-    scrollbar-width: thin;
+    /* Firefox-style scrollbar width (supported در فایرفاکس) */
   }
 
+  /* Feature query: apply Firefox scrollbar width when supported */
+  @supports (scrollbar-width: thin) {
+    .service-details .service-tabs .nav-tabs {
+      scrollbar-width: thin;
+    }
+  }
+
+  /* Chrome/Edge/Safari scrollbar fallback */
   .service-details .service-tabs .nav-tabs::-webkit-scrollbar {
     height: 5px;
   }
-
   .service-details .service-tabs .nav-tabs::-webkit-scrollbar-thumb {
-    background: color-mix(in srgb, var(--default-color), transparent 80%);
+    background: rgba(var(--default-rgb), 0.2);
+    /* background: color-mix(in srgb, var(--default-color), transparent 80%); */
     border-radius: 10px;
   }
 }
@@ -2954,12 +2952,12 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .service-details .service-tabs .tab-content p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: rgba(var(--default-rgb), 0.75);
 }
 
 .service-details .service-tabs .tab-content .feature-item {
   padding: 20px;
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  background: rgba(var(--background-rgb), 0.5);
   border-radius: 12px;
   height: 100%;
   transition: transform 0.3s;
@@ -3022,7 +3020,7 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 }
 
 .service-details .service-testimonial .testimonial-card .client-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: rgba(var(--default-rgb), 0.75);
   margin-bottom: 10px;
   font-size: 14px;
 }
@@ -3048,15 +3046,15 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 .service-details .service-testimonial .testimonial-card .quote p {
   font-style: italic;
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  color: rgba(var(--default-rgb), 0.85);
 }
 
 .service-details .service-cta {
   margin-top: 80px;
   padding: 60px;
   border-radius: 16px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 10%), color-mix(in srgb, var(--accent-color), transparent 40%));
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 85%);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9), rgba(var(--accent-rgb), 0.6));
+  box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.15);
 }
 
 .service-details .service-cta h3 {
@@ -3134,12 +3132,6 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 /*--------------------------------------------------------------
 # Utility Classes for Inline Styles
@@ -3179,4 +3171,78 @@ body.ltr .contact .form-wrapper textarea.form-control::placeholder {
 /* جلوگیری از فاصله‌های ناخواسته داخل دراپ‌زون */
 #file-drop-zone .uploader-actions .btn {
   margin: 0;
+}
+
+/* استایل آیتم‌های فایل و نوار پیشرفت */
+.file-item .progress {
+  height: 8px;
+  background-color: #e9ecef;
+}
+.file-item .progress-bar {
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+  font-size: 0.65rem;
+}
+
+/* استایل دراپ‌زون برای کشیدن و رها کردن فایل */
+#file-drop-zone {
+  min-height: 110px;
+  color: #6c757d;
+}
+#file-drop-zone.dragging {
+  border-color: #0d6efd;
+  background-color: rgba(13,110,253,0.05);
+}
+
+/* پیام‌ها با انیمیشن های نرم */
+.contact .form-wrapper .error-message,
+.contact .form-wrapper .sent-message,
+.contact .form-wrapper .loading {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+.contact .form-wrapper .error-message {
+  background: #fff5f5;
+  color: #dc3545;
+}
+.contact .form-wrapper .sent-message {
+  background: #f0fff4;
+  color: #198754;
+}
+.contact .form-wrapper .loading {
+  background: #f8f9fa;
+  color: #6c757d;
+}
+
+/* افکت محو-نمایش ساده */
+.fade-in {
+  animation: fadeIn 0.25s ease-in both;
+}
+.fade-out {
+  animation: fadeOut 0.25s ease-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-4px); }
+}
+
+/* Center Turnstile widget inside its container */
+.cf-turnstile {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* گرادیان‌ها و سایه‌ها */
+.card.hero {
+  background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.05), var(--surface-color));
+  /* background: linear-gradient(145deg, color-mix(in srgb, var(--accent-color), transparent 95%), var(--surface-color)); */
+  border: 2px solid rgba(var(--accent-rgb), 0.15);
+  /* border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%); */
+  box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.15);
+  /* box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 85%); */
 }

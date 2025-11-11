@@ -69,13 +69,13 @@
                         allowedExtensions.includes(fileExtension);
     
     if (!isValidType) {
-      errors.push(t('contact.errors.fileType'));
+      errors.push(t('contact.form.errors.fileType'));
     }
     
     // بررسی حجم فایل (حداکثر 5MB)
     const maxSize = 5 * 1024 * 1024; // 5MB
     if (file.size > maxSize) {
-      errors.push(t('contact.errors.fileSize'));
+      errors.push(t('contact.form.errors.fileSize'));
     }
     
     return {
@@ -108,15 +108,15 @@
     
     // اعتبارسنجی نام
     if (!name || name.trim().length < 2) {
-      errors.push(t('contact.errors.nameMin'));
+      errors.push(t('contact.form.errors.nameMin'));
     } else if (name.trim().length > 100) {
-      errors.push(t('contact.errors.nameMax'));
+      errors.push(t('contact.form.errors.nameMax'));
     }
     
     // اعتبارسنجی ایمیل
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email.trim())) {
-      errors.push(t('contact.errors.emailInvalid'));
+      errors.push(t('contact.form.errors.emailInvalid'));
     }
     
     // اعتبارسنجی واتساپ (اختیاری اما اگر وارد شده باشد باید معتبر باشد)
@@ -124,28 +124,28 @@
       const whatsappRegex = /^[\d\s\-\+\(\)]+$/;
       const digitsOnly = whatsapp.replace(/\D/g, '');
       if (!whatsappRegex.test(whatsapp.trim()) || digitsOnly.length < 10) {
-        errors.push(t('contact.errors.whatsappInvalid'));
+        errors.push(t('contact.form.errors.whatsappInvalid'));
       }
     }
     
     // اعتبارسنجی انتخاب پلن
     const validPlans = ['basic', 'professional', 'enterprise'];
     if (!plan || plan.trim() === '' || !validPlans.includes(plan.trim())) {
-      errors.push(t('contact.errors.planInvalid'));
+      errors.push(t('contact.form.errors.planInvalid'));
     }
     
     // اعتبارسنجی پیام
     if (!message || message.trim().length < 10) {
-      errors.push(t('contact.errors.messageMin'));
+      errors.push(t('contact.form.errors.messageMin'));
     } else if (message.trim().length > 5000) {
-      errors.push(t('contact.errors.messageMax'));
+      errors.push(t('contact.form.errors.messageMax'));
     }
     
     // اعتبارسنجی فایل‌ها
     const MAX_FILES = 5;
     if (Array.isArray(files)) {
       if (files.length > MAX_FILES) {
-        errors.push(t('contact.errors.maxFiles'));
+        errors.push(t('contact.form.errors.maxFiles'));
       }
       files.forEach(f => {
         const v = validateFile(f);
@@ -164,6 +164,28 @@
   // مدیریت فرم تماس
   // حالت انتخاب فایل‌ها در UI
   const selectedFiles = [];
+  // پیگیری پیشرفت هر فایل با WeakMap (کلید = شیء فایل)
+  const fileProgress = new WeakMap();
+
+  function updateFileProgress(file, percent) {
+    const safePercent = Math.min(100, Math.max(0, Math.round(percent)));
+    fileProgress.set(file, safePercent);
+    // به‌روزرسانی UI بدون بازساخت کامل لیست
+    const listEl = document.getElementById('file-list');
+    if (!listEl) return;
+    const items = listEl.querySelectorAll('[data-file-name]');
+    items.forEach(el => {
+      const name = el.getAttribute('data-file-name');
+      if (name === file.name) {
+        const bar = el.querySelector('.progress-bar');
+        if (bar) {
+          bar.style.width = safePercent + '%';
+          bar.setAttribute('aria-valuenow', safePercent);
+          bar.textContent = safePercent + '%';
+        }
+      }
+    });
+  }
 
   function renderFileList() {
     const listEl = document.getElementById('file-list');
@@ -177,7 +199,12 @@
     const fragment = document.createDocumentFragment();
     selectedFiles.forEach((file, index) => {
       const item = document.createElement('div');
-      item.className = 'd-flex align-items-center justify-content-between border rounded p-2 mb-2';
+      item.className = 'file-item border rounded p-2 mb-2';
+      item.setAttribute('data-file-name', file.name);
+
+      const rowTop = document.createElement('div');
+      rowTop.className = 'd-flex align-items-center justify-content-between';
+
       const info = document.createElement('div');
       info.className = 'd-flex align-items-center gap-2';
       if (file.type.startsWith('image/')) {
@@ -202,8 +229,24 @@
         selectedFiles.splice(index, 1);
         renderFileList();
       });
-      item.appendChild(info);
-      item.appendChild(removeBtn);
+      rowTop.appendChild(info);
+      rowTop.appendChild(removeBtn);
+
+      const progressWrap = document.createElement('div');
+      progressWrap.className = 'progress mt-2';
+      const progressBar = document.createElement('div');
+      progressBar.className = 'progress-bar';
+      const current = fileProgress.get(file) || 0;
+      progressBar.style.width = current + '%';
+      progressBar.setAttribute('role', 'progressbar');
+      progressBar.setAttribute('aria-valuemin', '0');
+      progressBar.setAttribute('aria-valuemax', '100');
+      progressBar.setAttribute('aria-valuenow', String(current));
+      progressBar.textContent = current + '%';
+      progressWrap.appendChild(progressBar);
+
+      item.appendChild(rowTop);
+      item.appendChild(progressWrap);
       fragment.appendChild(item);
     });
     listEl.appendChild(fragment);
@@ -225,6 +268,7 @@
         continue;
       }
       selectedFiles.push(f);
+      fileProgress.set(f, 0);
     }
     if (errors.length > 0 && errorEl) {
       errorEl.style.display = 'block';
@@ -241,6 +285,10 @@
     const dropZone = document.getElementById('file-drop-zone');
     const inputEl = document.getElementById('attachments');
     const selectBtn = document.getElementById('file-select-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+      submitBtn.disabled = true; // فعال‌سازی پس از کپچا
+    }
     if (selectBtn && inputEl) {
       selectBtn.addEventListener('click', () => inputEl.click());
     }
@@ -249,16 +297,14 @@
         dropZone.addEventListener(evt, (e) => {
           e.preventDefault();
           e.stopPropagation();
-          dropZone.style.borderColor = '#0d6efd';
-          dropZone.style.background = 'rgba(13,110,253,0.05)';
+          dropZone.classList.add('dragging');
         });
       });
       ['dragleave','drop'].forEach(evt => {
         dropZone.addEventListener(evt, (e) => {
           e.preventDefault();
           e.stopPropagation();
-          dropZone.style.borderColor = '#6c757d';
-          dropZone.style.background = 'transparent';
+          dropZone.classList.remove('dragging');
         });
       });
       dropZone.addEventListener('drop', (e) => {
@@ -279,17 +325,81 @@
     }
   });
 
+  // سوییچ پویا Site Key کپچا بر اساس دامنه (لوکال/تولید)
+  function getTurnstileSiteKey(defaultKey) {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+    // Site Key تست Cloudflare برای توسعه محلی
+    const testKey = '1x00000000000000000000AA';
+    return isLocal ? testKey : (defaultKey || testKey);
+  }
+
+  // بارگذاری پویا اسکریپت Turnstile
+  function loadTurnstileScript() {
+    return new Promise((resolve, reject) => {
+      if (window.turnstile) return resolve();
+      const s = document.createElement('script');
+      // تغییر: غیرفعال کردن auto-render با explicit
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.async = true;
+      s.defer = true;
+      s.onload = () => resolve();
+      s.onerror = (e) => reject(e);
+      document.head.appendChild(s);
+    });
+  }
+
+  window.addEventListener('load', () => {
+    const widget = document.querySelector('.cf-turnstile');
+    if (!widget) return;
+    const currentKey = widget.getAttribute('data-sitekey');
+    const desiredKey = getTurnstileSiteKey(currentKey);
+    const theme = widget.getAttribute('data-theme') || 'auto';
+    const language = widget.getAttribute('data-language') || 'fa';
+    // ابتدا Site Key صحیح را روی مارک‌آپ ست می‌کنیم و سپس اسکریپت را بارگذاری/رندر می‌کنیم
+    widget.setAttribute('data-sitekey', desiredKey);
+    loadTurnstileScript()
+      .then(() => {
+        if (window.turnstile && typeof window.turnstile.render === 'function') {
+          try {
+            widget.innerHTML = '';
+            window.turnstile.render(widget, {
+              sitekey: desiredKey,
+              theme: theme,
+              language: language,
+              callback: window.onTurnstileSuccess,
+              'error-callback': window.onTurnstileError,
+              'expired-callback': window.onTurnstileExpired
+            });
+            // علامت‌گذاری به عنوان رندر شده
+            widget.dataset.rendered = 'true';
+          } catch (e) {
+            console.error('Turnstile render error:', e);
+          }
+        }
+      })
+      .catch((e) => {
+        console.error('Turnstile script load error:', e);
+      });
+  });
+
   // هندلرهای کپچا Turnstile برای ذخیره توکن در فیلد مخفی
   window.onTurnstileSuccess = function(token) {
     const el = document.getElementById('captcha-token');
     if (el) el.value = token;
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) submitBtn.disabled = false;
   };
   window.onTurnstileError = function() {
     console.error('Turnstile error');
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) submitBtn.disabled = true;
   };
   window.onTurnstileExpired = function() {
     const el = document.getElementById('captcha-token');
     if (el) el.value = '';
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) submitBtn.disabled = true;
   };
 
   const contactForm = document.querySelector('#contact-form');
@@ -328,8 +438,12 @@
       const originalBtnText = submitBtn.textContent;
       submitBtn.textContent = files.length ? t('contact.form.uploader.uploadingAndSending') : t('contact.form.uploader.sending');
       loadingDiv.style.display = 'block';
+      loadingDiv.classList.remove('fade-out');
+      loadingDiv.classList.add('fade-in');
       errorDiv.style.display = 'none';
+      errorDiv.classList.remove('fade-in');
       successDiv.style.display = 'none';
+      successDiv.classList.remove('fade-in');
       
       try {
         // دریافت توکن Turnstile (اولویت با فیلد پیش‌فرض، سپس fallback به input مخفی)
@@ -360,7 +474,23 @@
           submitBtn.textContent = t('contact.form.uploader.processingFiles');
           try {
             const encoded = await Promise.all(files.map(async (f) => {
-              const base64Content = await fileToBase64(f);
+              // پیشرفت خواندن فایل تا 90%
+              const base64Content = await new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                  const base64 = reader.result.split(',')[1];
+                  updateFileProgress(f, 95);
+                  resolve(base64);
+                };
+                reader.onerror = (error) => reject(error);
+                reader.onprogress = (e) => {
+                  if (e.lengthComputable) {
+                    const pct = Math.round((e.loaded / e.total) * 90);
+                    updateFileProgress(f, pct);
+                  }
+                };
+                reader.readAsDataURL(f);
+              });
               return {
                 name: f.name,
                 type: f.type,
@@ -373,7 +503,7 @@
             formData.file = encoded[0];
           } catch (fileError) {
             console.error('Error converting files to base64:', fileError);
-            throw new Error(t('contact.errors.fileProcessing'));
+            throw new Error(t('contact.form.errors.fileProcessing'));
           }
         }
         
@@ -402,7 +532,7 @@
           result = await response.json();
         } catch (jsonError) {
           console.error('Error parsing JSON response:', jsonError);
-          throw new Error(t('contact.errors.invalidServerResponse'));
+          throw new Error(t('contact.form.errors.invalidServerResponse'));
         }
         
         console.log('Response data:', result);
@@ -410,8 +540,13 @@
         if (response.ok && result.success) {
           // موفقیت
           loadingDiv.style.display = 'none';
+          loadingDiv.classList.add('fade-out');
           successDiv.style.display = 'block';
+          successDiv.classList.remove('fade-out');
+          successDiv.classList.add('fade-in');
           submitBtn.textContent = originalBtnText;
+          // تکمیل نوار پیشرفت فایل‌ها
+          files.forEach(f => updateFileProgress(f, 100));
           
           // پاک کردن فرم
           this.reset();
@@ -428,35 +563,33 @@
           }, 100);
         } else {
           // مدیریت خطاهای مختلف
-          let errorMessage = t('contact.feedback.submitError');
-          
+          let errorMessage = t('contact.form.feedback.submitError');
           if (response.status === 429) {
-            // Rate limiting
-            errorMessage = result.error || t('contact.feedback.rateLimited');
+            errorMessage = result.error || t('contact.form.feedback.rateLimited');
           } else if (response.status === 400) {
-            // خطای اعتبارسنجی
-            errorMessage = result.error || t('contact.feedback.validationError');
+            errorMessage = result.error || t('contact.form.feedback.validationError');
           } else if (response.status === 500) {
-            // خطای سرور
-            errorMessage = result.error || t('contact.feedback.serverError');
+            errorMessage = result.error || t('contact.form.feedback.serverError');
           } else if (result.error) {
             errorMessage = result.error;
           }
-          
           throw new Error(errorMessage);
         }
       } catch (error) {
         // مدیریت خطا
         console.error('Form submission error:', error);
         loadingDiv.style.display = 'none';
+        loadingDiv.classList.add('fade-out');
         errorDiv.style.display = 'block';
+        errorDiv.classList.remove('fade-out');
+        errorDiv.classList.add('fade-in');
         
         if (error.name === 'TypeError' && error.message.includes('fetch')) {
-          errorDiv.textContent = t('contact.feedback.networkError');
+          errorDiv.textContent = t('contact.form.feedback.networkError');
         } else if (error.message) {
           errorDiv.textContent = error.message;
         } else {
-          errorDiv.textContent = t('contact.feedback.submitError');
+          errorDiv.textContent = t('contact.form.feedback.submitError');
         }
         
         submitBtn.textContent = originalBtnText;
