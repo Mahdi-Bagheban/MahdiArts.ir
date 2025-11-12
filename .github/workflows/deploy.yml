@@ -47,3 +47,39 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Smoke test (homepage and contact markup)
+        if: ${{ success() }}
+        run: |
+          set -e
+          PAGE_URL='${{ steps.deployment.outputs.page_url }}'
+          echo "Deployed URL: ${PAGE_URL}"
+
+          test_target() {
+            local TARGET="$1"
+            echo "Testing: ${TARGET}"
+            for i in $(seq 1 10); do
+              STATUS=$(curl -s -o /tmp/body -w "%{http_code}" \
+                -H "Cache-Control: no-cache, no-store, must-revalidate" \
+                -H "Pragma: no-cache" \
+                -H "Expires: 0" \
+                "${TARGET}?_ts=$(date +%s)") || STATUS=0
+
+              if [ "${STATUS}" = "200" ]; then
+                SIZE=$(wc -c </tmp/body)
+                echo "OK 200 for ${TARGET} (size=${SIZE})"
+                grep -q "cf-turnstile" /tmp/body || { echo "Missing Turnstile widget markup"; exit 1; }
+                grep -q "challenges.cloudflare.com/turnstile/v0/api.js" /tmp/body || { echo "Missing Turnstile script include"; exit 1; }
+                return 0
+              fi
+
+              echo "Attempt ${i}: got ${STATUS}; retrying..."
+              sleep 6
+            done
+            echo "Smoke test failed for ${TARGET}"
+            return 1
+          }
+
+          # Test both the Pages URL and the custom domain
+          test_target "${PAGE_URL}"
+          test_target "https://mahdiarts.ir/"
+
