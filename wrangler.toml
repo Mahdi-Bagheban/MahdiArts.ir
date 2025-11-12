@@ -21,6 +21,8 @@ routes = [
 ALLOWED_ORIGINS = "https://mahdiarts.ir,https://www.mahdiarts.ir"
 # Ensure FROM_EMAIL exists in production
 FROM_EMAIL = "noreply@mahdiarts.ir"
+# Admin email must be set explicitly for production
+ADMIN_EMAIL = "info@mahdiarts.ir"
 
 # تنظیمات Dev (برای تست و ذخیره Secret های محیط dev)
 [env.dev]
