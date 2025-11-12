@@ -334,19 +334,33 @@
     return isLocal ? testKey : (defaultKey || testKey);
   }
 
-  // بارگذاری پویا اسکریپت Turnstile
+  // بارگذاری پویا اسکریپت Turnstile با auto-render
   function loadTurnstileScript() {
     return new Promise((resolve, reject) => {
       if (window.turnstile) return resolve();
       const s = document.createElement('script');
-      // تغییر: غیرفعال کردن auto-render با explicit
-      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=auto';
       s.async = true;
       s.defer = true;
       s.onload = () => resolve();
       s.onerror = (e) => reject(e);
       document.head.appendChild(s);
     });
+  }
+
+  // تلاش برای رندر صریح در صورت عدم رندر خودکار
+  function ensureTurnstileRendered(widget, options) {
+    try {
+      const alreadyRendered = widget.dataset.rendered === 'true' || widget.querySelector('iframe');
+      if (alreadyRendered) return;
+      if (window.turnstile && typeof window.turnstile.render === 'function') {
+        widget.innerHTML = '';
+        window.turnstile.render(widget, options);
+        widget.dataset.rendered = 'true';
+      }
+    } catch (e) {
+      console.error('Turnstile fallback render error:', e);
+    }
   }
 
   window.addEventListener('load', () => {
@@ -360,23 +374,17 @@
     widget.setAttribute('data-sitekey', desiredKey);
     loadTurnstileScript()
       .then(() => {
-        if (window.turnstile && typeof window.turnstile.render === 'function') {
-          try {
-            widget.innerHTML = '';
-            window.turnstile.render(widget, {
-              sitekey: desiredKey,
-              theme: theme,
-              language: language,
-              callback: window.onTurnstileSuccess,
-              'error-callback': window.onTurnstileError,
-              'expired-callback': window.onTurnstileExpired
-            });
-            // علامت‌گذاری به عنوان رندر شده
-            widget.dataset.rendered = 'true';
-          } catch (e) {
-            console.error('Turnstile render error:', e);
-          }
-        }
+        // اگر auto-render انجام نشده، fallback به رندر صریح
+        const options = {
+          sitekey: desiredKey,
+          theme: theme,
+          language: language,
+          callback: window.onTurnstileSuccess,
+          'error-callback': window.onTurnstileError,
+          'expired-callback': window.onTurnstileExpired
+        };
+        // کمی صبر می‌کنیم تا auto-render فرصت داشته باشد
+        setTimeout(() => ensureTurnstileRendered(widget, options), 600);
       })
       .catch((e) => {
         console.error('Turnstile script load error:', e);
@@ -390,11 +398,20 @@
     const submitBtn = document.getElementById('submit-btn');
     if (submitBtn) submitBtn.disabled = false;
   };
-  window.onTurnstileError = function() {
-    console.error('Turnstile error');
+
+  window.onTurnstileError = function(err) {
+    console.error('Turnstile error', err);
     const submitBtn = document.getElementById('submit-btn');
     if (submitBtn) submitBtn.disabled = true;
+
+    const errorDiv = document.querySelector('#contact-form .error-message');
+    if (errorDiv) {
+      errorDiv.style.display = 'block';
+      errorDiv.textContent = 'بارگذاری کپچا با خطا مواجه شد. لطفاً صفحه را رفرش کنید، افزونه‌های مسدودکننده را غیرفعال کنید یا اتصال اینترنت متفاوتی امتحان کنید.';
+    }
+    // توجه: دیگر تلاش مجدد رندر خودکار انجام نمی‌دهیم تا از حلقه خطا جلوگیری شود.
   };
+
   window.onTurnstileExpired = function() {
     const el = document.getElementById('captcha-token');
     if (el) el.value = '';
@@ -595,13 +612,13 @@
         submitBtn.textContent = originalBtnText;
       } finally {
         submitBtn.disabled = false;
-        // ریست کردن ویجت کپچا در صورت وجود
-        if (window.turnstile) {
-          try {
+        // ریست کپچا فقط در صورت وجود و یک‌بار
+        try {
+          if (window.turnstile) {
             const widget = this.querySelector('.cf-turnstile');
             if (widget) window.turnstile.reset(widget);
-          } catch (e) {}
-        }
+          }
+        } catch (_) {}
       }
     });
   }

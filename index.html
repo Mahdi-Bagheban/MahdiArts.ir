@@ -883,6 +883,21 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- Prepare Turnstile sitekey BEFORE loading its script -->
+  <script>
+    (function() {
+      var widget = document.querySelector('.cf-turnstile');
+      if (!widget) return;
+      var host = location.hostname;
+      var isLocal = (host === 'localhost' || host === '127.0.0.1' || host === '::1');
+      var testKey = '1x00000000000000000000AA';
+      var currentKey = widget.getAttribute('data-sitekey');
+      widget.setAttribute('data-sitekey', isLocal ? testKey : (currentKey || testKey));
+    })();
+  </script>
+  <!-- Cloudflare Turnstile (static include to ensure reliable loading) -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
   <!-- Contact Form Handler -->
   <script src="assets/js/contact-form.js"></script>
 
