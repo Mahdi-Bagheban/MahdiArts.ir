@@ -325,71 +325,8 @@
     }
   });
 
-  // سوییچ پویا Site Key کپچا بر اساس دامنه (لوکال/تولید)
-  function getTurnstileSiteKey(defaultKey) {
-    const host = location.hostname;
-    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '::1';
-    // Site Key تست Cloudflare برای توسعه محلی
-    const testKey = '1x00000000000000000000AA';
-    return isLocal ? testKey : (defaultKey || testKey);
-  }
-
-  // بارگذاری پویا اسکریپت Turnstile با auto-render
-  function loadTurnstileScript() {
-    return new Promise((resolve, reject) => {
-      if (window.turnstile) return resolve();
-      const s = document.createElement('script');
-      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=auto';
-      s.async = true;
-      s.defer = true;
-      s.onload = () => resolve();
-      s.onerror = (e) => reject(e);
-      document.head.appendChild(s);
-    });
-  }
-
-  // تلاش برای رندر صریح در صورت عدم رندر خودکار
-  function ensureTurnstileRendered(widget, options) {
-    try {
-      const alreadyRendered = widget.dataset.rendered === 'true' || widget.querySelector('iframe');
-      if (alreadyRendered) return;
-      if (window.turnstile && typeof window.turnstile.render === 'function') {
-        widget.innerHTML = '';
-        window.turnstile.render(widget, options);
-        widget.dataset.rendered = 'true';
-      }
-    } catch (e) {
-      console.error('Turnstile fallback render error:', e);
-    }
-  }
-
-  window.addEventListener('load', () => {
-    const widget = document.querySelector('.cf-turnstile');
-    if (!widget) return;
-    const currentKey = widget.getAttribute('data-sitekey');
-    const desiredKey = getTurnstileSiteKey(currentKey);
-    const theme = widget.getAttribute('data-theme') || 'auto';
-    const language = widget.getAttribute('data-language') || 'fa';
-    // ابتدا Site Key صحیح را روی مارک‌آپ ست می‌کنیم و سپس اسکریپت را بارگذاری/رندر می‌کنیم
-    widget.setAttribute('data-sitekey', desiredKey);
-    loadTurnstileScript()
-      .then(() => {
-        // اگر auto-render انجام نشده، fallback به رندر صریح
-        const options = {
-          sitekey: desiredKey,
-          theme: theme,
-          language: language,
-          callback: window.onTurnstileSuccess,
-          'error-callback': window.onTurnstileError,
-          'expired-callback': window.onTurnstileExpired
-        };
-        // کمی صبر می‌کنیم تا auto-render فرصت داشته باشد
-        setTimeout(() => ensureTurnstileRendered(widget, options), 600);
-      })
-      .catch((e) => {
-        console.error('Turnstile script load error:', e);
-      });
-  });
+  // Turnstile بارگذاری و رندر توسط اسکریپت ثابت در index.html انجام می‌شود.
+  // این فایل تنها شامل callbackها و منطق فرم است تا از دوبارگی بارگذاری/رندر جلوگیری شود.
 
   // هندلرهای کپچا Turnstile برای ذخیره توکن در فیلد مخفی
   window.onTurnstileSuccess = function(token) {
