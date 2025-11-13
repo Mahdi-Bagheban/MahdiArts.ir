@@ -64,7 +64,7 @@ jobs:
             local TARGET="$1"
             echo "Testing: ${TARGET}"
             for i in $(seq 1 20); do
-              STATUS=$(curl -s -o /tmp/body -w "%{http_code}" \
+              STATUS=$(curl -s -L -o /tmp/body -w "%{http_code}" \
                 -H "Cache-Control: no-cache, no-store, must-revalidate" \
                 -H "Pragma: no-cache" \
                 -H "Expires: 0" \
@@ -93,7 +93,8 @@ jobs:
             return 1
           }
 
-          # Test both the Pages URL and the custom domain
+          # Test Pages URL and both custom domains (follow redirects)
           test_target "${PAGE_URL}"
           test_target "https://mahdiarts.ir/"
+          test_target "https://www.mahdiarts.ir/"
 
