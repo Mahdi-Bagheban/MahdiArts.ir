@@ -237,6 +237,14 @@
         "networkError": "Errore di connessione. Verifica Internet e riprova.",
         "submitError": "Errore durante l’invio del messaggio. Riprova."
       },
+      "captcha": {
+        "verifyRequired": "Verifica il captcha",
+        "loadingError": "Impossibile caricare il captcha. Aggiorna la pagina o disattiva le estensioni di blocco",
+        "expired": "Il captcha è scaduto; verifica di nuovo",
+        "blockedHint": "Il captcha è stato bloccato dal browser/estensioni. Controlla le impostazioni di privacy o AdBlock",
+        "invalidSiteKey": "Il sitekey del captcha non è valido",
+        "domainNotAllowed": "Il dominio corrente non è autorizzato per il captcha"
+      },
       "submit": "Invia messaggio",
       "selectService": "Seleziona piano",
       "basic": "Piano Base",

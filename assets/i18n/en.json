@@ -200,7 +200,7 @@
       "title": "Email",
       "value": "info@mahdiarts.ir"
     },
-    "form": {
+  "form": {
       "name": "Full Name",
       "email": "Email",
       "whatsapp": "WhatsApp Number with Country Code",
@@ -236,6 +236,14 @@
         "serverError": "Server error. Please try again later.",
         "networkError": "Connection error. Check your internet and try again.",
         "submitError": "Error sending message. Please try again."
+      },
+      "captcha": {
+        "verifyRequired": "Please verify the captcha",
+        "loadingError": "Captcha failed to load. Refresh the page or disable blocking extensions",
+        "expired": "Captcha expired; please verify again",
+        "blockedHint": "Captcha was blocked by browser/extensions. Check privacy or AdBlock settings",
+        "invalidSiteKey": "Captcha sitekey is invalid; please contact support",
+        "domainNotAllowed": "Current domain is not allowed for captcha"
       },
       "submit": "Send Message",
       "selectService": "Select Plan",

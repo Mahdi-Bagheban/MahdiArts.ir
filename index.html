@@ -893,6 +893,10 @@
       var testKey = '1x00000000000000000000AA';
       var currentKey = widget.getAttribute('data-sitekey');
       widget.setAttribute('data-sitekey', isLocal ? testKey : (currentKey || testKey));
+      try {
+        var lang = (window.i18n && window.i18n.currentLanguage) ? window.i18n.currentLanguage : (document.documentElement.getAttribute('lang') || 'fa');
+        widget.setAttribute('data-language', lang);
+      } catch (_) {}
     })();
   </script>
   <!-- Cloudflare Turnstile (static include to ensure reliable loading) -->

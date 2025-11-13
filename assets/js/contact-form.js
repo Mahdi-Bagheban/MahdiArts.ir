@@ -344,7 +344,11 @@
     const errorDiv = document.querySelector('#contact-form .error-message');
     if (errorDiv) {
       errorDiv.style.display = 'block';
-      errorDiv.textContent = 'بارگذاری کپچا با خطا مواجه شد. لطفاً صفحه را رفرش کنید، افزونه‌های مسدودکننده را غیرفعال کنید یا اتصال اینترنت متفاوتی امتحان کنید.';
+      var code = (typeof err === 'string' ? err : (err && (err.code || err.error))) || '';
+      var msg = t('contact.form.captcha.loadingError');
+      if (String(code).startsWith('400020')) msg = t('contact.form.captcha.invalidSiteKey');
+      else if (String(code).startsWith('110200')) msg = t('contact.form.captcha.domainNotAllowed');
+      errorDiv.textContent = msg;
     }
     // توجه: دیگر تلاش مجدد رندر خودکار انجام نمی‌دهیم تا از حلقه خطا جلوگیری شود.
   };
@@ -406,7 +410,7 @@
           || '';
         if (!turnstileToken || turnstileToken.trim() === '') {
           errorDiv.style.display = 'block';
-          errorDiv.textContent = 'لطفاً کپچا را تأیید کنید';
+          errorDiv.textContent = t('contact.form.captcha.verifyRequired');
           successDiv.style.display = 'none';
           loadingDiv.style.display = 'none';
           return;

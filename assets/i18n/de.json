@@ -237,6 +237,14 @@
         "networkError": "Verbindungsfehler. Internet prüfen und erneut versuchen.",
         "submitError": "Fehler beim Senden der Nachricht. Bitte erneut versuchen."
       },
+      "captcha": {
+        "verifyRequired": "Bitte das Captcha bestätigen",
+        "loadingError": "Captcha konnte nicht geladen werden. Seite aktualisieren oder Blocker deaktivieren",
+        "expired": "Captcha ist abgelaufen; bitte erneut bestätigen",
+        "blockedHint": "Captcha wurde vom Browser/Erweiterungen blockiert. Datenschutz- oder AdBlock-Einstellungen prüfen",
+        "invalidSiteKey": "Captcha-Sitekey ist ungültig",
+        "domainNotAllowed": "Aktuelle Domain ist für Captcha nicht erlaubt"
+      },
       "submit": "Senden",
       "selectService": "Plan wählen",
       "basic": "Basis‑Paket",

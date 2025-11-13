@@ -237,6 +237,14 @@
         "networkError": "网络连接错误，请检查后重试。",
         "submitError": "发送消息出错，请重试。"
       },
+      "captcha": {
+        "verifyRequired": "请完成验证码验证",
+        "loadingError": "验证码加载失败。请刷新页面或禁用拦截扩展",
+        "expired": "验证码已过期；请重新验证",
+        "blockedHint": "验证码被浏览器/扩展拦截。请检查隐私或广告拦截设置",
+        "invalidSiteKey": "验证码 sitekey 无效",
+        "domainNotAllowed": "当前域名未被允许使用验证码"
+      },
       "submit": "发送消息",
       "selectService": "选择方案",
       "basic": "基础方案",

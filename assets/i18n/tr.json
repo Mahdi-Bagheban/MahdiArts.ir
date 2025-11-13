@@ -237,6 +237,14 @@
         "networkError": "Bağlantı hatası. İnterneti kontrol edip tekrar deneyin.",
         "submitError": "Mesaj gönderilirken hata oluştu. Lütfen tekrar deneyin."
       },
+      "captcha": {
+        "verifyRequired": "Lütfen captcha’yı doğrulayın",
+        "loadingError": "Captcha yüklenemedi. Sayfayı yenileyin veya engelleyici eklentileri kapatın",
+        "expired": "Captcha’nın süresi doldu; lütfen tekrar doğrulayın",
+        "blockedHint": "Captcha tarayıcı/eklenti tarafından engellendi. Gizlilik veya AdBlock ayarlarını kontrol edin",
+        "invalidSiteKey": "Captcha sitekey geçersiz",
+        "domainNotAllowed": "Mevcut alan adı captcha için izinli değil"
+      },
       "submit": "Gönder",
       "selectService": "Plan seç",
       "basic": "Temel Plan",

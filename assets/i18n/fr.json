@@ -237,6 +237,14 @@
         "networkError": "Erreur de connexion. Vérifiez Internet et réessayez.",
         "submitError": "Erreur lors de l’envoi du message. Veuillez réessayer."
       },
+      "captcha": {
+        "verifyRequired": "Veuillez valider le captcha",
+        "loadingError": "Échec du chargement du captcha. Actualisez la page ou désactivez les extensions bloqueuses",
+        "expired": "Le captcha a expiré ; veuillez valider à nouveau",
+        "blockedHint": "Le captcha a été bloqué par le navigateur/les extensions. Vérifiez les réglages de confidentialité ou AdBlock",
+        "invalidSiteKey": "Le sitekey du captcha est invalide",
+        "domainNotAllowed": "Le domaine actuel n’est pas autorisé pour le captcha"
+      },
       "submit": "Envoyer",
       "selectService": "Sélectionner un plan",
       "basic": "Plan Basique",

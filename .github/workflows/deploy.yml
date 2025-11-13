@@ -63,7 +63,7 @@ jobs:
           test_target() {
             local TARGET="$1"
             echo "Testing: ${TARGET}"
-            for i in $(seq 1 10); do
+            for i in $(seq 1 20); do
               STATUS=$(curl -s -o /tmp/body -w "%{http_code}" \
                 -H "Cache-Control: no-cache, no-store, must-revalidate" \
                 -H "Pragma: no-cache" \
@@ -83,8 +83,11 @@ jobs:
                 return 0
               fi
 
-              echo "Attempt ${i}: got ${STATUS}; retrying..."
-              sleep 6
+              echo "Attempt ${i}: got ${STATUS}";
+              head -c 300 /tmp/body | tr -d '\n' || true
+              echo "";
+              echo "Retrying..."
+              sleep 9
             done
             echo "Smoke test failed for ${TARGET}"
             return 1
