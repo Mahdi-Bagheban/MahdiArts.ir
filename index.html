@@ -727,13 +727,13 @@
                   <div class="col-md-6 form-group">
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-person"></i></span>
-                      <input type="text" name="name" id="name" class="form-control" data-i18n-placeholder="contact.form.name" placeholder="نام و نام خانوادگی" required>
+                      <input type="text" name="name" id="name" class="form-control" data-i18n-placeholder="contact.form.name" placeholder="نام و نام خانوادگی" autocomplete="name" required>
                     </div>
                   </div>
                   <div class="col-md-6 form-group">
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                      <input type="email" class="form-control" name="email" id="email" data-i18n-placeholder="contact.form.email" placeholder="ایمیل" required>
+                      <input type="email" class="form-control" name="email" id="email" data-i18n-placeholder="contact.form.email" placeholder="ایمیل" autocomplete="email" required>
                     </div>
                   </div>
                 </div>
@@ -741,13 +741,13 @@
                   <div class="col-md-6 form-group">
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
-                      <input type="tel" class="form-control" name="whatsapp" id="whatsapp" data-i18n-placeholder="contact.form.whatsapp" placeholder="شماره واتساپ با کد کشور">
+                      <input type="tel" class="form-control" name="whatsapp" id="whatsapp" data-i18n-placeholder="contact.form.whatsapp" placeholder="شماره واتساپ با کد کشور" autocomplete="tel">
                     </div>
                   </div>
                   <div class="col-md-6 form-group">
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-list"></i></span>
-                      <select name="service" id="service-select" class="form-control" title="انتخاب پلن" aria-label="انتخاب پلن" required>
+                      <select name="service" id="service-select" class="form-control" title="انتخاب پلن" aria-label="انتخاب پلن" autocomplete="off" required>
                         <option value="" data-i18n="contact.form.selectService">انتخاب پلن</option>
                         <option value="basic" data-i18n="contact.form.basic">پلن پایه</option>
                         <option value="professional" data-i18n="contact.form.professional">پلن حرفه‌ای</option>
@@ -760,7 +760,7 @@
                   <div class="col-12 form-group">
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
-                      <textarea class="form-control" name="message" id="message" rows="6" data-i18n-placeholder="contact.form.message" placeholder="متن پیام/توضیحات پروژه" required></textarea>
+                      <textarea class="form-control" name="message" id="message" rows="6" data-i18n-placeholder="contact.form.message" placeholder="متن پیام/توضیحات پروژه" autocomplete="off" required></textarea>
                     </div>
                   </div>
                   <div class="col-12 form-group mt-3">
