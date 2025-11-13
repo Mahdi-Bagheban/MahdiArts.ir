@@ -41,7 +41,8 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <!-- Preload Vazirmatn variable font for faster rendering -->
-  <link rel="preload" href="assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin>
   
   <!-- Vazirmatn Font for Persian -->
   <style>
@@ -722,6 +723,9 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
+              <div class="form-progress" aria-hidden="true">
+                <div class="progress-bar" style="width: 0%"></div>
+              </div>
               <form id="contact-form" method="post" role="form" enctype="multipart/form-data">
                 <div class="row justify-content-center">
                   <div class="col-md-6 form-group">
@@ -807,6 +811,19 @@
       </div>
     </section><!-- /Contact Section -->
 
+  
+  <!-- Newsletter Section -->
+  <section class="newsletter-section section">
+    <div class="container" data-aos="fade-up" data-aos-delay="200">
+      <h4>عضویت در نیوزلتر</h4>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" class="form-control" placeholder="ایمیل خود را وارد کنید" required>
+        <button type="submit" class="btn btn-primary mt-2">عضویت</button>
+      </form>
+      <div class="newsletter-result mt-2" aria-live="polite"></div>
+    </div>
+  </section>
+
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -855,7 +872,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span data-i18n="footer.copyright">تمامی حقوق محفوظ است</span> <strong class="px-1 sitename">MahdiArts</strong> - <span data-i18n="footer.designedBy">طراحی و توسعه توسط</span> <strong>مهدی باغبان‌پور</strong></p>
+      <p>© <span id="year"></span> <span data-i18n="footer.copyright">تمامی حقوق محفوظ است</span> <strong class="px-1 sitename">MahdiArts</strong> - <span data-i18n="footer.designedBy">طراحی و توسعه توسط</span> <strong>مهدی باغبان‌پور</strong></p>
       <div class="credits">
       </div>
     </div>
