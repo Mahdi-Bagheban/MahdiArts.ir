@@ -502,6 +502,7 @@
           successDiv.style.display = 'block';
           successDiv.classList.remove('fade-out');
           successDiv.classList.add('fade-in');
+          successDiv.classList.add('success-check');
           submitBtn.textContent = originalBtnText;
           // تکمیل نوار پیشرفت فایل‌ها
           files.forEach(f => updateFileProgress(f, 100));
@@ -518,6 +519,34 @@
           // اسکرول به پیام موفقیت
           setTimeout(() => {
             successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            try {
+              // افکت کنفتی سبک بدون کتابخانه خارجی
+              (function confetti(){
+                var count = 24;
+                for (var i=0;i<count;i++) {
+                  var d = document.createElement('div');
+                  d.style.position='fixed';
+                  d.style.top='-10px';
+                  d.style.left=(10+Math.random()*80)+'%';
+                  d.style.width='8px';
+                  d.style.height='12px';
+                  d.style.background='hsl('+(Math.random()*360)+'deg,85%,60%)';
+                  d.style.opacity='0.9';
+                  d.style.transform='rotate('+(Math.random()*360)+'deg)';
+                  d.style.zIndex='99999';
+                  d.style.transition='transform 1.2s ease-out, top 1.2s ease-out, opacity 1.2s ease-out';
+                  document.body.appendChild(d);
+                  setTimeout((function(el){return function(){
+                    el.style.top=(60+Math.random()*30)+'%';
+                    el.style.transform='translateY(0) rotate('+(Math.random()*360)+'deg)';
+                    el.style.opacity='0.0';
+                  }})(d), 20);
+                  setTimeout((function(el){return function(){
+                    if (el && el.parentNode) el.parentNode.removeChild(el);
+                  }})(d), 1400);
+                }
+              })();
+            } catch(_) {}
           }, 100);
         } else {
           // مدیریت خطاهای مختلف
