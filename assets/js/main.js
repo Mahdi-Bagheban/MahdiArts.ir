@@ -215,6 +215,70 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Dynamic copyright year
+   */
+  window.addEventListener('load', function() {
+    var y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  });
+
+  /**
+   * Contact form progress bar
+   */
+  function initFormProgress() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var bar = form.parentElement.querySelector('.form-progress .progress-bar');
+    if (!bar) return;
+    var fields = [
+      form.querySelector('#name'),
+      form.querySelector('#email'),
+      form.querySelector('#service-select'),
+      form.querySelector('#message')
+    ];
+    function update() {
+      var total = fields.length;
+      var filled = fields.reduce(function(sum, el){
+        return sum + ((el && String(el.value || '').trim().length) ? 1 : 0);
+      }, 0);
+      var percent = Math.round((filled / total) * 100);
+      bar.style.width = percent + '%';
+    }
+    fields.forEach(function(el){
+      if (el) {
+        el.addEventListener('input', update);
+        el.addEventListener('change', update);
+      }
+    });
+    update();
+  }
+  window.addEventListener('load', initFormProgress);
+
+  /**
+   * Newsletter form (client-side only)
+   */
+  function initNewsletter() {
+    var form = document.getElementById('newsletter-form');
+    var email = document.getElementById('newsletter-email');
+    var result = document.querySelector('.newsletter-result');
+    if (!form || !email || !result) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var value = String(email.value || '').trim();
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      if (ok) {
+        result.textContent = 'عضویت شما ثبت شد (نمونه نمایشی)';
+        result.style.color = 'green';
+        form.reset();
+      } else {
+        result.textContent = 'ایمیل معتبر وارد کنید';
+        result.style.color = 'red';
+      }
+    });
+  }
+  window.addEventListener('load', initNewsletter);
+
 })();
 
 /* ساخته شده توسط مهدی باغبان‌پور */
