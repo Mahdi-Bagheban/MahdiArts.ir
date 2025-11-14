@@ -568,6 +568,10 @@ function createAdminNotificationEmail(name, email, whatsapp, plan, message, ip, 
  * @param {array} attachments - آرایه فایل‌های ضمیمه (اختیاری)
  */
 async function sendEmailWithResend(to, subject, html, env, attachments = null) {
+  if (env && env.TEST_MODE === 'true') {
+    try { env.__sent = (env.__sent || 0) + 1; } catch (_) {}
+    return { id: 'test-' + Date.now(), to, subject };
+  }
   console.log(`[Resend] Attempting to send email to: ${to}`);
   console.log(`[Resend] Subject: ${subject}`);
   
@@ -659,6 +663,42 @@ async function sendEmailWithResend(to, subject, html, env, attachments = null) {
   }
 }
 
+function createNewsletterEmail(title, summary, url, lang) {
+  const isRTL = ['fa','ar','he'].includes(lang);
+  const d = new Date().toLocaleDateString(lang === 'fa' ? 'fa-IR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return `<!DOCTYPE html>
+<html dir="${isRTL ? 'rtl' : 'ltr'}" lang="${lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{font-family:${lang==='fa' ? "'Vazirmatn', 'Tahoma'" : "Arial, sans-serif"};background:#f5f5f5;color:#333;padding:20px}
+    .container{max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .header{background:linear-gradient(135deg,#5d57f4 0%,#6c63ff 100%);color:#fff;padding:28px 24px;text-align:center}
+    .header h1{margin:0;font-size:22px}
+    .content{padding:28px 24px}
+    .title{font-size:20px;font-weight:700;color:#333;margin-bottom:12px}
+    .summary{font-size:16px;line-height:1.8;color:#555;margin-bottom:16px}
+    .cta{display:inline-block;background:#5d57f4;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px}
+    .meta{margin-top:16px;font-size:13px;color:#888}
+    .footer{background:#f8f9fa;padding:18px;text-align:center;font-size:12px;color:#777}
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"><h1>MahdiArts</h1></div>
+      <div class="content">
+        <div class="title">${title}</div>
+        ${summary ? `<div class="summary">${summary}</div>` : ''}
+        <a class="cta" href="${url}" target="_blank" rel="noopener">مشاهده مطلب</a>
+        <div class="meta">${d}</div>
+      </div>
+      <div class="footer">برای لغو عضویت، پاسخ دهید یا از فرم سایت اقدام کنید.</div>
+    </div>
+  </body>
+</html>`;
+}
+
 // اعتبارسنجی توکن Turnstile در سمت سرور
 async function verifyTurnstileToken(token, ip, env) {
   const secret = env.TURNSTILE_SECRET_KEY;
@@ -709,7 +749,7 @@ export default {
         headers: {
           'Access-Control-Allow-Origin': corsOrigin,
           'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With', // گسترش هدرهای مجاز برای درخواست‌های AJAX
+          'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With, Authorization', // گسترش هدرهای مجاز برای درخواست‌های AJAX
           'Vary': 'Origin', // پاسخ‌ها بسته به Origin متفاوت است
           'Access-Control-Max-Age': '86400'
         }
@@ -739,7 +779,7 @@ export default {
     const url = new URL(request.url);
     console.log(`[Worker] Path: ${url.pathname}`);
     
-    if (url.pathname !== '/api/contact') {
+    if (url.pathname !== '/api/contact' && url.pathname !== '/api/newsletter/subscribe' && url.pathname !== '/api/newsletter/publish' && url.pathname !== '/api/newsletter/unsubscribe') {
       console.log(`[Worker] Path not found: ${url.pathname}`);
       return new Response(
         JSON.stringify({ 
@@ -828,18 +868,105 @@ export default {
         captchaToken: captchaToken ? 'present' : 'missing'
       });
 
-      // بررسی کپچا
-      if (!captchaToken || typeof captchaToken !== 'string' || captchaToken.trim().length === 0) {
-        return new Response(
-          JSON.stringify({ success: false, error: 'لطفاً کپچا را تأیید کنید' }),
-          { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
-        );
-      }
-      const captchaOk = await verifyTurnstileToken(captchaToken.trim(), clientIP, env);
+      if (url.pathname === '/api/contact') {
+        if (!captchaToken || typeof captchaToken !== 'string' || captchaToken.trim().length === 0) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'لطفاً کپچا را تأیید کنید' }),
+            { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        const captchaOk = await verifyTurnstileToken(captchaToken.trim(), clientIP, env);
       if (!captchaOk) {
         return new Response(
           JSON.stringify({ success: false, error: 'اعتبارسنجی کپچا ناموفق بود؛ دوباره تلاش کنید.' }),
           { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+        );
+      }
+    }
+
+      if (url.pathname === '/api/newsletter/subscribe') {
+        const subEmail = sanitizeInput(email || '').toLowerCase();
+        const subLang = sanitizeInput(body.lang || env.DEFAULT_LANG || 'fa');
+        if (!subEmail || !validateEmail(subEmail)) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'ایمیل معتبر وارد کنید' }),
+            { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        if (!env.NEWSLETTER_KV) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'سیستم خبرنامه فعال نیست' }),
+            { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        const key = `sub:${subEmail}`;
+        await env.NEWSLETTER_KV.put(key, JSON.stringify({ email: subEmail, lang: subLang, createdAt: new Date().toISOString() }));
+        try {
+          const html = createNewsletterEmail('اشتراک خبرنامه', 'از این پس جدیدترین مطالب MahdiArts را دریافت می‌کنید.', 'https://mahdiarts.ir', subLang);
+          await sendEmailWithResend(subEmail, 'اشتراک خبرنامه MahdiArts', html, env);
+        } catch (_) {}
+        return new Response(
+          JSON.stringify({ success: true, message: 'عضویت شما ثبت شد' }),
+          { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+        );
+      }
+
+      if (url.pathname === '/api/newsletter/unsubscribe') {
+        const subEmail = sanitizeInput(email || '').toLowerCase();
+        if (!subEmail || !validateEmail(subEmail)) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'ایمیل معتبر وارد کنید' }),
+            { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        if (!env.NEWSLETTER_KV) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'سیستم خبرنامه فعال نیست' }),
+            { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        await env.NEWSLETTER_KV.delete(`sub:${subEmail}`);
+        return new Response(
+          JSON.stringify({ success: true, message: 'لغو عضویت انجام شد' }),
+          { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+        );
+      }
+
+      if (url.pathname === '/api/newsletter/publish') {
+        const auth = request.headers.get('Authorization') || '';
+        const token = auth.startsWith('Bearer ') ? auth.substring(7) : '';
+        if (!env.NEWSLETTER_PUBLISH_KEY || token !== env.NEWSLETTER_PUBLISH_KEY) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'اجازه دسترسی ندارید' }),
+            { status: 401, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        const title = sanitizeInput(body.title || 'مطلب جدید');
+        const summary = sanitizeInput(body.summary || '');
+        const link = sanitizeInput(body.url || 'https://mahdiarts.ir');
+        const lang = sanitizeInput(body.lang || '');
+        if (!env.NEWSLETTER_KV) {
+          return new Response(
+            JSON.stringify({ success: false, error: 'سیستم خبرنامه فعال نیست' }),
+            { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
+          );
+        }
+        const list = await env.NEWSLETTER_KV.list({ prefix: 'sub:' });
+        let count = 0;
+        for (const k of list.keys) {
+          const v = await env.NEWSLETTER_KV.get(k.name);
+          if (!v) continue;
+          const s = JSON.parse(v);
+          if (lang && s.lang && s.lang !== lang) continue;
+          try {
+            const html = createNewsletterEmail(title, summary, link, s.lang || 'fa');
+            await sendEmailWithResend(s.email, `[MahdiArts] ${title}`, html, env);
+            count++;
+          } catch (_) {}
+        }
+        return new Response(
+          JSON.stringify({ success: true, sent: count }),
+          { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
         );
       }
 

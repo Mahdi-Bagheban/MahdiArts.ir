@@ -264,5 +264,12 @@
     "copyright": "Todos los derechos reservados",
     "designedBy": "Diseñado y desarrollado por"
   },
+  "newsletter": {
+    "title": "Suscríbete al boletín",
+    "placeholder": "Ingresa tu correo electrónico",
+    "subscribe": "Suscribirse",
+    "success": "Tu suscripción se ha registrado correctamente",
+    "invalidEmail": "Por favor ingresa un correo electrónico válido"
+  },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

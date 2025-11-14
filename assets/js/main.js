@@ -267,14 +267,33 @@
       e.preventDefault();
       var value = String(email.value || '').trim();
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-      if (ok) {
-        result.textContent = 'عضویت شما ثبت شد (نمونه نمایشی)';
-        result.style.color = 'green';
-        form.reset();
-      } else {
-        result.textContent = 'ایمیل معتبر وارد کنید';
+      if (!ok) {
+        result.textContent = (window.i18n ? window.i18n.t('newsletter.invalidEmail') : 'ایمیل معتبر وارد کنید');
         result.style.color = 'red';
+        return;
       }
+      result.textContent = '';
+      var lang = (window.i18n && window.i18n.currentLanguage) ? window.i18n.currentLanguage : 'fa';
+      fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: value, lang: lang })
+      }).then(function(res){ return res.json().catch(function(){ return { success:false, error:'invalid' }; }); })
+      .then(function(data){
+        if (data && data.success) {
+          result.textContent = (window.i18n ? window.i18n.t('newsletter.success') : 'عضویت شما با موفقیت ثبت شد');
+          result.style.color = 'green';
+          form.reset();
+        } else {
+          var msg = (data && data.error) ? data.error : (window.i18n ? window.i18n.t('contact.form.feedback.serverError') : 'خطای سرور');
+          result.textContent = msg;
+          result.style.color = 'red';
+        }
+      }).catch(function(){
+        var msg = (window.i18n ? window.i18n.t('contact.form.feedback.networkError') : 'خطا در اتصال');
+        result.textContent = msg;
+        result.style.color = 'red';
+      });
     });
   }
   window.addEventListener('load', initNewsletter);

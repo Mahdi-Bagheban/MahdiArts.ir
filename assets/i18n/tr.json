@@ -264,5 +264,12 @@
     "copyright": "Tüm hakları saklıdır",
     "designedBy": "Tasarım ve geliştirme:"
   },
+  "newsletter": {
+    "title": "Bültene Kaydol",
+    "placeholder": "E‑postanızı girin",
+    "subscribe": "Kaydol",
+    "success": "Aboneliğiniz başarıyla kaydedildi",
+    "invalidEmail": "Lütfen geçerli bir e‑posta girin"
+  },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

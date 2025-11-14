@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "deploy:prod": "wrangler deploy --env production"
+    "deploy:prod": "wrangler deploy --env production",
+    "test:e2e": "node tests/e2e/newsletter.e2e.js"
   },
   "keywords": [
     "cloudflare",

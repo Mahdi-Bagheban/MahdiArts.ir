@@ -8,6 +8,14 @@
 class I18n {
   constructor() {
     this.currentLanguage = localStorage.getItem('mahdiarts_lang') || 'fa';
+    this.fallbacks = { fa: null, en: null };
+    try {
+      var urlLang = new URL(window.location.href).searchParams.get('lang');
+      if (urlLang && typeof urlLang === 'string' && urlLang.length <= 5) {
+        this.currentLanguage = urlLang;
+        localStorage.setItem('mahdiarts_lang', urlLang);
+      }
+    } catch (_) {}
     this.translations = {};
     this.rtlLanguages = ['fa', 'ar', 'he'];
     // Ensure DOM is ready before initializing UI-related features
@@ -23,6 +31,7 @@ class I18n {
    */
   async init() {
     await this.loadLanguage(this.currentLanguage);
+    await this.loadFallbacks();
     this.applyLanguage();
     this.createLanguageSelector();
     this.updateLanguageSelector();
@@ -47,22 +56,35 @@ class I18n {
     }
   }
 
+  async loadFallbacks() {
+    try {
+      if (!this.fallbacks.fa) {
+        const rfa = await fetch('assets/i18n/fa.json');
+        if (rfa.ok) this.fallbacks.fa = await rfa.json();
+      }
+      if (!this.fallbacks.en) {
+        const ren = await fetch('assets/i18n/en.json');
+        if (ren.ok) this.fallbacks.en = await ren.json();
+      }
+    } catch (_) {}
+  }
+
   /**
    * دریافت متن ترجمه شده
    */
   t(key, defaultValue = '') {
     const keys = key.split('.');
-    let value = this.translations;
-    
-    for (const k of keys) {
-      if (value && typeof value === 'object') {
-        value = value[k];
-      } else {
-        return defaultValue || key;
+    const dig = (obj) => {
+      let v = obj;
+      for (const k of keys) {
+        if (v && typeof v === 'object' && (k in v)) v = v[k]; else return undefined;
       }
-    }
-    
-    return value || defaultValue || key;
+      return v;
+    };
+    let value = dig(this.translations);
+    if (value === undefined && this.currentLanguage !== 'fa' && this.fallbacks.fa) value = dig(this.fallbacks.fa);
+    if (value === undefined && this.currentLanguage !== 'en' && this.fallbacks.en) value = dig(this.fallbacks.en);
+    return (value !== undefined && value !== null) ? value : (defaultValue || key);
   }
 
   /**
@@ -87,11 +109,12 @@ class I18n {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       const translation = this.t(key);
-      
-      if (element.hasAttribute('data-i18n-html')) {
-        element.innerHTML = translation;
-      } else {
-        element.textContent = translation;
+      if (typeof translation === 'string' && translation.length > 0) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translation;
+        } else {
+          element.textContent = translation;
+        }
       }
     });
 
@@ -108,6 +131,16 @@ class I18n {
     if (metaDescription) {
       metaDescription.setAttribute('content', this.t('meta.description'));
     }
+
+    // به‌روزرسانی OG/Twitter meta ها
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', this.t('meta.title'));
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', this.t('meta.description'));
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', this.t('meta.title'));
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', this.t('meta.description'));
 
     // به‌روزرسانی hreflang
     this.updateHreflang();
@@ -234,8 +267,27 @@ class I18n {
    * به‌روزرسانی hreflang tags
    */
   updateHreflang() {
-    // این تابع می‌تواند hreflang tags را به‌روزرسانی کند
-    // در حال حاضر در HTML قرار دارد
+    var head = document.getElementsByTagName('head')[0];
+    if (!head) return;
+    Array.prototype.slice.call(head.querySelectorAll('link[rel="alternate"][hreflang]')).forEach(function(el){ el.parentNode.removeChild(el); });
+    var origin = location.origin;
+    var path = location.pathname;
+    var languages = [
+      { code: 'fa' }, { code: 'en' }, { code: 'ar' }, { code: 'tr' }, { code: 'de' },
+      { code: 'fr' }, { code: 'es' }, { code: 'ru' }, { code: 'zh' }, { code: 'it' }
+    ];
+    languages.forEach(function(l){
+      var link = document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', l.code);
+      link.setAttribute('href', origin + path + '?lang=' + l.code);
+      head.appendChild(link);
+    });
+    var xd = document.createElement('link');
+    xd.setAttribute('rel', 'alternate');
+    xd.setAttribute('hreflang', 'x-default');
+    xd.setAttribute('href', origin + path);
+    head.appendChild(xd);
   }
 }
 

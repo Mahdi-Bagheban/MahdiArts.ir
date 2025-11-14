@@ -13,7 +13,13 @@ workers_dev = true
 name = "mahdiarts-contact-form"
 routes = [
   { pattern = "mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" },
-  { pattern = "www.mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" }
+  { pattern = "www.mahdiarts.ir/api/contact", zone_name = "mahdiarts.ir" },
+  { pattern = "mahdiarts.ir/api/newsletter/subscribe", zone_name = "mahdiarts.ir" },
+  { pattern = "mahdiarts.ir/api/newsletter/unsubscribe", zone_name = "mahdiarts.ir" },
+  { pattern = "mahdiarts.ir/api/newsletter/publish", zone_name = "mahdiarts.ir" },
+  { pattern = "www.mahdiarts.ir/api/newsletter/subscribe", zone_name = "mahdiarts.ir" },
+  { pattern = "www.mahdiarts.ir/api/newsletter/unsubscribe", zone_name = "mahdiarts.ir" },
+  { pattern = "www.mahdiarts.ir/api/newsletter/publish", zone_name = "mahdiarts.ir" }
 ]
 
 [env.production.vars]
@@ -47,6 +53,9 @@ ADMIN_EMAIL = "info@mahdiarts.ir"
 # wrangler secret put RESEND_API_KEY
 # wrangler secret put RESEND_API_KEY --env production
 
+# wrangler secret put NEWSLETTER_PUBLISH_KEY
+# wrangler secret put NEWSLETTER_PUBLISH_KEY --env production
+
 # KV Namespace برای Rate Limiting
 # برای ایجاد KV namespace:
 # wrangler kv:namespace create "RATE_LIMIT_KV"
@@ -56,6 +65,11 @@ ADMIN_EMAIL = "info@mahdiarts.ir"
 # binding = "RATE_LIMIT_KV"
 # id = "YOUR_KV_NAMESPACE_ID"
 # preview_id = "YOUR_PREVIEW_KV_NAMESPACE_ID"
+
+# [[kv_namespaces]]
+# binding = "NEWSLETTER_KV"
+# id = "YOUR_NEWSLETTER_KV_NAMESPACE_ID"
+# preview_id = "YOUR_NEWSLETTER_KV_PREVIEW_ID"
 
 # R2 Bucket برای آپلود فایل‌ها (اختیاری)
 # برای ایجاد R2 bucket:

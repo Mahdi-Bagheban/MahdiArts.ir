@@ -137,6 +137,10 @@ body.ltr {
 .language-selector {
   margin-left: 1rem;
 }
+[dir="rtl"] .language-selector {
+  margin-left: 0;
+  margin-right: 1rem;
+}
 
 .language-selector .dropdown-toggle {
   display: flex;
