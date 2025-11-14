@@ -904,13 +904,13 @@ export default {
         const subLang = sanitizeInput(body.lang || env.DEFAULT_LANG || 'fa');
         if (!subEmail || !validateEmail(subEmail)) {
           return new Response(
-            JSON.stringify({ success: false, error: 'ایمیل معتبر وارد کنید' }),
+            JSON.stringify({ success: false, error_code: 'INVALID_EMAIL', error: 'ایمیل معتبر وارد کنید' }),
             { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }
         if (!env.NEWSLETTER_KV) {
           return new Response(
-            JSON.stringify({ success: false, error: 'سیستم خبرنامه فعال نیست' }),
+            JSON.stringify({ success: false, error_code: 'NEWSLETTER_INACTIVE', error: 'سیستم خبرنامه فعال نیست' }),
             { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }
@@ -934,7 +934,7 @@ export default {
           await sendEmailWithResend(subEmail, m.subject, html, env);
         } catch (_) {}
         return new Response(
-          JSON.stringify({ success: true, message: 'عضویت شما ثبت شد' }),
+          JSON.stringify({ success: true, message_code: 'NEWSLETTER_SUBSCRIBED', message: 'عضویت شما ثبت شد' }),
           { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
         );
       }
@@ -943,19 +943,19 @@ export default {
         const subEmail = sanitizeInput(email || '').toLowerCase();
         if (!subEmail || !validateEmail(subEmail)) {
           return new Response(
-            JSON.stringify({ success: false, error: 'ایمیل معتبر وارد کنید' }),
+            JSON.stringify({ success: false, error_code: 'INVALID_EMAIL', error: 'ایمیل معتبر وارد کنید' }),
             { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }
         if (!env.NEWSLETTER_KV) {
           return new Response(
-            JSON.stringify({ success: false, error: 'سیستم خبرنامه فعال نیست' }),
+            JSON.stringify({ success: false, error_code: 'NEWSLETTER_INACTIVE', error: 'سیستم خبرنامه فعال نیست' }),
             { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }
         await env.NEWSLETTER_KV.delete(`sub:${subEmail}`);
         return new Response(
-          JSON.stringify({ success: true, message: 'لغو عضویت انجام شد' }),
+          JSON.stringify({ success: true, message_code: 'NEWSLETTER_UNSUBSCRIBED', message: 'لغو عضویت انجام شد' }),
           { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
         );
       }
@@ -965,7 +965,7 @@ export default {
         const token = auth.startsWith('Bearer ') ? auth.substring(7) : '';
         if (!env.NEWSLETTER_PUBLISH_KEY || token !== env.NEWSLETTER_PUBLISH_KEY) {
           return new Response(
-            JSON.stringify({ success: false, error: 'اجازه دسترسی ندارید' }),
+            JSON.stringify({ success: false, error_code: 'UNAUTHORIZED', error: 'اجازه دسترسی ندارید' }),
             { status: 401, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }
@@ -975,7 +975,7 @@ export default {
         const lang = sanitizeInput(body.lang || '');
         if (!env.NEWSLETTER_KV) {
           return new Response(
-            JSON.stringify({ success: false, error: 'سیستم خبرنامه فعال نیست' }),
+            JSON.stringify({ success: false, error_code: 'NEWSLETTER_INACTIVE', error: 'سیستم خبرنامه فعال نیست' }),
             { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
           );
         }

@@ -269,7 +269,15 @@
     "placeholder": "输入您的邮箱",
     "subscribe": "订阅",
     "success": "您的订阅已成功登记",
-    "invalidEmail": "请输入有效的邮箱地址"
+    "invalidEmail": "请输入有效的邮箱地址",
+    "unsubscribeSuccess": "取消订阅成功",
+    "errors": {
+      "inactive": "新闻简报系统未启用",
+      "unauthorized": "未授权",
+      "serverError": "服务器错误，请稍后重试。",
+      "networkError": "连接错误，请检查网络后重试。",
+      "invalidEmail": "请输入有效的邮箱地址"
+    }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

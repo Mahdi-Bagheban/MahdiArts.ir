@@ -269,7 +269,15 @@
     "placeholder": "E‑postanızı girin",
     "subscribe": "Kaydol",
     "success": "Aboneliğiniz başarıyla kaydedildi",
-    "invalidEmail": "Lütfen geçerli bir e‑posta girin"
+    "invalidEmail": "Lütfen geçerli bir e‑posta girin",
+    "unsubscribeSuccess": "Abonelik başarıyla iptal edildi",
+    "errors": {
+      "inactive": "Bülten sistemi etkin değil",
+      "unauthorized": "Yetkiniz yok",
+      "serverError": "Sunucu hatası. Lütfen daha sonra tekrar deneyin.",
+      "networkError": "Bağlantı hatası. İnternetinizi kontrol edip tekrar deneyin.",
+      "invalidEmail": "Lütfen geçerli bir e‑posta girin"
+    }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

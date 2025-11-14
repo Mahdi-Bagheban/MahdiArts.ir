@@ -269,7 +269,15 @@
     "placeholder": "Ingresa tu correo electrónico",
     "subscribe": "Suscribirse",
     "success": "Tu suscripción se ha registrado correctamente",
-    "invalidEmail": "Por favor ingresa un correo electrónico válido"
+    "invalidEmail": "Por favor ingresa un correo electrónico válido",
+    "unsubscribeSuccess": "La cancelación se realizó correctamente",
+    "errors": {
+      "inactive": "El sistema de boletín está inactivo",
+      "unauthorized": "No autorizado",
+      "serverError": "Error del servidor. Por favor, inténtalo más tarde.",
+      "networkError": "Error de conexión. Verifica tu internet y vuelve a intentar.",
+      "invalidEmail": "Por favor ingresa un correo electrónico válido"
+    }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

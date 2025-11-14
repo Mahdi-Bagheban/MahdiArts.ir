@@ -269,7 +269,15 @@
     "placeholder": "E‑Mail eingeben",
     "subscribe": "Abonnieren",
     "success": "Ihr Abonnement wurde erfolgreich registriert",
-    "invalidEmail": "Bitte geben Sie eine gültige E‑Mail‑Adresse ein"
+    "invalidEmail": "Bitte geben Sie eine gültige E‑Mail‑Adresse ein",
+    "unsubscribeSuccess": "Abmeldung erfolgreich abgeschlossen",
+    "errors": {
+      "inactive": "Newsletter‑System ist inaktiv",
+      "unauthorized": "Nicht autorisiert",
+      "serverError": "Serverfehler. Bitte später erneut versuchen.",
+      "networkError": "Verbindungsfehler. Bitte Internet prüfen und erneut versuchen.",
+      "invalidEmail": "Bitte geben Sie eine gültige E‑Mail‑Adresse ein"
+    }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

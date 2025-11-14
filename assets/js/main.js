@@ -278,19 +278,21 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: value, lang: lang })
-      }).then(function(res){ return res.json().catch(function(){ return { success:false, error:'invalid' }; }); })
+      }).then(function(res){ return res.json().catch(function(){ return { success:false, error_code:'SERVER_ERROR' }; }); })
       .then(function(data){
         if (data && data.success) {
           result.textContent = (window.i18n ? window.i18n.t('newsletter.success') : 'عضویت شما با موفقیت ثبت شد');
           result.style.color = 'green';
           form.reset();
         } else {
-          var msg = (data && data.error) ? data.error : (window.i18n ? window.i18n.t('contact.form.feedback.serverError') : 'خطای سرور');
+          var codeMap = { NEWSLETTER_INACTIVE: 'inactive', INVALID_EMAIL: 'invalidEmail', UNAUTHORIZED: 'unauthorized', SERVER_ERROR: 'serverError', NETWORK_ERROR: 'networkError' };
+          var key = data && data.error_code ? ('newsletter.errors.' + (codeMap[data.error_code] || 'serverError')) : null;
+          var msg = key && window.i18n ? window.i18n.t(key) : (data && data.error ? data.error : (window.i18n ? window.i18n.t('contact.form.feedback.serverError') : 'خطای سرور'));
           result.textContent = msg;
           result.style.color = 'red';
         }
       }).catch(function(){
-        var msg = (window.i18n ? window.i18n.t('contact.form.feedback.networkError') : 'خطا در اتصال');
+        var msg = (window.i18n ? window.i18n.t('newsletter.errors.networkError') : 'خطا در اتصال');
         result.textContent = msg;
         result.style.color = 'red';
       });

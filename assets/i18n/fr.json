@@ -267,7 +267,15 @@
     "placeholder": "Entrez votre e‑mail",
     "subscribe": "S’abonner",
     "success": "Votre abonnement a été enregistré avec succès",
-    "invalidEmail": "Veuillez saisir une adresse e‑mail valide"
+    "invalidEmail": "Veuillez saisir une adresse e‑mail valide",
+    "unsubscribeSuccess": "Désinscription effectuée avec succès",
+    "errors": {
+      "inactive": "Le système de newsletter est inactif",
+      "unauthorized": "Non autorisé",
+      "serverError": "Erreur serveur. Veuillez réessayer plus tard.",
+      "networkError": "Erreur de connexion. Vérifiez votre connexion et réessayez.",
+      "invalidEmail": "Veuillez saisir une adresse e‑mail valide"
+    }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }

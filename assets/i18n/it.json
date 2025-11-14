@@ -269,7 +269,15 @@
     "placeholder": "Inserisci la tua email",
     "subscribe": "Iscriviti",
     "success": "La tua iscrizione è stata registrata con successo",
-    "invalidEmail": "Inserisci un indirizzo email valido"
+    "invalidEmail": "Inserisci un indirizzo email valido",
+    "unsubscribeSuccess": "Annullamento dell’iscrizione completato con successo",
+    "errors": {
+      "inactive": "Il sistema newsletter non è attivo",
+      "unauthorized": "Non autorizzato",
+      "serverError": "Errore del server. Riprova più tardi.",
+      "networkError": "Errore di connessione. Controlla la rete e riprova.",
+      "invalidEmail": "Inserisci un indirizzo email valido"
+    }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
 }
