@@ -277,6 +277,11 @@
       "serverError": "Sunucu hatası. Lütfen daha sonra tekrar deneyin.",
       "networkError": "Bağlantı hatası. İnternetinizi kontrol edip tekrar deneyin.",
       "invalidEmail": "Lütfen geçerli bir e‑posta girin"
+    },
+    "success": {
+      "subscribed": "Bültene başarıyla abone oldunuz",
+      "unsubscribed": "Bülten aboneliğiniz başarıyla iptal edildi",
+      "published": "Bülten başarıyla yayınlandı"
     }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"

@@ -277,6 +277,11 @@
       "serverError": "Errore del server. Riprova più tardi.",
       "networkError": "Errore di connessione. Controlla la rete e riprova.",
       "invalidEmail": "Inserisci un indirizzo email valido"
+    },
+    "success": {
+      "subscribed": "Iscrizione alla newsletter avvenuta con successo",
+      "unsubscribed": "Cancellazione dalla newsletter avvenuta con successo",
+      "published": "Newsletter pubblicata con successo"
     }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"

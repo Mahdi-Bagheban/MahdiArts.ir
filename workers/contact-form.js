@@ -993,7 +993,7 @@ export default {
           } catch (_) {}
         }
         return new Response(
-          JSON.stringify({ success: true, sent: count }),
+          JSON.stringify({ success: true, sent: count, message_code: 'NEWSLETTER_PUBLISHED' }),
           { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': corsOrigin, 'Vary': 'Origin' } }
         );
       }

@@ -277,6 +277,11 @@
       "serverError": "服务器错误，请稍后重试。",
       "networkError": "连接错误，请检查网络后重试。",
       "invalidEmail": "请输入有效的邮箱地址"
+    },
+    "success": {
+      "subscribed": "成功订阅新闻简报",
+      "unsubscribed": "成功取消订阅新闻简报",
+      "published": "新闻简报发布成功"
     }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"

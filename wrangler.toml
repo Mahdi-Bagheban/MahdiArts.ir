@@ -71,6 +71,15 @@ ADMIN_EMAIL = "info@mahdiarts.ir"
 # id = "YOUR_NEWSLETTER_KV_NAMESPACE_ID"
 # preview_id = "YOUR_NEWSLETTER_KV_PREVIEW_ID"
 
+[[kv_namespaces]]
+binding = "NEWSLETTER_KV"
+id = "fdc0ad54623244d6a7a9067967386244"
+preview_id = "fdc0ad54623244d6a7a9067967386244"
+
+[[env.production.kv_namespaces]]
+binding = "NEWSLETTER_KV"
+id = "3d552da92b654edb8085b301ef439e3f"
+
 # R2 Bucket برای آپلود فایل‌ها (اختیاری)
 # برای ایجاد R2 bucket:
 # wrangler r2 bucket create mahdiarts-uploads

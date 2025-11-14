@@ -281,7 +281,9 @@
       }).then(function(res){ return res.json().catch(function(){ return { success:false, error_code:'SERVER_ERROR' }; }); })
       .then(function(data){
         if (data && data.success) {
-          result.textContent = (window.i18n ? window.i18n.t('newsletter.success') : 'عضویت شما با موفقیت ثبت شد');
+          var successMap = { NEWSLETTER_SUBSCRIBED: 'newsletter.success.subscribed', NEWSLETTER_UNSUBSCRIBED: 'newsletter.success.unsubscribed', NEWSLETTER_PUBLISHED: 'newsletter.success.published' };
+          var sKey = (data && data.message_code && successMap[data.message_code]) ? successMap[data.message_code] : 'newsletter.success';
+          result.textContent = (window.i18n ? window.i18n.t(sKey) : 'عضویت شما با موفقیت ثبت شد');
           result.style.color = 'green';
           form.reset();
         } else {

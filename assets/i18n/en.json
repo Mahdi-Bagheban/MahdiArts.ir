@@ -277,6 +277,11 @@
       "serverError": "Server error. Please try again later.",
       "networkError": "Connection error. Check your internet and try again.",
       "invalidEmail": "Please enter a valid email address"
+    },
+    "success": {
+      "subscribed": "Successfully subscribed to newsletter",
+      "unsubscribed": "Successfully unsubscribed from newsletter",
+      "published": "Newsletter published successfully"
     }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"

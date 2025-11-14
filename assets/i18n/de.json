@@ -277,6 +277,16 @@
       "serverError": "Serverfehler. Bitte später erneut versuchen.",
       "networkError": "Verbindungsfehler. Bitte Internet prüfen und erneut versuchen.",
       "invalidEmail": "Bitte geben Sie eine gültige E‑Mail‑Adresse ein"
+    },
+    "success": {
+      "subscribed": "Erfolgreich für den Newsletter angemeldet",
+      "unsubscribed": "Erfolgreich vom Newsletter abgemeldet",
+      "published": "Newsletter erfolgreich veröffentlicht"
+    },
+    "success": {
+      "subscribed": "Erfolgreich für den Newsletter angemeldet",
+      "unsubscribed": "Erfolgreich vom Newsletter abgemeldet",
+      "published": "Newsletter erfolgreich veröffentlicht"
     }
   },
   "_bismillah_end": "به نام خداوند بخشنده مهربان"
