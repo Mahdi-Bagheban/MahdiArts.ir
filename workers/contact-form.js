@@ -666,6 +666,19 @@ async function sendEmailWithResend(to, subject, html, env, attachments = null) {
 function createNewsletterEmail(title, summary, url, lang) {
   const isRTL = ['fa','ar','he'].includes(lang);
   const d = new Date().toLocaleDateString(lang === 'fa' ? 'fa-IR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const L = {
+    fa: { hello: 'به خبرنامه MahdiArts خوش آمدید', cta: 'مشاهده مطلب', unsub: 'برای لغو عضویت، پاسخ دهید یا از فرم سایت اقدام کنید.' },
+    en: { hello: 'Welcome to the MahdiArts Newsletter', cta: 'View Article', unsub: 'To unsubscribe, reply or use the form on our site.' },
+    ar: { hello: 'مرحبًا بك في نشرة MahdiArts', cta: 'عرض المقال', unsub: 'لإلغاء الاشتراك، ردّ على الرسالة أو استخدم نموذج الموقع.' },
+    tr: { hello: 'MahdiArts bültenine hoş geldiniz', cta: 'Yazıyı Görüntüle', unsub: 'Aboneliği iptal etmek için yanıt verin veya sitedeki formu kullanın.' },
+    de: { hello: 'Willkommen im MahdiArts‑Newsletter', cta: 'Artikel ansehen', unsub: 'Zum Abbestellen antworten oder das Formular auf der Website nutzen.' },
+    fr: { hello: 'Bienvenue dans la newsletter MahdiArts', cta: 'Voir l’article', unsub: 'Pour vous désabonner, répondez ou utilisez le formulaire sur le site.' },
+    es: { hello: 'Bienvenido al boletín de MahdiArts', cta: 'Ver artículo', unsub: 'Para darte de baja, responde o usa el formulario del sitio.' },
+    ru: { hello: 'Добро пожаловать в рассылку MahdiArts', cta: 'Смотреть статью', unsub: 'Чтобы отменить подписку, ответьте на письмо или используйте форму на сайте.' },
+    zh: { hello: '欢迎订阅 MahdiArts 新闻简报', cta: '查看文章', unsub: '如需退订，请回复邮件或在网站上使用表单。' },
+    it: { hello: 'Benvenuto nella newsletter di MahdiArts', cta: 'Vedi l’articolo', unsub: 'Per annullare l’iscrizione, rispondi o usa il modulo sul sito.' }
+  };
+  const t = L[lang] || L.en;
   return `<!DOCTYPE html>
 <html dir="${isRTL ? 'rtl' : 'ltr'}" lang="${lang}">
 <head>
@@ -677,6 +690,7 @@ function createNewsletterEmail(title, summary, url, lang) {
     .header{background:linear-gradient(135deg,#5d57f4 0%,#6c63ff 100%);color:#fff;padding:28px 24px;text-align:center}
     .header h1{margin:0;font-size:22px}
     .content{padding:28px 24px}
+    .hello{font-size:16px;color:#5d57f4;margin-bottom:10px;font-weight:600}
     .title{font-size:20px;font-weight:700;color:#333;margin-bottom:12px}
     .summary{font-size:16px;line-height:1.8;color:#555;margin-bottom:16px}
     .cta{display:inline-block;background:#5d57f4;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px}
@@ -688,12 +702,13 @@ function createNewsletterEmail(title, summary, url, lang) {
     <div class="container">
       <div class="header"><h1>MahdiArts</h1></div>
       <div class="content">
+        <div class="hello">${t.hello}</div>
         <div class="title">${title}</div>
         ${summary ? `<div class="summary">${summary}</div>` : ''}
-        <a class="cta" href="${url}" target="_blank" rel="noopener">مشاهده مطلب</a>
+        <a class="cta" href="${url}" target="_blank" rel="noopener">${t.cta}</a>
         <div class="meta">${d}</div>
       </div>
-      <div class="footer">برای لغو عضویت، پاسخ دهید یا از فرم سایت اقدام کنید.</div>
+      <div class="footer">${t.unsub}</div>
     </div>
   </body>
 </html>`;
@@ -902,8 +917,21 @@ export default {
         const key = `sub:${subEmail}`;
         await env.NEWSLETTER_KV.put(key, JSON.stringify({ email: subEmail, lang: subLang, createdAt: new Date().toISOString() }));
         try {
-          const html = createNewsletterEmail('اشتراک خبرنامه', 'از این پس جدیدترین مطالب MahdiArts را دریافت می‌کنید.', 'https://mahdiarts.ir', subLang);
-          await sendEmailWithResend(subEmail, 'اشتراک خبرنامه MahdiArts', html, env);
+          const wl = {
+            fa: { title: 'خوش آمدید', summary: 'از این پس جدیدترین مطالب MahdiArts را دریافت می‌کنید. شروع کنید با مرور خدمات منتخب.', url: 'https://mahdiarts.ir/#services', subject: 'خوش آمدید به خبرنامه MahdiArts' },
+            en: { title: 'Welcome', summary: 'You will receive the latest updates from MahdiArts. Start with featured services.', url: 'https://mahdiarts.ir/#services', subject: 'Welcome to MahdiArts Newsletter' },
+            ar: { title: 'أهلًا بك', summary: 'ستتلقى أحدث تحديثات MahdiArts. ابدأ بمراجعة الخدمات المميزة.', url: 'https://mahdiarts.ir/#services', subject: 'مرحبًا بك في نشرة MahdiArts' },
+            tr: { title: 'Hoş geldiniz', summary: 'Artık MahdiArts’tan en yeni güncellemeleri alacaksınız. Öne çıkan hizmetlerle başlayın.', url: 'https://mahdiarts.ir/#services', subject: 'MahdiArts Bültenine Hoş Geldiniz' },
+            de: { title: 'Willkommen', summary: 'Sie erhalten künftig die neuesten Updates von MahdiArts. Starten Sie mit unseren Highlights.', url: 'https://mahdiarts.ir/#services', subject: 'Willkommen im MahdiArts‑Newsletter' },
+            fr: { title: 'Bienvenue', summary: 'Vous recevrez désormais les dernières nouveautés de MahdiArts. Commencez par nos services phares.', url: 'https://mahdiarts.ir/#services', subject: 'Bienvenue dans la newsletter MahdiArts' },
+            es: { title: 'Bienvenido', summary: 'A partir de ahora recibirás las últimas novedades de MahdiArts. Empieza con nuestros servicios destacados.', url: 'https://mahdiarts.ir/#services', subject: 'Bienvenido al boletín de MahdiArts' },
+            ru: { title: 'Добро пожаловать', summary: 'Теперь вы будете получать последние новости MahdiArts. Начните с избранных услуг.', url: 'https://mahdiarts.ir/#services', subject: 'Добро пожаловать в рассылку MahdiArts' },
+            zh: { title: '欢迎', summary: '您将收到 MahdiArts 的最新更新。先看看精选服务。', url: 'https://mahdiarts.ir/#services', subject: '欢迎订阅 MahdiArts 新闻简报' },
+            it: { title: 'Benvenuto', summary: 'Riceverai le ultime novità di MahdiArts. Inizia dai servizi in evidenza.', url: 'https://mahdiarts.ir/#services', subject: 'Benvenuto nella newsletter di MahdiArts' }
+          };
+          const m = wl[subLang] || wl.en;
+          const html = createNewsletterEmail(m.title, m.summary, m.url, subLang);
+          await sendEmailWithResend(subEmail, m.subject, html, env);
         } catch (_) {}
         return new Response(
           JSON.stringify({ success: true, message: 'عضویت شما ثبت شد' }),
