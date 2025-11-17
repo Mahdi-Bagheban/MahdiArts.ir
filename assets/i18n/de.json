@@ -15,7 +15,7 @@
   "hero": {
     "badge": "Innovative Lösungen",
     "title": "Mahdi Baghebanpour — Senior Computer Engineer",
-    "description": "10 Jahre Erfahrung in der Entwicklung professioneller Websites und Android-Apps",
+    "description": "Über 10 Jahre Erfahrung in der Konzeption und Entwicklung moderner Web‑ und Android‑Lösungen",
     "cta": "Mehr erfahren"
   },
   "features": {
@@ -42,7 +42,26 @@
       "SEO‑Optimierung und bessere Platzierungen in Suchmaschinen",
       "Fortlaufender Support und Wartung Ihrer Projekte"
     ],
-    "readMore": "Mehr lesen"
+    "readMore": "Mehr lesen",
+    "quote": "Qualität, Leistung und Einfachheit – die drei Prinzipien, die jedes Projekt leiten.",
+    "more": "Durch die Verbindung menschenzentrierten Designs, verlässlicher Ingenieurskunst und kontinuierlicher Verbesserung verwandeln wir Ihre Prozesse in skalierbare Softwarelösungen – von der Discovery bis zur Bereitstellung und dem Support.",
+    "readMoreExpand": "Mehr lesen",
+    "readMoreCollapse": "Weniger",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "Jahre Erfahrung",
+      "projects": "50+",
+      "projectsLabel": "Erfolgreiche Projekte",
+      "clients": "95%",
+      "clientsLabel": "Kundenzufriedenheit"
+    },
+    "contactMe": "Kontaktieren Sie uns"
+  },
+  "aboutImages": {
+    "portraitAlt": "Porträt im Bereich Über mich",
+    "aboutAlt": "Bild im Bereich Über mich",
+    "sample8Alt": "Beispielarbeit 8",
+    "sample12Alt": "Beispielarbeit 12"
   },
   "services": {
     "title": "Leistungen",
@@ -137,23 +156,27 @@
   },
   "howWeWork": {
     "title": "Unsere Arbeitsweise",
-    "subtitle": "Wir liefern Ihre Projekte durch einen strukturierten, professionellen Prozess",
+    "subtitle": "Ein klarer, professioneller Prozess von der Idee bis zum Launch",
     "steps": {
       "planning": {
         "title": "Projektplanung",
-        "description": "Anforderungsanalyse, Architekturdesign und detaillierte Planung für erfolgreiche Umsetzung"
+        "description": "Anforderungsanalyse, Architekturdesign und detaillierte Planung für erfolgreiche Umsetzung",
+        "details": "Abgleich in Discovery‑Sessions, Sammlung und Priorisierung der Anforderungen, Risikobewertung, Architekturvorschlag und realistischer Zeitplan. Ergebnisse: Scope‑Dokument und umsetzbare Roadmap."
       },
       "development": {
         "title": "Entwicklungsphase",
-        "description": "Umsetzung mit modernen Technologien und aktuellen Standards"
+        "description": "Umsetzung mit modernen Technologien und aktuellen Standards",
+        "details": "Iterative Umsetzung in kurzen Sprints; inkrementelle Feature‑Lieferung, Einarbeitung von Feedback und gepflegte technische Dokumentation. Code‑Qualität durch Reviews und automatisierte Tests."
       },
       "testing": {
         "title": "Testing & Qualitätssicherung",
-        "description": "Umfassende Tests zu Funktionalität, Sicherheit und Nutzererlebnis — für höchste Qualität"
+        "description": "Umfassende Tests zu Funktionalität, Sicherheit und Nutzererlebnis — für höchste Qualität",
+        "details": "Unit‑, Integrations‑ und Akzeptanztests; Sicherheits‑ und Performance‑Checks, Behebung von Cross‑Browser‑Problemen. Prüfung von Usability und Accessibility."
       },
       "launch": {
         "title": "Launch & Support",
-        "description": "Erfolgreicher Start und fortlaufender Support für volle Zufriedenheit"
+        "description": "Erfolgreicher Start und fortlaufender Support für volle Zufriedenheit",
+        "details": "Stufenweiser Rollout mit sorgfältigem Monitoring und Logging; Schulung, Wissenstransfer und Wartungsplan. Reales Nutzer‑Feedback fließt in die nächste Roadmap ein."
       }
     }
   },

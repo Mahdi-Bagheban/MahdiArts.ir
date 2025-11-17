@@ -118,6 +118,15 @@ class I18n {
       }
     });
 
+    // به‌روزرسانی alt برای تصاویر در صورت وجود data-i18n-alt
+    document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+      const key = element.getAttribute('data-i18n-alt');
+      const translation = this.t(key);
+      if (typeof translation === 'string' && translation.length > 0) {
+        element.setAttribute('alt', translation);
+      }
+    });
+
     // به‌روزرسانی placeholder ها
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
       const key = element.getAttribute('data-i18n-placeholder');

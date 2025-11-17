@@ -15,7 +15,7 @@
   "hero": {
     "badge": "Yenilikçi çözümler",
     "title": "Mahdi Baghebanpour — Kıdemli Bilgisayar Mühendisi",
-    "description": "Profesyonel web siteleri ve Android uygulamaları geliştirmede 10+ yıllık deneyim",
+    "description": "Web ve Android için yenilikçi çözümler tasarlama ve geliştirmede 10+ yıl deneyim",
     "cta": "Detayları gör"
   },
   "features": {
@@ -42,7 +42,26 @@
       "SEO iyileştirmeleri ve arama motoru sıralamalarının geliştirilmesi",
       "Projelerin sürekli destek ve bakımı"
     ],
-    "readMore": "Daha fazla oku"
+    "readMore": "Daha fazla oku",
+    "quote": "Kalite, performans ve sadelik — her projeyi yöneten üç ilke.",
+    "more": "İnsan odaklı tasarım, güvenilir mühendislik ve sürekli iyileştirmeyi birleştirerek süreçlerinizi ölçeklenebilir yazılım çözümlerine dönüştürüyorum — keşiften yayına ve desteğe kadar.",
+    "readMoreExpand": "Daha fazla oku",
+    "readMoreCollapse": "Daha az",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "Deneyim yılı",
+      "projects": "50+",
+      "projectsLabel": "Başarılı proje",
+      "clients": "95%",
+      "clientsLabel": "Müşteri memnuniyeti"
+    },
+    "contactMe": "Bizimle iletişime geçin"
+  },
+  "aboutImages": {
+    "portraitAlt": "Hakkımda bölümünde portre",
+    "aboutAlt": "Hakkımda bölümü görseli",
+    "sample8Alt": "Örnek çalışma 8",
+    "sample12Alt": "Örnek çalışma 12"
   },
   "services": {
     "title": "Hizmetler",
@@ -137,23 +156,27 @@
   },
   "howWeWork": {
     "title": "Nasıl çalışıyoruz",
-    "subtitle": "Projelerinizi yapılandırılmış ve profesyonel bir süreçle teslim ederiz",
+    "subtitle": "Fikirden lansmana kadar net ve profesyonel bir süreç",
     "steps": {
       "planning": {
         "title": "Proje Planlama",
-        "description": "Gereksinim analizi, mimari tasarım ve başarı için detaylı planlama"
+        "description": "Gereksinim analizi, mimari tasarım ve başarı için detaylı planlama",
+        "details": "Hedefleri hizalamak için keşif oturumları, gereksinimlerin toplanması ve önceliklendirilmesi, risk analizi, mimari öneri ve gerçekçi zaman çizelgesi. Çıktılar: kapsam dokümanı ve uygulanabilir yol haritası."
       },
       "development": {
         "title": "Geliştirme Aşaması",
-        "description": "Projeyi en iyi teknolojiler ve güncel dünya standartlarıyla hayata geçirme"
+        "description": "Projeyi en iyi teknolojiler ve güncel dünya standartlarıyla hayata geçirme",
+        "details": "Kısa sprintlerle artımlı özellik teslimi; geri bildirimlerin işlenmesi ve teknik dokümantasyonun güncel tutulması. Kod kalitesi; kod incelemeleri ve otomatik testlerle güvence altına alınır."
       },
       "testing": {
         "title": "Test ve Kalite Güvencesi",
-        "description": "İşlevsellik, güvenlik ve kullanıcı deneyiminin eksiksiz testi; yüksek kalite güvencesi"
+        "description": "İşlevsellik, güvenlik ve kullanıcı deneyiminin eksiksiz testi; yüksek kalite güvencesi",
+        "details": "Birim, entegrasyon ve kabul testlerinin yürütülmesi; güvenlik ve performans değerlendirmeleri, tarayıcı uyumsuzluklarının giderilmesi. Kullanılabilirlik ve erişilebilirlik doğrulanır."
       },
       "launch": {
         "title": "Yayın ve Destek",
-        "description": "Başarılı lansman ve tam memnuniyet için kesintisiz destek"
+        "description": "Başarılı lansman ve tam memnuniyet için kesintisiz destek",
+        "details": "Kademeli yayına alma, kapsamlı izleme ve loglama ile; eğitim, bilgi aktarımı ve bakım planı sunulur. Gerçek kullanıcı geri bildirimleri bir sonraki yol haritasını besler."
       }
     }
   },

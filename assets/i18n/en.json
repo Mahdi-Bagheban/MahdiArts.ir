@@ -42,7 +42,26 @@
       "SEO improvements and better search visibility",
       "Continuous support and lifecycle maintenance"
     ],
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "quote": "Quality, performance, and simplicity — the three principles guiding every project.",
+    "more": "Combining human‑centered design, reliable engineering, and continuous improvement, I turn your processes into scalable software solutions — from discovery to deployment and support.",
+    "readMoreExpand": "Read More",
+    "readMoreCollapse": "Less",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "Years of Experience",
+      "projects": "50+",
+      "projectsLabel": "Successful Projects",
+      "clients": "95%",
+      "clientsLabel": "Client Satisfaction"
+    },
+    "contactMe": "Contact Us"
+  },
+  "aboutImages": {
+    "portraitAlt": "About portrait",
+    "aboutAlt": "About image",
+    "sample8Alt": "Sample work 8",
+    "sample12Alt": "Sample work 12"
   },
   "services": {
     "title": "Services",
@@ -141,19 +160,23 @@
     "steps": {
       "planning": {
         "title": "Project Planning",
-        "description": "Discovery, requirements, architecture design, and a practical delivery roadmap."
+        "description": "Discovery, requirements, architecture design, and a practical delivery roadmap.",
+        "details": "We align through discovery sessions, gather and prioritize requirements, assess risks, propose architecture, and craft a realistic timeline. Deliverables: scope document and an actionable roadmap."
       },
       "development": {
         "title": "Development Phase",
-        "description": "Iterative implementation with modern frameworks, testing, and documentation."
+        "description": "Iterative implementation with modern frameworks, testing, and documentation.",
+        "details": "Features ship incrementally in short sprints; feedback is applied and technical documentation is kept accurate. Code quality is ensured through reviews and automated tests."
       },
       "testing": {
         "title": "Testing & QA",
-        "description": "Functional, security, and UX checks to ensure quality across devices."
+        "description": "Functional, security, and UX checks to ensure quality across devices.",
+        "details": "Unit, integration, and acceptance tests are executed; security and performance are evaluated, and cross‑browser inconsistencies are resolved. UX is verified for usability and accessibility."
       },
       "launch": {
         "title": "Launch & Support",
-        "description": "Smooth rollout, monitoring, and continuous support for long‑term success."
+        "description": "Smooth rollout, monitoring, and continuous support for long‑term success.",
+        "details": "Gradual rollout with thorough monitoring and logging; training, knowledge transfer, and a maintenance plan are delivered. Real‑world feedback informs the next roadmap."
       }
     }
   },

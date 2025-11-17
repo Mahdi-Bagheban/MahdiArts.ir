@@ -15,7 +15,7 @@
   "hero": {
     "badge": "Soluciones innovadoras",
     "title": "Mahdi Baghebanpour — Ingeniero de Computación Senior",
-    "description": "10 años de experiencia construyendo sitios web y apps Android profesionales",
+    "description": "Más de 10 años de experiencia en el diseño y desarrollo de soluciones web y Android innovadoras",
     "cta": "Saber más"
   },
   "features": {
@@ -42,7 +42,26 @@
       "Optimización SEO y mejora del posicionamiento",
       "Soporte continuo y mantenimiento de proyectos"
     ],
-    "readMore": "Leer más"
+    "readMore": "Leer más",
+    "quote": "Calidad, rendimiento y simplicidad: los tres principios que guían cada proyecto.",
+    "more": "Combinando el diseño centrado en las personas, la ingeniería fiable y la mejora continua, transformo tus procesos en soluciones de software escalables — desde el descubrimiento hasta el despliegue y el soporte.",
+    "readMoreExpand": "Leer más",
+    "readMoreCollapse": "Ver menos",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "Años de experiencia",
+      "projects": "50+",
+      "projectsLabel": "Proyectos exitosos",
+      "clients": "95%",
+      "clientsLabel": "Satisfacción de clientes"
+    },
+    "contactMe": "Contáctanos"
+  },
+  "aboutImages": {
+    "portraitAlt": "Retrato en la sección Sobre mí",
+    "aboutAlt": "Imagen de la sección Sobre mí",
+    "sample8Alt": "Trabajo 8",
+    "sample12Alt": "Trabajo 12"
   },
   "services": {
     "title": "Servicios",
@@ -137,23 +156,27 @@
   },
   "howWeWork": {
     "title": "Cómo trabajamos",
-    "subtitle": "Entregamos tus proyectos mediante un proceso estructurado y profesional",
+    "subtitle": "Un proceso claro y profesional desde la idea hasta el lanzamiento",
     "steps": {
       "planning": {
         "title": "Planificación del proyecto",
-        "description": "Análisis de requisitos, diseño de arquitectura y planificación detallada para una ejecución exitosa"
+        "description": "Análisis de requisitos, diseño de arquitectura y planificación detallada para una ejecución exitosa",
+        "details": "Sesiones de descubrimiento para alinear objetivos, recopilación y priorización de requisitos, evaluación de riesgos, propuesta de arquitectura y cronograma realista. Entregables: documento de alcance y hoja de ruta accionable."
       },
       "development": {
         "title": "Fase de desarrollo",
-        "description": "Implementación con las mejores tecnologías y estándares actuales"
+        "description": "Implementación con las mejores tecnologías y estándares actuales",
+        "details": "Entrega incremental de funcionalidades en sprints cortos; incorporación de feedback y mantenimiento de documentación técnica. La calidad del código se asegura mediante revisiones y pruebas automatizadas."
       },
       "testing": {
         "title": "Pruebas y QA",
-        "description": "Pruebas completas de funcionalidad, seguridad y experiencia de usuario para asegurar alta calidad"
+        "description": "Pruebas completas de funcionalidad, seguridad y experiencia de usuario para asegurar alta calidad",
+        "details": "Ejecución de pruebas unitarias, de integración y aceptación; evaluación de seguridad y rendimiento, corrección de incompatibilidades entre navegadores. Verificación de usabilidad y accesibilidad."
       },
       "launch": {
         "title": "Lanzamiento y soporte",
-        "description": "Lanzamiento exitoso y soporte continuo para tu total satisfacción"
+        "description": "Lanzamiento exitoso y soporte continuo para tu total satisfacción",
+        "details": "Despliegue gradual con monitoreo y registros detallados; capacitación, transferencia de conocimiento y plan de mantenimiento. El feedback real alimenta la hoja de ruta siguiente."
       }
     }
   },

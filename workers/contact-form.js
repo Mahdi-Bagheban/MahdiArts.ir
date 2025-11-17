@@ -141,6 +141,7 @@ function validateFile(file) {
     'image/jpg',
     'image/png',
     'image/gif',
+    'image/webp',
     'text/plain',
     'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -152,7 +153,7 @@ function validateFile(file) {
   ];
 
   // پسوندهای مجاز
-  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.txt', '.doc', '.docx', '.mp3', '.wav'];
+  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.webp', '.txt', '.doc', '.docx', '.mp3', '.wav'];
   const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
 
   // بررسی نوع فایل

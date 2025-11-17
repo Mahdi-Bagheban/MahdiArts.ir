@@ -134,11 +134,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active" data-i18n="nav.home">خانه</a></li>
-          <li><a href="#about" data-i18n="nav.about">درباره من</a></li>
-          <li><a href="#services" data-i18n="nav.services">خدمات</a></li>
-          <li><a href="#pricing" data-i18n="nav.pricing">قیمت‌گذاری</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">تماس با ما</a></li>
+          <li><a href="#hero" class="active" data-i18n="nav.home"><i class="bi bi-house"></i> خانه</a></li>
+          <li><a href="#about" data-i18n="nav.about"><i class="bi bi-info-circle"></i> درباره من</a></li>
+          <li><a href="#services" data-i18n="nav.services"><i class="bi bi-grid"></i> خدمات</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing"><i class="bi bi-cash-stack"></i> قیمت‌گذاری</a></li>
+          <li><a href="#contact" data-i18n="nav.contact"><i class="bi bi-telephone"></i> تماس با ما</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -151,7 +151,7 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" aria-labelledby="hero-title" aria-describedby="hero-description">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -160,24 +160,24 @@
             <div class="badge-wrapper mb-3">
               <div class="d-inline-flex align-items-center rounded-pill border border-accent-light">
                 <div class="icon-circle me-2">
-                  <i class="bi bi-bell"></i>
+                  <i class="bi bi-bell" aria-hidden="true"></i>
                 </div>
                 <span class="badge-text me-3" data-i18n="hero.badge">راهکارهای نوآورانه</span>
               </div>
             </div>
 
-            <h1 class="hero-title mb-4" data-i18n="hero.title">مهدی باغبان‌پور - مهندس ارشد کامپیوتر</h1>
+            <h1 id="hero-title" class="hero-title mb-4" data-i18n="hero.title">مهدی باغبان‌پور - مهندس ارشد کامپیوتر</h1>
 
-            <p class="hero-description mb-4" data-i18n="hero.description">۱۰ سال تجربه در طراحی و پیاده‌سازی وب‌سایت و اپلیکیشن اندروید حرفه‌ای</p>
+            <p id="hero-description" class="hero-description mb-4" data-i18n="hero.description">دارای بیش از ۱۰ سال تجربه در طراحی و توسعه راهکارهای نوین وب و اندروید</p>
 
             <div class="cta-wrapper">
-              <a href="#contact" class="btn btn-primary" data-i18n="hero.cta">بیشتر بدانید</a>
+              <a href="#about" class="btn btn-primary cta-scroll" aria-label="مشاهده درباره" data-i18n="hero.cta">بیشتر بدانید</a>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="hero-image">
-              <img src="assets/img/illustration/illustration-16.webp" alt="Business Growth" class="img-fluid" loading="lazy">
+              <img src="assets/img/hero/hero.webp" alt="Business Growth" class="img-fluid" loading="lazy">
             </div>
           </div>
         </div>
@@ -225,39 +225,77 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section" aria-labelledby="about-title" aria-describedby="about-subtitle">
 
       <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="who-we-are" data-i18n="about.whoWeAre">درباره من</p>
-            <h3 data-i18n="about.title">راه‌اندازی پتانسیل با استراتژی خلاقانه</h3>
-            <p class="fst-italic" data-i18n="about.subtitle">
-              با بیش از ۱۰ سال تجربه در زمینه طراحی و توسعه وب‌سایت و اپلیکیشن‌های موبایل، من متعهد به ارائه راهکارهای نوآورانه و با کیفیت هستم.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.0">طراحی و توسعه وب‌سایت‌های Responsive و مدرن</span></li>
-              <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.1">ساخت اپلیکیشن‌های اندروید Native با عملکرد بهینه</span></li>
-              <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.2">بهینه‌سازی SEO و بهبود رتبه در موتورهای جستجو</span></li>
-              <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.3">پشتیبانی و نگهداری مستمر پروژه‌ها</span></li>
-            </ul>
-            <a href="#contact" class="read-more"><span data-i18n="about.readMore">بیشتر بخوانید</span><i class="bi bi-arrow-left"></i></a>
+          <div class="col-lg-6 content order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-measure">
+              <p class="who-we-are" data-i18n="about.whoWeAre">درباره من</p>
+              <h3 id="about-title" data-i18n="about.title">راهبرد خلاق، مهندسی کاربردی</h3>
+              <p id="about-subtitle" class="fst-italic" data-i18n="about.subtitle">راهکارهای دیجیتال مدرن را با تمرکز بر سادگی، سرعت و اعتماد طراحی، توسعه و نگهداشت می‌کنم.</p>
+              <blockquote class="brand-quote" data-i18n="about.quote">کیفیت، کارایی و سادگی؛ سه اصل هدایتگر در همه پروژه‌ها.</blockquote>
+              <ul class="mt-3">
+                <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.0">طراحی و توسعه وب‌سایت‌های مدرن و واکنش‌گرا</span></li>
+                <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.1">اپلیکیشن‌های اندروید نیتیو با کارایی بالا</span></li>
+                <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.2">بهبود سئو و افزایش دیده‌شدن در جست‌وجوها</span></li>
+                <li><i class="bi bi-check-circle"></i> <span data-i18n="about.points.3">پشتیبانی مستمر و نگهداشت چرخه عمر پروژه</span></li>
+              </ul>
+              <div class="stats row g-3 mt-3">
+                <div class="col-4">
+                  <div class="stat-card">
+                    <div class="stat-number" data-i18n="about.stats.years">10+</div>
+                    <div class="stat-label" data-i18n="about.stats.yearsLabel">سال تجربه</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="stat-card">
+                    <div class="stat-number" data-i18n="about.stats.projects">50+</div>
+                    <div class="stat-label" data-i18n="about.stats.projectsLabel">پروژه موفق</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="stat-card">
+                    <div class="stat-number" data-i18n="about.stats.clients">95%</div>
+                    <div class="stat-label" data-i18n="about.stats.clientsLabel">رضایت مشتری</div>
+                  </div>
+                </div>
+              </div>
+              <div class="actions">
+                <a href="#contact" class="btn btn-primary btn-contact" aria-label="تماس"><span data-i18n="about.contactMe">تماس با ما</span></a>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 about-images order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
             <div class="row gy-4">
               <div class="col-lg-6">
-                <img src="assets/img/about/about-portrait-1.webp" class="img-fluid" alt="">
+                <div class="row gy-4">
+                  <div class="col-lg-12">
+                    <a href="assets/img/about/about-8.webp" class="glightbox" data-gallery="about-gallery" aria-label="نمای بزرگ تصویر ۸">
+                      <img src="assets/img/about/about-8.webp" class="img-fluid" alt="نمونه کار ۸" data-i18n-alt="aboutImages.sample8Alt" loading="lazy" decoding="async">
+                    </a>
+                  </div>
+                  <div class="col-lg-12">
+                    <a href="assets/img/about/about-img.webp" class="glightbox" data-gallery="about-gallery" aria-label="نمای بزرگ تصویر درباره">
+                      <img src="assets/img/about/about-img.webp" class="img-fluid" alt="تصویر درباره من" data-i18n-alt="aboutImages.aboutAlt" loading="lazy" decoding="async">
+                    </a>
+                  </div>
+                </div>
               </div>
               <div class="col-lg-6">
                 <div class="row gy-4">
                   <div class="col-lg-12">
-                    <img src="assets/img/about/about-8.webp" class="img-fluid" alt="">
+                    <a href="assets/img/about/about-portrait-1.webp" class="glightbox" data-gallery="about-gallery" aria-label="نمای بزرگ تصویر پرتره">
+                      <img src="assets/img/about/about-portrait-1.webp" class="img-fluid" alt="پرتره درباره من" data-i18n-alt="aboutImages.portraitAlt" loading="lazy" decoding="async">
+                    </a>
                   </div>
                   <div class="col-lg-12">
-                    <img src="assets/img/about/about-12.webp" class="img-fluid" alt="">
+                    <a href="assets/img/about/about-12.webp" class="glightbox" data-gallery="about-gallery" aria-label="نمای بزرگ تصویر ۱۲">
+                      <img src="assets/img/about/about-12.webp" class="img-fluid" alt="نمونه کار ۱۲" data-i18n-alt="aboutImages.sample12Alt" loading="lazy" decoding="async">
+                    </a>
                   </div>
                 </div>
               </div>
@@ -293,7 +331,8 @@
                   </div>
                   <div class="step-content">
                     <h3 data-i18n="howWeWork.steps.planning.title">برنامه‌ریزی پروژه</h3>
-                    <p data-i18n="howWeWork.steps.planning.description">تحلیل نیازها، طراحی معماری و برنامه‌ریزی دقیق برای اجرای موفق پروژه</p>
+                    <p class="step-summary" data-i18n="howWeWork.steps.planning.description">تحلیل نیازها، طراحی معماری و برنامه‌ریزی دقیق برای اجرای موفق پروژه</p>
+                    <p class="step-detail" data-i18n="howWeWork.steps.planning.details"></p>
                   </div>
                 </div>
               </div>
@@ -308,7 +347,8 @@
                   </div>
                   <div class="step-content">
                     <h3 data-i18n="howWeWork.steps.development.title">فاز توسعه</h3>
-                    <p data-i18n="howWeWork.steps.development.description">پیاده‌سازی پروژه با استفاده از بهترین تکنولوژی‌ها و استانداردهای روز دنیا</p>
+                    <p class="step-summary" data-i18n="howWeWork.steps.development.description">پیاده‌سازی پروژه با استفاده از بهترین تکنولوژی‌ها و استانداردهای روز دنیا</p>
+                    <p class="step-detail" data-i18n="howWeWork.steps.development.details"></p>
                   </div>
                 </div>
               </div>
@@ -323,7 +363,8 @@
                   </div>
                   <div class="step-content">
                     <h3 data-i18n="howWeWork.steps.testing.title">تست و کنترل کیفیت</h3>
-                    <p data-i18n="howWeWork.steps.testing.description">تست کامل عملکرد، امنیت و تجربه کاربری برای اطمینان از کیفیت بالا</p>
+                    <p class="step-summary" data-i18n="howWeWork.steps.testing.description">تست کامل عملکرد، امنیت و تجربه کاربری برای اطمینان از کیفیت بالا</p>
+                    <p class="step-detail" data-i18n="howWeWork.steps.testing.details"></p>
                   </div>
                 </div>
               </div>
@@ -338,7 +379,8 @@
                   </div>
                   <div class="step-content">
                     <h3 data-i18n="howWeWork.steps.launch.title">راه‌اندازی و پشتیبانی</h3>
-                    <p data-i18n="howWeWork.steps.launch.description">راه‌اندازی موفق پروژه و ارائه پشتیبانی مستمر برای رضایت کامل شما</p>
+                    <p class="step-summary" data-i18n="howWeWork.steps.launch.description">راه‌اندازی موفق پروژه و ارائه پشتیبانی مستمر برای رضایت کامل شما</p>
+                    <p class="step-detail" data-i18n="howWeWork.steps.launch.details"></p>
                   </div>
                 </div>
               </div>
@@ -489,6 +531,7 @@
           <!-- Basic Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-card">
+              <div class="plan-image"><img src="assets/img/pricing/pricing-1.svg" alt="Basic plan" loading="lazy" decoding="async"></div>
               <h3 data-i18n="pricing.basic.name">پلن پایه</h3>
               <div class="price">
                 <span class="currency">$</span>
@@ -522,6 +565,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="pricing-card popular">
               <div class="popular-badge" data-i18n="pricing.professional.popular">محبوب‌ترین</div>
+              <div class="plan-image"><img src="assets/img/pricing/pricing-2.svg" alt="Professional plan" loading="lazy" decoding="async"></div>
               <h3 data-i18n="pricing.professional.name">پلن حرفه‌ای</h3>
               <div class="price">
                 <span class="currency">$</span>
@@ -554,6 +598,7 @@
           <!-- Enterprise Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="pricing-card">
+              <div class="plan-image"><img src="assets/img/pricing/pricing-3.svg" alt="Enterprise plan" loading="lazy" decoding="async"></div>
               <h3 data-i18n="pricing.enterprise.name">پلن سازمانی</h3>
               <div class="price">
                 <span class="currency">$</span>
@@ -595,14 +640,14 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-5">
-          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
+          <div class="col-lg-6 order-2 order-md-1" data-aos="zoom-out" data-aos-delay="200">
             <div class="faq-contact-card">
               <div class="card-icon">
-                <i class="bi bi-question-circle"></i>
+              <img src="assets/img/illustration/illustration-16.webp" alt="سوالات متداول" class="img-fluid faq-hero" loading="lazy" decoding="async">
               </div>
               <div class="card-content">
                 <h3 data-i18n="faq.subtitle">هنوز سوالی دارید؟</h3>
-                <p data-i18n="faq.description">ما آماده پاسخگویی به سوالات شما هستیم. با ما از طریق ایمیل، چت یا تماس تلفنی در ارتباط باشید.</p>
+                <p data-i18n-html="faq.description">با کمال میل پاسخ‌گو هستیم.<br>از طریق ایمیل، چت یا تماس ارتباط بگیرید.</p>
                 <div class="contact-options">
                   <a href="mailto:info@mahdiarts.ir" class="contact-option">
                     <i class="bi bi-envelope"></i>
@@ -621,7 +666,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-6 order-1 order-md-2" data-aos="fade-up" data-aos-delay="300">
             <div class="faq-accordion">
               <div class="faq-item faq-active">
                 <div class="faq-header">
@@ -725,7 +770,7 @@
           <div class="col-lg-12">
             <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
               <div class="form-progress" aria-hidden="true">
-                <div class="progress-bar" style="width: 0%"></div>
+                <div class="progress-bar"></div>
               </div>
               <form id="contact-form" method="post" role="form" enctype="multipart/form-data">
                 <div class="row justify-content-center">
@@ -778,7 +823,7 @@
                           <button type="submit" class="btn btn-primary btn-sm" data-i18n="contact.form.submit" id="submit-btn">ارسال پیام</button>
                         </div>
                       </div>
-                      <input type="file" class="visually-hidden" name="attachments" id="attachments" multiple accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.mp3,.wav">
+                      <input type="file" class="visually-hidden" name="attachments" id="attachments" multiple accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.webp,.mp3,.wav">
                       <div id="file-error" class="text-danger small mt-2" role="alert" aria-live="assertive"></div>
                       <div id="file-list" class="mt-2" aria-live="polite"></div>
                     </div>
@@ -928,3 +973,22 @@
 
 </html>
 <!-- ساخته شده توسط مهدی باغبان‌پور -->
+  <script>
+    (function(){
+      function patch(){
+        var fn = window.refreshCSS;
+        window.refreshCSS = function(){
+          try {
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(function(link){
+              var href = String(link.getAttribute('href')||'');
+              if (/^https?:\/\/fonts\.googleapis\.com/i.test(href)) return;
+              if (/\/assets\/vendor\//i.test(href)) return;
+              var base = href.split('?')[0];
+              link.setAttribute('href', base + '?_cacheOverride=' + Date.now());
+            });
+          } catch(_) {}
+        };
+      }
+      if (document.readyState === 'complete') patch(); else window.addEventListener('load', patch);
+    })();
+  </script>

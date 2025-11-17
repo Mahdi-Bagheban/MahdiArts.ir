@@ -15,7 +15,7 @@
   "hero": {
     "badge": "Soluzioni innovative",
     "title": "Mahdi Baghebanpour — Ingegnere informatico senior",
-    "description": "10 anni di esperienza nello sviluppo di siti web e app Android professionali",
+    "description": "Oltre 10 anni di esperienza nel design e nello sviluppo di soluzioni web e Android innovative",
     "cta": "Scopri di più"
   },
   "features": {
@@ -42,7 +42,26 @@
       "Ottimizzazione SEO e miglioramento del posizionamento",
       "Supporto continuo e manutenzione dei progetti"
     ],
-    "readMore": "Scopri di più"
+    "readMore": "Scopri di più",
+    "quote": "Qualità, prestazioni e semplicità — i tre principi che guidano ogni progetto.",
+    "more": "Unendo design centrato sulle persone, ingegneria affidabile e miglioramento continuo, trasformo i tuoi processi in soluzioni software scalabili — dalla discovery al rilascio e al supporto.",
+    "readMoreExpand": "Scopri di più",
+    "readMoreCollapse": "Mostra meno",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "Anni di esperienza",
+      "projects": "50+",
+      "projectsLabel": "Progetti di successo",
+      "clients": "95%",
+      "clientsLabel": "Soddisfazione dei clienti"
+    },
+    "contactMe": "Contattaci"
+  },
+  "aboutImages": {
+    "portraitAlt": "Ritratto nella sezione Chi siamo",
+    "aboutAlt": "Immagine della sezione Chi siamo",
+    "sample8Alt": "Lavoro 8",
+    "sample12Alt": "Lavoro 12"
   },
   "services": {
     "title": "Servizi",
@@ -137,23 +156,27 @@
   },
   "howWeWork": {
     "title": "Come lavoriamo",
-    "subtitle": "Consegniamo i tuoi progetti con un processo strutturato e professionale",
+    "subtitle": "Un processo chiaro e professionale, dall’idea al lancio",
     "steps": {
       "planning": {
         "title": "Pianificazione del progetto",
-        "description": "Analisi dei requisiti, progettazione dell’architettura e pianificazione dettagliata per una consegna di successo"
+        "description": "Analisi dei requisiti, progettazione dell’architettura e pianificazione dettagliata per una consegna di successo",
+        "details": "Sessioni di discovery per allineare gli obiettivi; raccolta e priorità dei requisiti; valutazione dei rischi; proposta architetturale e timeline realistica. Deliverable: documento di scope e roadmap azionabile."
       },
       "development": {
         "title": "Fase di sviluppo",
-        "description": "Implementazione con le migliori tecnologie e gli standard attuali"
+        "description": "Implementazione con le migliori tecnologie e gli standard attuali",
+        "details": "Consegna incrementale delle funzionalità in sprint brevi; integrazione del feedback e documentazione tecnica accurata. Qualità del codice garantita da code review e test automatizzati."
       },
       "testing": {
         "title": "Test e QA",
-        "description": "Verifica completa di funzionalità, sicurezza ed esperienza utente per garantire alta qualità"
+        "description": "Verifica completa di funzionalità, sicurezza ed esperienza utente per garantire alta qualità",
+        "details": "Esecuzione di test unitari, di integrazione e accettazione; valutazioni di sicurezza e performance; risoluzione delle incompatibilità tra browser. Verifica di usabilità e accessibilità."
       },
       "launch": {
         "title": "Lancio e supporto",
-        "description": "Lancio senza intoppi e supporto continuo per la massima soddisfazione"
+        "description": "Lancio senza intoppi e supporto continuo per la massima soddisfazione",
+        "details": "Rilascio graduale con monitoraggio e logging accurati; formazione, trasferimento di conoscenze e piano di manutenzione. Il feedback reale degli utenti alimenta la roadmap successiva."
       }
     }
   },

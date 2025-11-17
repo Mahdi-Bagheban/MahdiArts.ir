@@ -15,7 +15,7 @@
   "hero": {
     "badge": "创新解决方案",
     "title": "马赫迪·巴盖班普尔 — 首席软件工程师",
-    "description": "拥有 10 年网站与 Android 应用开发经验",
+    "description": "拥有超过 10 年设计与开发创新型网页与 Android 解决方案的经验",
     "cta": "了解更多"
   },
   "features": {
@@ -42,7 +42,26 @@
       "SEO 优化与排名提升",
       "持续支持与维护"
     ],
-    "readMore": "了解更多"
+    "readMore": "了解更多",
+    "quote": "品质、性能与简洁——引领每个项目的三项原则。",
+    "more": "结合以人为本的设计、可靠的工程与持续改进，将您的流程转化为可扩展的软件解决方案——从探索到发布与支持。",
+    "readMoreExpand": "了解更多",
+    "readMoreCollapse": "收起",
+    "stats": {
+      "years": "10+",
+      "yearsLabel": "年经验",
+      "projects": "50+",
+      "projectsLabel": "成功项目",
+      "clients": "95%",
+      "clientsLabel": "客户满意度"
+    },
+    "contactMe": "联系我们"
+  },
+  "aboutImages": {
+    "portraitAlt": "关于我版块的人像",
+    "aboutAlt": "关于我版块的图片",
+    "sample8Alt": "作品 8",
+    "sample12Alt": "作品 12"
   },
   "services": {
     "title": "服务",
@@ -137,23 +156,27 @@
   },
   "howWeWork": {
     "title": "我们如何工作",
-    "subtitle": "通过结构化、专业的流程交付您的项目",
+    "subtitle": "从创意到上线的清晰、专业流程",
     "steps": {
       "planning": {
         "title": "项目规划",
-        "description": "分析需求、设计架构并制定详细实施计划"
+        "description": "分析需求、设计架构并制定详细实施计划",
+        "details": "通过研讨与对齐目标，收集并优先排序需求，评估风险，提出架构方案并制定现实可行的时间表。交付物：范围文档与可执行的路线图。"
       },
       "development": {
         "title": "开发阶段",
-        "description": "采用最佳实践与现代技术进行实现"
+        "description": "采用最佳实践与现代技术进行实现",
+        "details": "以短迭代增量交付功能；吸收反馈并维护准确的技术文档。通过代码评审与自动化测试确保代码质量。"
       },
       "testing": {
         "title": "测试与质量保证",
-        "description": "全面测试功能、安全与用户体验"
+        "description": "全面测试功能、安全与用户体验",
+        "details": "执行单元、集成与验收测试；评估安全与性能，修复跨浏览器不一致。验证可用性与可访问性。"
       },
       "launch": {
         "title": "上线与支持",
-        "description": "成功上线并提供持续支持，确保满意度"
+        "description": "成功上线并提供持续支持，确保满意度",
+        "details": "渐进式发布并进行深入监控与日志记录；提供培训、知识传递与维护计划。真实反馈将驱动下一阶段路线图。"
       }
     }
   },
