@@ -1,6 +1,8 @@
-# راهنمای Deploy پروژه MahdiArts.ir
+# 🚀 راهنمای Deploy پروژه MahdiArts.ir
 
-## مراحل Deploy روی GitHub Pages
+این راهنما مراحل کامل استقرار پروژه در GitHub Pages و تنظیم Cloudflare Workers را پوشش می‌دهد.
+
+## 📦 مراحل Deploy روی GitHub Pages
 
 ### 1. ایجاد Repository در GitHub
 1. به [GitHub.com](https://github.com) بروید
@@ -28,7 +30,7 @@ git push -u origin main
 4. Save کنید
 5. بعد از چند دقیقه، سایت شما در `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME` در دسترس خواهد بود
 
-## تنظیمات Cloudflare Worker
+## ☁️ تنظیمات Cloudflare Worker
 
 ### 1. نصب Wrangler CLI
 ```bash
@@ -44,31 +46,39 @@ wrangler login
 در Cloudflare Dashboard:
 - Workers & Pages > Your Worker > Settings > Variables
 - متغیرهای زیر را اضافه کنید:
-  - `MAILGUN_API_KEY`: کلید API Mailgun
-  - `MAILGUN_DOMAIN`: دامنه Mailgun
-  - `ADMIN_EMAIL`: ایمیل ادمین
-  - `RECAPTCHA_SECRET_KEY`: کلید مخفی reCAPTCHA v3
+
+| متغیر | نوع | توضیحات | الزامی |
+|------|-----|---------|--------|
+| `RESEND_API_KEY` | Secret | کلید API سرویس Resend | ✅ |
+| `ADMIN_EMAIL` | Variable | ایمیل ادمین برای دریافت پیام‌ها | ✅ |
+| `TURNSTILE_SECRET_KEY` | Secret | کلید مخفی Cloudflare Turnstile | ✅ |
+| `ALLOWED_ORIGINS` | Variable | دامنه‌های مجاز برای CORS (با کاما جدا شوند) | ✅ |
+| `RATE_LIMIT_KV` | KV | نیم‌اسپیس KV برای محدودیت نرخ ارسال | ❌ |
+| `R2_BUCKET` | R2 | باکت R2 برای ذخیره فایل‌های آپلودی | ❌ |
 
 ### 4. Deploy Worker
 ```bash
-cd workers
-wrangler deploy
+# تست در محیط لوکال
+wrangler dev
+
+# استقرار نهایی
+wrangler deploy --env production
 ```
 
 ### 5. تنظیم Route در Cloudflare
 - Workers & Pages > Routes
 - Route را تنظیم کنید: `mahdiarts.ir/api/contact`
-- Worker را انتخاب کنید
+- Worker مربوطه را انتخاب کنید
 
-## تنظیمات Cloudflare برای دامنه
+## 🌐 تنظیمات Cloudflare برای دامنه
 
 ### 1. DNS Settings
-- A Record: `@` → `192.0.2.1` (IP Cloudflare)
-- CNAME Record: `www` → `mahdiarts.ir`
+- A Record: `@` → `192.0.2.1` (Proxied)
+- CNAME Record: `www` → `mahdiarts.ir` (Proxied)
 
 ### 2. SSL/TLS
 - Settings > SSL/TLS
-- Encryption mode: Full (strict)
+- Encryption mode: **Full (strict)**
 
 ### 3. Caching
 - Caching > Configuration
@@ -80,11 +90,12 @@ wrangler deploy
 - URL: `mahdiarts.ir/*`
 - Settings: Cache Level: Standard, Browser Cache TTL: 4 hours
 
-## تست نهایی
+## ✅ تست نهایی
 
 ### 1. تست فرم تماس
 - فرم را پر کنید و ارسال کنید
-- بررسی کنید که ایمیل‌ها ارسال می‌شوند
+- بررسی کنید که ایمیل‌ها از طریق Resend ارسال می‌شوند
+- بررسی کنید که Turnstile به درستی کار می‌کند
 
 ### 2. تست چندزبانه
 - زبان‌های مختلف را تست کنید
@@ -94,19 +105,19 @@ wrangler deploy
 - از [Google Search Console](https://search.google.com/search-console) استفاده کنید
 - sitemap.xml را submit کنید
 
-## نکات مهم
+## ⚠️ نکات مهم
 
-1. **Worker URL**: بعد از deploy Worker، URL را در `assets/js/contact-form.js` به‌روزرسانی کنید
-2. **reCAPTCHA**: کلیدهای reCAPTCHA v3 را در HTML و Worker تنظیم کنید
-3. **Email Service**: از Mailgun یا SendGrid برای ارسال ایمیل استفاده کنید
+1. **Worker URL**: بعد از deploy Worker، URL را در `assets/js/contact-form.js` بررسی کنید
+2. **Turnstile**: کلیدهای Turnstile را در HTML (Site Key) و Worker (Secret Key) تنظیم کنید
+3. **Email Service**: سرویس Resend برای ارسال ایمیل استفاده می‌شود (Mailgun حذف شده است)
 4. **Backup**: به‌طور منظم از پروژه backup بگیرید
 
-## پشتیبانی
+## 📞 پشتیبانی
 
 برای سوالات و مشکلات:
 - Email: info@mahdiarts.ir
 - WhatsApp: +989306880801
 
 ---
-ساخته شده توسط مهدی باغبان‌پور
+**ساخته شده با ❤️ توسط مهدی باغبان‌پور**
 

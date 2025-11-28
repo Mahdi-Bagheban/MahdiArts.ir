@@ -53,6 +53,9 @@ ADMIN_EMAIL = "info@mahdiarts.ir"
 # wrangler secret put RESEND_API_KEY
 # wrangler secret put RESEND_API_KEY --env production
 
+# wrangler secret put TURNSTILE_SECRET_KEY
+# wrangler secret put TURNSTILE_SECRET_KEY --env production
+
 # wrangler secret put NEWSLETTER_PUBLISH_KEY
 # wrangler secret put NEWSLETTER_PUBLISH_KEY --env production
 
